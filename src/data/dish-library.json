@@ -1,0 +1,1874 @@
+[
+  {
+    "id": "khao-soi",
+    "thai_name": "ข้าวซอยไก่",
+    "romanized": "khâao soi gài",
+    "english_name": "Khao Soi (chicken)",
+    "description": "Northern Thai coconut curry noodle soup with soft egg noodles, topped with crispy fried noodles.",
+    "ingredients": [
+      "chicken drumstick",
+      "egg noodles",
+      "coconut milk",
+      "curry paste"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Add lime, pickled mustard greens and shallots from the side plate, then chilli oil to taste.",
+    "story": "Chiang Mai's signature dish, linked to Chinese-Muslim (Haw) caravan traders who travelled through the north.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khanom-jeen-nam-ngiao",
+    "thai_name": "ขนมจีนน้ำเงี้ยว",
+    "romanized": "khà-nǒm jeen nám ngíao",
+    "english_name": "Khanom Jeen Nam Ngiao",
+    "description": "Fresh rice noodles in a tangy tomato-pork broth.",
+    "ingredients": [
+      "rice noodles",
+      "pork",
+      "tomato",
+      "pork blood cubes",
+      "dried cotton-tree flower"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Top with crispy garlic, bean sprouts and cabbage from the side, plus a squeeze of lime.",
+    "story": "Named after the Ngiao (Shan) people, it reflects the Shan influence on Lanna cooking.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "sai-ua",
+    "thai_name": "ไส้อั่ว",
+    "romanized": "sâi ùa",
+    "english_name": "Sai Ua (Northern sausage)",
+    "description": "Grilled pork sausage packed with lemongrass, kaffir lime, galangal and chilli.",
+    "ingredients": [
+      "pork",
+      "lemongrass",
+      "kaffir lime leaf",
+      "chilli",
+      "herbs"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat with sticky rice, fresh cabbage and raw chillies or ginger on the side.",
+    "story": "A market staple and a classic Chiang Mai souvenir that people take home to Bangkok.",
+    "unit": "ที่"
+  },
+  {
+    "id": "nam-prik-noom",
+    "thai_name": "น้ำพริกหนุ่ม",
+    "romanized": "nám phrík nùm",
+    "english_name": "Nam Prik Noom (green chilli dip)",
+    "description": "Smoky dip of roasted young green chillies, shallots and garlic.",
+    "ingredients": [
+      "green chilli",
+      "shallot",
+      "garlic",
+      "pork rinds (on the side)",
+      "vegetables"
+    ],
+    "spice_level": 3,
+    "northern_specialty": true,
+    "how_to_eat": "Dip pork rinds (khaep mu), steamed vegetables or a ball of sticky rice into it.",
+    "story": "\"Noom\" means young. The dish is named after the young chillies, and it's on every Lanna table.",
+    "unit": "ที่"
+  },
+  {
+    "id": "gaeng-hung-lay",
+    "thai_name": "แกงฮังเล",
+    "romanized": "gaeng hang-lee",
+    "english_name": "Gaeng Hung Lay (pork belly curry)",
+    "description": "Slow-cooked pork belly curry, rich and sweet-sour rather than spicy, with ginger and tamarind.",
+    "ingredients": [
+      "pork belly",
+      "ginger",
+      "tamarind",
+      "garlic",
+      "curry powder"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Order with steamed or sticky rice. It's often better the day after it's made.",
+    "story": "Burmese in origin, adopted into Lanna cuisine. It's a festival and temple-fair favourite.",
+    "unit": "ที่"
+  },
+  {
+    "id": "khao-kha-moo",
+    "thai_name": "ข้าวขาหมู",
+    "romanized": "khâao khǎa mǔu",
+    "english_name": "Khao Kha Moo (stewed pork leg rice)",
+    "description": "Tender pork leg braised in soy and five-spice, served on rice with a boiled egg.",
+    "ingredients": [
+      "pork leg",
+      "soy sauce",
+      "five-spice",
+      "egg",
+      "pickled greens"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Bite a raw garlic clove or chilli between mouthfuls, and use the sour chilli sauce.",
+    "story": "Thai-Chinese comfort food. The cowboy-hat lady at Chang Phuak Gate made it famous in Chiang Mai.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pad-kra-pao",
+    "thai_name": "ผัดกะเพราหมูสับ",
+    "romanized": "phàt grà-phrao mǔu sàp",
+    "english_name": "Pad Kra Pao (holy basil pork)",
+    "description": "Minced pork stir-fried with holy basil, garlic and chilli, over rice.",
+    "ingredients": [
+      "minced pork",
+      "holy basil",
+      "garlic",
+      "chilli",
+      "rice"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Add a fried egg (khai dao). Almost every Thai person does.",
+    "story": "Thailand's go-to \"I don't know what to eat\" dish. Ask for it anywhere.",
+    "unit": "จาน"
+  },
+  {
+    "id": "som-tam",
+    "thai_name": "ส้มตำไทย",
+    "romanized": "sôm tam thai",
+    "english_name": "Som Tam (papaya salad)",
+    "description": "Pounded green papaya salad: sour, sweet, salty and hot.",
+    "ingredients": [
+      "green papaya",
+      "lime",
+      "peanuts",
+      "dried shrimp",
+      "chilli",
+      "fish sauce"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Share it with sticky rice and grilled chicken (gai yang).",
+    "story": "From Isan (the northeast). Vendors pound each order fresh, so you can set your chilli count.",
+    "unit": "จาน"
+  },
+  {
+    "id": "mango-sticky-rice",
+    "thai_name": "ข้าวเหนียวมะม่วง",
+    "romanized": "khâao nǐao má-mûang",
+    "english_name": "Mango Sticky Rice",
+    "description": "Sweet sticky rice with coconut cream and ripe mango.",
+    "ingredients": [
+      "sticky rice",
+      "mango",
+      "coconut cream",
+      "mung beans"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it at room temperature, and pour the extra coconut cream over it.",
+    "story": "It's best in the hot season (around March to May), when mangoes are at their peak.",
+    "unit": "ที่"
+  },
+  {
+    "id": "cha-yen",
+    "thai_name": "ชาเย็น",
+    "romanized": "chaa yen",
+    "english_name": "Thai Iced Tea",
+    "description": "Strong orange-hued black tea with sweetened condensed milk over ice.",
+    "ingredients": [
+      "black tea",
+      "condensed milk",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say \"wǎan nói\" (หวานน้อย) if you want it less sweet.",
+    "story": "Found at nearly every street stall. The bright orange colour comes from the tea blend.",
+    "unit": "แก้ว"
+  },
+  {
+    "id": "pad-thai",
+    "thai_name": "ผัดไทย",
+    "romanized": "phàt thai",
+    "english_name": "Pad Thai",
+    "description": "Stir-fried thin rice noodles with egg, tofu, bean sprouts and a sweet-sour tamarind sauce.",
+    "ingredients": [
+      "rice noodles",
+      "egg",
+      "tofu",
+      "bean sprouts",
+      "tamarind",
+      "peanuts"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Season it yourself with the lime, crushed peanuts, sugar and chilli flakes on the table.",
+    "story": "Promoted as a national dish in the mid-20th century, it is now Thailand's best-known noodle dish abroad.",
+    "unit": "จาน"
+  },
+  {
+    "id": "tom-yum-goong",
+    "thai_name": "ต้มยำกุ้ง",
+    "romanized": "tôm yam gûng",
+    "english_name": "Tom Yum Goong (spicy prawn soup)",
+    "description": "Hot and sour soup with prawns, lemongrass, galangal, kaffir lime leaves and lime juice.",
+    "ingredients": [
+      "prawns",
+      "lemongrass",
+      "galangal",
+      "kaffir lime leaf",
+      "chilli",
+      "lime"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice and don't chew the lemongrass, galangal or lime leaves, they are there for flavour.",
+    "story": "One of Thailand's most famous soups; ask for 'nám khôn' for the creamy version or 'nám săi' for the clear one.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "tom-kha-gai",
+    "thai_name": "ต้มข่าไก่",
+    "romanized": "tôm khàa gài",
+    "english_name": "Tom Kha Gai (chicken coconut soup)",
+    "description": "Mild, creamy coconut milk soup with chicken, galangal, lemongrass and mushrooms.",
+    "ingredients": [
+      "chicken",
+      "coconut milk",
+      "galangal",
+      "lemongrass",
+      "mushrooms",
+      "lime"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Spoon it over rice; the galangal slices are for flavour, not for eating.",
+    "story": "'Khàa' means galangal, the ginger-like root that gives the soup its name.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "gaeng-keow-wan",
+    "thai_name": "แกงเขียวหวาน",
+    "romanized": "gaeng khĭao wăan",
+    "english_name": "Green Curry",
+    "description": "Coconut green curry with Thai eggplant, basil and chicken, pork or beef.",
+    "ingredients": [
+      "green curry paste",
+      "coconut milk",
+      "chicken",
+      "Thai eggplant",
+      "Thai basil"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Pour it over rice, or eat it with fresh rice noodles (khanom jeen).",
+    "story": "The name means 'sweet green curry', from the colour of the fresh green chillies in the paste.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "gaeng-daeng",
+    "thai_name": "แกงแดง",
+    "romanized": "gaeng daeng",
+    "english_name": "Red Curry",
+    "description": "Coconut curry made with red chilli paste, usually with pork, chicken or duck and bamboo shoots.",
+    "ingredients": [
+      "red curry paste",
+      "coconut milk",
+      "meat",
+      "bamboo shoots",
+      "basil"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with plain rice, which balances the richness.",
+    "story": "A central Thai staple; the red version with roast duck (gaeng phet bpet) is a popular variation.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "massaman",
+    "thai_name": "แกงมัสมั่น",
+    "romanized": "gaeng mát-sà-màn",
+    "english_name": "Massaman Curry",
+    "description": "Mild, rich curry with warm spices, potatoes, peanuts and slow-cooked chicken or beef.",
+    "ingredients": [
+      "beef or chicken",
+      "potato",
+      "peanuts",
+      "coconut milk",
+      "cardamom",
+      "cinnamon"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice or roti; it is a good choice if you don't like much heat.",
+    "story": "Its dried spices show the Persian and Muslim trading influences on Thai cooking.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "panang",
+    "thai_name": "พะแนง",
+    "romanized": "phá-naeng",
+    "english_name": "Panang Curry",
+    "description": "Thick, slightly sweet red curry with peanuts, kaffir lime leaves and meat.",
+    "ingredients": [
+      "panang curry paste",
+      "coconut cream",
+      "pork or chicken",
+      "kaffir lime leaf",
+      "peanuts"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice; the sauce is thick, so a little goes a long way.",
+    "story": "Drier and richer than most Thai curries, it is often topped with a swirl of coconut cream.",
+    "unit": "จาน"
+  },
+  {
+    "id": "khao-man-gai",
+    "thai_name": "ข้าวมันไก่",
+    "romanized": "khâao man gài",
+    "english_name": "Khao Man Gai (Hainanese chicken rice)",
+    "description": "Poached chicken on rice cooked in chicken fat and stock, with a clear soup and ginger-soy sauce.",
+    "ingredients": [
+      "chicken",
+      "rice",
+      "garlic",
+      "ginger",
+      "soybean sauce",
+      "cucumber"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Dip each bite of chicken in the ginger and fermented soybean sauce; the soup comes free on the side.",
+    "story": "Brought by Hainanese Chinese immigrants, it is now a Thai lunchtime classic.",
+    "unit": "จาน"
+  },
+  {
+    "id": "khao-pad",
+    "thai_name": "ข้าวผัด",
+    "romanized": "khâao phàt",
+    "english_name": "Khao Pad (fried rice)",
+    "description": "Fried rice with egg, onion and your choice of chicken, pork, prawn or crab.",
+    "ingredients": [
+      "rice",
+      "egg",
+      "onion",
+      "meat or seafood",
+      "soy sauce"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Squeeze the lime wedge over it and add prik nam pla (fish sauce with chilli) to taste.",
+    "story": "A safe everyday dish found everywhere; say 'khâao phàt gài' for chicken or 'gûng' for prawn.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pad-see-ew",
+    "thai_name": "ผัดซีอิ๊ว",
+    "romanized": "phàt sii-íu",
+    "english_name": "Pad See Ew",
+    "description": "Wide rice noodles stir-fried with dark soy sauce, egg, Chinese kale and meat.",
+    "ingredients": [
+      "wide rice noodles",
+      "dark soy sauce",
+      "egg",
+      "Chinese kale",
+      "pork or chicken"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add chilli vinegar and sugar from the condiment tray if you want more kick.",
+    "story": "A Chinese-Thai wok dish; the slightly charred, smoky noodles are the sign of a good one.",
+    "unit": "จาน"
+  },
+  {
+    "id": "rad-na",
+    "thai_name": "ราดหน้า",
+    "romanized": "râat nâa",
+    "english_name": "Rad Na (noodles in gravy)",
+    "description": "Wide rice noodles topped with a thick, savoury gravy, Chinese kale and meat.",
+    "ingredients": [
+      "wide rice noodles",
+      "gravy",
+      "Chinese kale",
+      "pork or seafood",
+      "soybean paste"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add chilli vinegar to cut through the gravy; you can ask for crispy egg noodles (mìi gròp) instead.",
+    "story": "'Râat nâa' means 'poured on top', describing the gravy ladled over the noodles.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pad-kee-mao",
+    "thai_name": "ผัดขี้เมา",
+    "romanized": "phàt khîi mao",
+    "english_name": "Pad Kee Mao (drunken noodles)",
+    "description": "Spicy stir-fried wide noodles with holy basil, chilli, garlic and meat.",
+    "ingredients": [
+      "wide rice noodles",
+      "holy basil",
+      "chilli",
+      "garlic",
+      "meat or seafood"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Ask for 'phèt nít nòi' (a little spicy) if you are careful with heat.",
+    "story": "'Khîi mao' means 'drunkard'; one story is that it was cooked as a late-night dish after drinking.",
+    "unit": "จาน"
+  },
+  {
+    "id": "kuay-teow-nam",
+    "thai_name": "ก๋วยเตี๋ยวน้ำ",
+    "romanized": "gŭay-tĭao náam",
+    "english_name": "Noodle Soup",
+    "description": "Rice noodles in clear broth with pork, meatballs, bean sprouts and herbs.",
+    "ingredients": [
+      "rice noodles",
+      "pork",
+      "meatballs",
+      "bean sprouts",
+      "broth"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Choose the noodle size (sên lék thin, sên yài wide) and season with the four condiments: sugar, fish sauce, chilli flakes and vinegar.",
+    "story": "Thailand's everyday street food, originally brought by Chinese immigrants.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "kuay-teow-rua",
+    "thai_name": "ก๋วยเตี๋ยวเรือ",
+    "romanized": "gŭay-tĭao ruea",
+    "english_name": "Boat Noodles",
+    "description": "Small bowls of rich, dark noodle soup with pork or beef, herbs and spices.",
+    "ingredients": [
+      "rice noodles",
+      "pork or beef",
+      "dark broth",
+      "morning glory",
+      "pork crackling"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Bowls are small, so people order several; stack the empty bowls to count the bill.",
+    "story": "Once sold from boats on Bangkok's canals, which is why the bowls are small.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "bamee-moo-daeng",
+    "thai_name": "บะหมี่หมูแดง",
+    "romanized": "bà-mìi mŭu daeng",
+    "english_name": "Egg Noodles with Red Pork",
+    "description": "Yellow egg noodles with Chinese-style red roast pork and wontons, dry or in soup.",
+    "ingredients": [
+      "egg noodles",
+      "red roast pork",
+      "wontons",
+      "choy sum",
+      "broth"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say 'hâeng' for dry noodles or 'náam' for soup.",
+    "story": "A Chinese-Thai classic, often sold at the same stall as rice with red pork.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khao-moo-daeng",
+    "thai_name": "ข้าวหมูแดง",
+    "romanized": "khâao mŭu daeng",
+    "english_name": "Rice with Red Pork",
+    "description": "Sliced Chinese-style red roast pork on rice with a sweet, thick red gravy and a boiled egg.",
+    "ingredients": [
+      "red roast pork",
+      "rice",
+      "sweet gravy",
+      "boiled egg",
+      "cucumber"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add the sliced chillies in soy sauce on the side for contrast.",
+    "story": "A Teochew Chinese dish that became a Thai lunchtime staple.",
+    "unit": "จาน"
+  },
+  {
+    "id": "khao-moo-krob",
+    "thai_name": "ข้าวหมูกรอบ",
+    "romanized": "khâao mŭu gròp",
+    "english_name": "Rice with Crispy Pork",
+    "description": "Crispy pork belly on rice with sweet gravy, often served with red pork.",
+    "ingredients": [
+      "crispy pork belly",
+      "rice",
+      "sweet gravy",
+      "cucumber"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Dip the pork in the chilli soy sauce served on the side.",
+    "story": "Often sold at the same stall as rice with red pork; order both as 'khâao mŭu daeng mŭu gròp'.",
+    "unit": "จาน"
+  },
+  {
+    "id": "jok",
+    "thai_name": "โจ๊ก",
+    "romanized": "jóok",
+    "english_name": "Jok (rice porridge)",
+    "description": "Smooth, thick rice porridge with pork balls, ginger and often an egg.",
+    "ingredients": [
+      "rice",
+      "pork balls",
+      "ginger",
+      "spring onion",
+      "egg"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Stir in the egg, then add pepper and fried garlic; it is a common breakfast.",
+    "story": "A Chinese-style congee eaten across Thailand, especially in the morning.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khao-tom",
+    "thai_name": "ข้าวต้ม",
+    "romanized": "khâao tôm",
+    "english_name": "Khao Tom (rice soup)",
+    "description": "Rice in a light clear broth with pork, prawns or fish, garlic oil and celery.",
+    "ingredients": [
+      "rice",
+      "broth",
+      "pork or seafood",
+      "garlic",
+      "Chinese celery"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add pepper and a little fish sauce; it is a popular breakfast and late-night meal.",
+    "story": "Unlike jok, the rice grains stay whole in a clear soup.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "moo-ping",
+    "thai_name": "หมูปิ้ง",
+    "romanized": "mŭu bpîng",
+    "english_name": "Moo Ping (grilled pork skewers)",
+    "description": "Sweet, garlicky marinated pork grilled on skewers over charcoal.",
+    "ingredients": [
+      "pork",
+      "garlic",
+      "coconut milk",
+      "palm sugar",
+      "coriander root"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with a small bag of sticky rice as a grab-and-go breakfast.",
+    "story": "A morning street-food staple; buy a few skewers and a bag of sticky rice.",
+    "unit": "ที่"
+  },
+  {
+    "id": "gai-yang",
+    "thai_name": "ไก่ย่าง",
+    "romanized": "gài yâang",
+    "english_name": "Gai Yang (grilled chicken)",
+    "description": "Charcoal-grilled marinated chicken with a sweet or spicy dipping sauce.",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "coriander root",
+      "pepper",
+      "dipping sauce"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with sticky rice and som tam, tearing the chicken with your fingers.",
+    "story": "Strongly linked to Isan (the northeast), where it is eaten with sticky rice and papaya salad.",
+    "unit": "ที่"
+  },
+  {
+    "id": "larb",
+    "thai_name": "ลาบ",
+    "romanized": "lâap",
+    "english_name": "Larb (Isan minced meat salad)",
+    "description": "Minced meat tossed with lime, fish sauce, chilli, toasted rice powder and fresh herbs.",
+    "ingredients": [
+      "minced pork or chicken",
+      "lime",
+      "toasted rice powder",
+      "chilli",
+      "mint",
+      "shallot"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with sticky rice and raw vegetables like cabbage and long beans.",
+    "story": "The Isan (northeastern) version is sour and spicy; the Northern version, laab mueang, is quite different.",
+    "unit": "จาน"
+  },
+  {
+    "id": "nam-tok-moo",
+    "thai_name": "น้ำตกหมู",
+    "romanized": "náam tòk mŭu",
+    "english_name": "Nam Tok Moo (grilled pork salad)",
+    "description": "Sliced grilled pork tossed with lime, chilli, toasted rice powder and herbs.",
+    "ingredients": [
+      "grilled pork",
+      "lime",
+      "toasted rice powder",
+      "chilli",
+      "mint",
+      "shallot"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with sticky rice and fresh vegetables.",
+    "story": "'Náam tòk' means 'waterfall', often said to refer to the meat juices dripping as it grills.",
+    "unit": "จาน"
+  },
+  {
+    "id": "moo-manao",
+    "thai_name": "หมูมะนาว",
+    "romanized": "mŭu má-naao",
+    "english_name": "Moo Manao (pork in lime sauce)",
+    "description": "Thin slices of boiled pork covered in a sharp lime, garlic and chilli sauce.",
+    "ingredients": [
+      "pork",
+      "lime",
+      "garlic",
+      "chilli",
+      "fish sauce",
+      "Chinese kale"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it as a shared dish with drinks or rice; the raw garlic and chilli are strong.",
+    "story": "A popular drinking snack (gàp glâem) at Thai restaurants and bars.",
+    "unit": "จาน"
+  },
+  {
+    "id": "yam-woon-sen",
+    "thai_name": "ยำวุ้นเส้น",
+    "romanized": "yam wún-sên",
+    "english_name": "Glass Noodle Salad",
+    "description": "Glass noodles tossed with minced pork, prawns, lime, chilli, onion and herbs.",
+    "ingredients": [
+      "glass noodles",
+      "minced pork",
+      "prawns",
+      "lime",
+      "chilli",
+      "celery"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Share it as a side dish with rice.",
+    "story": "'Yam' is the Thai family of sour, spicy, salad-like dishes.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pla-pao",
+    "thai_name": "ปลาเผา",
+    "romanized": "plaa phăo",
+    "english_name": "Salt-Crusted Grilled Fish",
+    "description": "Whole fish packed with lemongrass, crusted in salt and grilled over charcoal.",
+    "ingredients": [
+      "whole fish (often tilapia)",
+      "salt",
+      "lemongrass",
+      "pandan leaf"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Peel off the salty skin and wrap the fish with noodles and vegetables in lettuce, dipped in seafood sauce.",
+    "story": "A night-market favourite; the salt crust keeps the fish moist.",
+    "unit": "ที่"
+  },
+  {
+    "id": "pla-kapong-neung-manao",
+    "thai_name": "ปลากะพงนึ่งมะนาว",
+    "romanized": "plaa gà-phong nûeng má-naao",
+    "english_name": "Steamed Sea Bass with Lime",
+    "description": "Whole sea bass steamed in a sour, spicy lime, garlic and chilli broth.",
+    "ingredients": [
+      "sea bass",
+      "lime",
+      "garlic",
+      "chilli",
+      "coriander"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Share the fish from the middle of the table and spoon the broth over rice.",
+    "story": "Often served in a fish-shaped pot kept hot with a flame at the table.",
+    "unit": "ที่"
+  },
+  {
+    "id": "tod-mun-pla",
+    "thai_name": "ทอดมันปลา",
+    "romanized": "thâwt man plaa",
+    "english_name": "Thai Fish Cakes",
+    "description": "Deep-fried fish cakes with red curry paste, long beans and kaffir lime leaves.",
+    "ingredients": [
+      "fish",
+      "red curry paste",
+      "long beans",
+      "kaffir lime leaf"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Dip them in the sweet cucumber relish served on the side.",
+    "story": "A common starter and street snack.",
+    "unit": "ที่"
+  },
+  {
+    "id": "poh-pia-tod",
+    "thai_name": "ปอเปี๊ยะทอด",
+    "romanized": "bpaw-bpía thâwt",
+    "english_name": "Fried Spring Rolls",
+    "description": "Crispy fried rolls filled with glass noodles, vegetables and sometimes pork.",
+    "ingredients": [
+      "spring roll wrapper",
+      "glass noodles",
+      "cabbage",
+      "carrot",
+      "pork"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Dip them in sweet chilli sauce.",
+    "story": "A Chinese-origin snack found at markets across Thailand.",
+    "unit": "ที่"
+  },
+  {
+    "id": "satay",
+    "thai_name": "สะเต๊ะ",
+    "romanized": "sà-té",
+    "english_name": "Satay",
+    "description": "Grilled turmeric-marinated pork or chicken skewers with peanut sauce.",
+    "ingredients": [
+      "pork or chicken",
+      "turmeric",
+      "coconut milk",
+      "peanut sauce",
+      "cucumber relish"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Dip in peanut sauce and eat with the cucumber relish and toasted bread.",
+    "story": "Came to Thailand from the Malay world in the south.",
+    "unit": "ที่"
+  },
+  {
+    "id": "kai-jeow",
+    "thai_name": "ไข่เจียว",
+    "romanized": "khài jiao",
+    "english_name": "Thai Omelette",
+    "description": "Puffy, crispy deep-fried omelette, plain or with minced pork.",
+    "ingredients": [
+      "eggs",
+      "fish sauce",
+      "minced pork (optional)"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it on rice with sriracha or chilli fish sauce.",
+    "story": "A cheap comfort food that almost every Thai person grows up eating.",
+    "unit": "จาน"
+  },
+  {
+    "id": "kai-dao",
+    "thai_name": "ไข่ดาว",
+    "romanized": "khài daao",
+    "english_name": "Fried Egg",
+    "description": "Egg fried in hot oil until the edges are crispy.",
+    "ingredients": [
+      "egg",
+      "oil"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add one on top of pad kra pao or fried rice by saying 'sài khài daao'.",
+    "story": "'Khài daao' means 'star egg', from its shape.",
+    "unit": "ที่"
+  },
+  {
+    "id": "pad-pak-bung",
+    "thai_name": "ผัดผักบุ้ง",
+    "romanized": "phàt phàk bûng",
+    "english_name": "Stir-fried Morning Glory",
+    "description": "Morning glory greens flash-fried with garlic, chilli and soybean sauce.",
+    "ingredients": [
+      "morning glory",
+      "garlic",
+      "chilli",
+      "soybean paste",
+      "oyster sauce"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Order it as a shared vegetable side with rice.",
+    "story": "Cooked over very high heat; at some places the flames rise dramatically from the wok.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pad-pak-ruam",
+    "thai_name": "ผัดผักรวม",
+    "romanized": "phàt phàk ruam",
+    "english_name": "Stir-fried Mixed Vegetables",
+    "description": "Mixed vegetables stir-fried with garlic and oyster sauce.",
+    "ingredients": [
+      "mixed vegetables",
+      "garlic",
+      "oyster sauce",
+      "mushrooms"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "A good vegetarian-friendly side; say 'mâi sài núea sàt' for no meat.",
+    "story": "A standard dish at every made-to-order (aahăan taam sàng) shop.",
+    "unit": "จาน"
+  },
+  {
+    "id": "gai-pad-med-mamuang",
+    "thai_name": "ไก่ผัดเม็ดมะม่วงหิมพานต์",
+    "romanized": "gài phàt mét má-mûang hĭm-má-phaan",
+    "english_name": "Chicken with Cashew Nuts",
+    "description": "Stir-fried chicken with cashews, onion, dried chillies and a sweet savoury sauce.",
+    "ingredients": [
+      "chicken",
+      "cashew nuts",
+      "onion",
+      "dried chilli",
+      "oyster sauce"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice; the dried chillies are mostly for aroma.",
+    "story": "A Chinese-influenced stir-fry that is very popular with visitors.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pad-priew-wan",
+    "thai_name": "ผัดเปรี้ยวหวาน",
+    "romanized": "phàt prîao wăan",
+    "english_name": "Sweet and Sour Stir-fry",
+    "description": "Stir-fried meat with pineapple, tomato, cucumber and onion in a sweet-sour sauce.",
+    "ingredients": [
+      "chicken or pork",
+      "pineapple",
+      "tomato",
+      "cucumber",
+      "onion"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice; good for kids and anyone avoiding heat.",
+    "story": "A Chinese-Thai dish found at most made-to-order shops.",
+    "unit": "จาน"
+  },
+  {
+    "id": "khao-kluk-kapi",
+    "thai_name": "ข้าวคลุกกะปิ",
+    "romanized": "khâao khlúk gà-bpì",
+    "english_name": "Shrimp Paste Rice",
+    "description": "Rice fried with shrimp paste, served with sweet pork, egg, green mango and shallots.",
+    "ingredients": [
+      "rice",
+      "shrimp paste",
+      "sweet pork",
+      "shredded egg",
+      "green mango",
+      "shallot"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Mix all the toppings into the rice before eating.",
+    "story": "A central Thai dish that balances salty, sweet and sour in one plate.",
+    "unit": "จาน"
+  },
+  {
+    "id": "kuay-jab",
+    "thai_name": "ก๋วยจั๊บ",
+    "romanized": "gŭay-jáp",
+    "english_name": "Kuay Jab (rolled noodle soup)",
+    "description": "Rolled rice noodles in a peppery broth with crispy pork, pork offal and egg.",
+    "ingredients": [
+      "rolled rice noodles",
+      "peppery broth",
+      "crispy pork",
+      "pork offal",
+      "boiled egg"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Ask for 'mâi ao khrûeang nai' if you don't want offal.",
+    "story": "A Teochew Chinese noodle soup; the noodles curl into little tubes as they cook.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "yen-ta-fo",
+    "thai_name": "เย็นตาโฟ",
+    "romanized": "yen-taa-foo",
+    "english_name": "Yen Ta Fo (pink noodle soup)",
+    "description": "Noodle soup in a pink broth coloured with fermented red bean curd, with fish balls and squid.",
+    "ingredients": [
+      "rice noodles",
+      "fermented red tofu sauce",
+      "fish balls",
+      "squid",
+      "morning glory"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Season with the table condiments; it tastes slightly sweet.",
+    "story": "Its bright pink colour makes it easy to spot on a menu photo.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khanom-jeen-nam-ya",
+    "thai_name": "ขนมจีนน้ำยา",
+    "romanized": "khà-nŏm jeen náam yaa",
+    "english_name": "Khanom Jeen Nam Ya (rice noodles with fish curry)",
+    "description": "Fresh fermented rice noodles with a fish and coconut curry sauce.",
+    "ingredients": [
+      "fresh rice noodles",
+      "fish curry",
+      "coconut milk",
+      "krachai (fingerroot)"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Help yourself to the free fresh vegetables and herbs, and add them on top.",
+    "story": "Khanom jeen is one of Thailand's oldest noodles, made from fermented rice.",
+    "unit": "จาน"
+  },
+  {
+    "id": "gaeng-som",
+    "thai_name": "แกงส้ม",
+    "romanized": "gaeng sôm",
+    "english_name": "Gaeng Som (sour curry)",
+    "description": "Thin, sour tamarind curry with fish or prawns and vegetables, without coconut milk.",
+    "ingredients": [
+      "tamarind",
+      "fish or prawns",
+      "papaya or vegetables",
+      "chilli paste"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Spoon it over rice; it is sour and spicy, not creamy.",
+    "story": "A central and southern Thai curry; the southern version (gaeng lueang) is yellow and fiery.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "gaeng-jued-tao-hoo",
+    "thai_name": "แกงจืดเต้าหู้หมูสับ",
+    "romanized": "gaeng jùet tâo-hûu mŭu sàp",
+    "english_name": "Clear Soup with Tofu and Pork",
+    "description": "Mild clear soup with soft tofu, minced pork, glass noodles and vegetables.",
+    "ingredients": [
+      "soft tofu",
+      "minced pork",
+      "glass noodles",
+      "cabbage",
+      "broth"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Order it to share alongside spicy dishes; it cools the palate.",
+    "story": "'Jùet' means 'bland': it is the gentle soup on a Thai table.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "tom-saep",
+    "thai_name": "ต้มแซ่บ",
+    "romanized": "tôm sâep",
+    "english_name": "Tom Saep (Isan hot and sour soup)",
+    "description": "Spicy, sour clear soup with pork ribs or beef, lemongrass, galangal and herbs.",
+    "ingredients": [
+      "pork ribs or beef",
+      "lemongrass",
+      "galangal",
+      "chilli",
+      "lime",
+      "sawtooth coriander"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with sticky rice; it is spicier and more herbal than tom yum.",
+    "story": "'Sâep' is the Isan word for 'delicious' and spicy.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "moo-krata",
+    "thai_name": "หมูกระทะ",
+    "romanized": "mŭu gà-thá",
+    "english_name": "Moo Kratha (Thai barbecue hotpot)",
+    "description": "Cook-it-yourself meal: grill meat on a domed pan while soup cooks vegetables around the edge.",
+    "ingredients": [
+      "pork",
+      "seafood",
+      "vegetables",
+      "glass noodles",
+      "broth",
+      "dipping sauce"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Rub pork fat on the dome first, grill on top, and let the juices run into the soup below.",
+    "story": "A hugely popular social meal, usually buffet-style, eaten with friends and beer.",
+    "unit": "ที่"
+  },
+  {
+    "id": "suki",
+    "thai_name": "สุกี้",
+    "romanized": "sù-gîi",
+    "english_name": "Suki (Thai sukiyaki)",
+    "description": "Glass noodles, egg, meat and vegetables in broth, served as soup (náam) or dry-fried (hâeng).",
+    "ingredients": [
+      "glass noodles",
+      "egg",
+      "meat or seafood",
+      "Chinese cabbage",
+      "suki sauce"
+    ],
+    "spice_level": 1,
+    "northern_specialty": false,
+    "how_to_eat": "Mix in the red, chilli-garlic suki sauce to taste.",
+    "story": "A Thai take on Japanese sukiyaki, very different from the original.",
+    "unit": "จาน"
+  },
+  {
+    "id": "hoy-tod",
+    "thai_name": "หอยทอด",
+    "romanized": "hŏi thâwt",
+    "english_name": "Hoy Tod (oyster or mussel omelette)",
+    "description": "Crispy fried batter with egg and mussels or oysters, on bean sprouts.",
+    "ingredients": [
+      "mussels or oysters",
+      "egg",
+      "flour batter",
+      "bean sprouts"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Dip it in sriracha sauce.",
+    "story": "A Chinese-Thai street-food favourite cooked on a big flat griddle.",
+    "unit": "จาน"
+  },
+  {
+    "id": "goong-ob-woon-sen",
+    "thai_name": "กุ้งอบวุ้นเส้น",
+    "romanized": "gûng òp wún-sên",
+    "english_name": "Baked Prawns with Glass Noodles",
+    "description": "Prawns baked in a clay pot on glass noodles with ginger, pepper and soy.",
+    "ingredients": [
+      "prawns",
+      "glass noodles",
+      "ginger",
+      "black pepper",
+      "soy sauce",
+      "pork fat"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Mix the noodles well; they soak up all the prawn juices.",
+    "story": "A Chinese-Thai seafood dish served in its clay pot.",
+    "unit": "ที่"
+  },
+  {
+    "id": "pla-muk-yang",
+    "thai_name": "ปลาหมึกย่าง",
+    "romanized": "plaa mùek yâang",
+    "english_name": "Grilled Squid",
+    "description": "Squid grilled on skewers with a spicy green seafood dipping sauce.",
+    "ingredients": [
+      "squid",
+      "seafood sauce",
+      "lime",
+      "chilli",
+      "garlic"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Dip it in the green nám jîm sii-fúut; it is very spicy.",
+    "story": "A common night-market and beach snack.",
+    "unit": "ที่"
+  },
+  {
+    "id": "sai-krok-isan",
+    "thai_name": "ไส้กรอกอีสาน",
+    "romanized": "sâi gràwk ii-săan",
+    "english_name": "Isan Sausage",
+    "description": "Slightly sour fermented pork and rice sausage, grilled in little balls or links.",
+    "ingredients": [
+      "pork",
+      "rice",
+      "garlic",
+      "salt"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with fresh ginger, raw chilli and cabbage in the same bite.",
+    "story": "The sourness comes from fermentation, a traditional northeastern way to preserve meat.",
+    "unit": "ที่"
+  },
+  {
+    "id": "kor-moo-yang",
+    "thai_name": "คอหมูย่าง",
+    "romanized": "khaw mŭu yâang",
+    "english_name": "Grilled Pork Neck",
+    "description": "Juicy, marinated pork neck grilled and sliced, with a spicy jaew dipping sauce.",
+    "ingredients": [
+      "pork neck",
+      "garlic",
+      "soy sauce",
+      "jaew dipping sauce"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Dip each slice in the jaew (chilli and toasted rice sauce) and eat it with sticky rice.",
+    "story": "An Isan-style grill favourite, often ordered with drinks.",
+    "unit": "จาน"
+  },
+  {
+    "id": "gai-tod",
+    "thai_name": "ไก่ทอด",
+    "romanized": "gài thâwt",
+    "english_name": "Thai Fried Chicken",
+    "description": "Crispy fried chicken, often topped with fried garlic or shallots.",
+    "ingredients": [
+      "chicken",
+      "garlic",
+      "flour",
+      "pepper"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with sticky rice and sweet chilli sauce.",
+    "story": "Thai street-style fried chicken; Hat Yai in the south is famous for its version.",
+    "unit": "ที่"
+  },
+  {
+    "id": "roti",
+    "thai_name": "โรตี",
+    "romanized": "roo-tii",
+    "english_name": "Roti",
+    "description": "Pan-fried flatbread, often with banana and egg, topped with condensed milk and sugar.",
+    "ingredients": [
+      "flour dough",
+      "banana",
+      "egg",
+      "condensed milk",
+      "sugar"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Order 'roo-tii glûay khài' for banana and egg.",
+    "story": "Brought by South Asian and Muslim communities; in Thailand it is mostly eaten as a sweet snack.",
+    "unit": "ที่"
+  },
+  {
+    "id": "khanom-krok",
+    "thai_name": "ขนมครก",
+    "romanized": "khà-nŏm khrók",
+    "english_name": "Khanom Krok (coconut pancakes)",
+    "description": "Small half-moon coconut rice pancakes, crispy outside and custardy inside.",
+    "ingredients": [
+      "rice flour",
+      "coconut milk",
+      "sugar",
+      "spring onion or corn"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat them hot straight from the pan.",
+    "story": "'Khrók' is the mortar the cast-iron pan resembles.",
+    "unit": "ที่"
+  },
+  {
+    "id": "bua-loy",
+    "thai_name": "บัวลอย",
+    "romanized": "bua loi",
+    "english_name": "Bua Loy (rice balls in coconut milk)",
+    "description": "Small chewy rice flour balls in warm, sweet coconut milk.",
+    "ingredients": [
+      "glutinous rice flour",
+      "coconut milk",
+      "sugar",
+      "pandan",
+      "egg (optional)"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Ask for a sweet egg on top with 'bua loi khài wăan'.",
+    "story": "'Bua loi' means 'floating lotus', from the way the balls float.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "tub-tim-krob",
+    "thai_name": "ทับทิมกรอบ",
+    "romanized": "tháp-thim gròp",
+    "english_name": "Tub Tim Krob (red rubies)",
+    "description": "Crunchy water chestnut cubes in red jelly coating, served with coconut milk and ice.",
+    "ingredients": [
+      "water chestnuts",
+      "tapioca flour",
+      "coconut milk",
+      "syrup",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Stir everything together so each spoon has coconut milk and ice.",
+    "story": "'Tháp-thim' means ruby, from their red colour.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "kluay-buat-chee",
+    "thai_name": "กล้วยบวชชี",
+    "romanized": "glûay bùat chii",
+    "english_name": "Bananas in Coconut Milk",
+    "description": "Banana pieces simmered in sweet, slightly salty coconut milk.",
+    "ingredients": [
+      "banana",
+      "coconut milk",
+      "sugar",
+      "salt"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "It is served warm; a good dessert after spicy food.",
+    "story": "The name means 'bananas ordained as nuns', from the white coconut milk.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "cha-manao",
+    "thai_name": "ชามะนาว",
+    "romanized": "chaa má-naao",
+    "english_name": "Iced Lime Tea",
+    "description": "Strong black tea with lime and sugar over ice.",
+    "ingredients": [
+      "black tea",
+      "lime",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say 'wăan nói' for less sweet.",
+    "story": "A refreshing alternative to milky cha yen, sold at the same stalls.",
+    "unit": "แก้ว"
+  },
+  {
+    "id": "oliang",
+    "thai_name": "โอเลี้ยง",
+    "romanized": "oo-líang",
+    "english_name": "Oliang (Thai iced coffee)",
+    "description": "Strong black iced coffee brewed with roasted grains and sweetened.",
+    "ingredients": [
+      "coffee",
+      "roasted grains",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say 'mâi sài nám dtaan' for no sugar.",
+    "story": "A traditional Chinese-Thai coffee shop drink, older than the modern café scene.",
+    "unit": "แก้ว"
+  },
+  {
+    "id": "nam-maprao",
+    "thai_name": "น้ำมะพร้าว",
+    "romanized": "náam má-práao",
+    "english_name": "Coconut Water",
+    "description": "Fresh coconut water, often served in the whole young coconut.",
+    "ingredients": [
+      "young coconut"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Scrape out the soft flesh with a spoon after drinking.",
+    "story": "Young coconuts are sold chilled at markets and fruit stalls.",
+    "unit": "ที่"
+  },
+  {
+    "id": "pad-woon-sen",
+    "thai_name": "ผัดวุ้นเส้น",
+    "romanized": "phàt wún-sên",
+    "english_name": "Stir-fried Glass Noodles",
+    "description": "Glass noodles stir-fried with egg, vegetables and meat or prawns.",
+    "ingredients": [
+      "glass noodles",
+      "egg",
+      "cabbage",
+      "carrot",
+      "meat or prawns"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add chilli fish sauce if you want more flavour.",
+    "story": "A light made-to-order dish, less oily than most noodle stir-fries.",
+    "unit": "จาน"
+  },
+  {
+    "id": "gai-pad-king",
+    "thai_name": "ไก่ผัดขิง",
+    "romanized": "gài phàt khĭng",
+    "english_name": "Chicken with Ginger",
+    "description": "Chicken stir-fried with fresh ginger, mushrooms, onion and soy sauce.",
+    "ingredients": [
+      "chicken",
+      "ginger",
+      "wood ear mushrooms",
+      "onion",
+      "soy sauce"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with rice; the ginger gives warmth rather than heat.",
+    "story": "A mild Chinese-Thai stir-fry.",
+    "unit": "จาน"
+  },
+  {
+    "id": "pla-rad-prik",
+    "thai_name": "ปลาราดพริก",
+    "romanized": "plaa râat phrík",
+    "english_name": "Fried Fish with Chilli Sauce",
+    "description": "Whole deep-fried fish covered in a sweet, sour and spicy chilli sauce.",
+    "ingredients": [
+      "whole fish",
+      "chilli",
+      "garlic",
+      "tamarind",
+      "palm sugar"
+    ],
+    "spice_level": 2,
+    "northern_specialty": false,
+    "how_to_eat": "Share it at the table; eat the crispy fins too.",
+    "story": "'Râat phrík' means 'topped with chilli'.",
+    "unit": "ที่"
+  },
+  {
+    "id": "moo-tod-kratiam",
+    "thai_name": "หมูทอดกระเทียม",
+    "romanized": "mŭu thâwt grà-thiam",
+    "english_name": "Garlic Pepper Pork",
+    "description": "Pork fried with lots of garlic and pepper, served on rice.",
+    "ingredients": [
+      "pork",
+      "garlic",
+      "black pepper",
+      "soy sauce"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Add a fried egg and chilli fish sauce.",
+    "story": "A mild made-to-order favourite, good for anyone avoiding chilli.",
+    "unit": "จาน"
+  },
+  {
+    "id": "gaeng-pa",
+    "thai_name": "แกงป่า",
+    "romanized": "gaeng bpàa",
+    "english_name": "Jungle Curry",
+    "description": "Fiery, herbal curry without coconut milk, with meat, vegetables and krachai root.",
+    "ingredients": [
+      "red curry paste",
+      "meat",
+      "Thai eggplant",
+      "krachai (fingerroot)",
+      "green peppercorns"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Eat it with plenty of rice; it is one of the spiciest curries.",
+    "story": "'Bpàa' means forest: a country-style curry made without coconut.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "yam-talay",
+    "thai_name": "ยำทะเล",
+    "romanized": "yam thá-lee",
+    "english_name": "Spicy Seafood Salad",
+    "description": "Mixed seafood tossed with lime, chilli, onion, celery and herbs.",
+    "ingredients": [
+      "prawns",
+      "squid",
+      "mussels",
+      "lime",
+      "chilli",
+      "Chinese celery"
+    ],
+    "spice_level": 3,
+    "northern_specialty": false,
+    "how_to_eat": "Share it as a side with rice or drinks.",
+    "story": "A 'yam' salad; the dressing is sour, salty, sweet and spicy.",
+    "unit": "จาน"
+  },
+  {
+    "id": "nam-prik-ong",
+    "thai_name": "น้ำพริกอ่อง",
+    "romanized": "náam phrík àwng",
+    "english_name": "Nam Prik Ong (Northern tomato-pork dip)",
+    "description": "Mild, chunky dip of minced pork, tomato and chilli paste, a bit like a Thai bolognese.",
+    "ingredients": [
+      "minced pork",
+      "tomato",
+      "dried chilli",
+      "garlic",
+      "fermented soybean"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Scoop it with pork crackling (khaep moo), raw or boiled vegetables and sticky rice.",
+    "story": "One of the best-known Northern chilli dips, often served next to nam prik noom.",
+    "unit": "ที่"
+  },
+  {
+    "id": "laab-mueang",
+    "thai_name": "ลาบเมือง",
+    "romanized": "lâap mueang",
+    "english_name": "Laab Mueang (Northern larb)",
+    "description": "Minced meat with a dry spice mix of dried chillies, long pepper and other spices, often with blood or offal.",
+    "ingredients": [
+      "minced pork or beef",
+      "dried chilli",
+      "long pepper",
+      "spices",
+      "herbs"
+    ],
+    "spice_level": 3,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice and bitter fresh herbs; ask 'sùk' for fully cooked, since some versions are raw.",
+    "story": "Unlike the lime-sour Isan larb, the Northern version gets its flavour from a dry spice blend.",
+    "unit": "จาน"
+  },
+  {
+    "id": "laab-khua",
+    "thai_name": "ลาบคั่ว",
+    "romanized": "lâap khûa",
+    "english_name": "Laab Khua (pan-fried Northern larb)",
+    "description": "Northern larb that is stir-fried in the pan until cooked, with spices and herbs.",
+    "ingredients": [
+      "minced pork",
+      "dried chilli",
+      "spices",
+      "garlic",
+      "herbs"
+    ],
+    "spice_level": 3,
+    "northern_specialty": true,
+    "how_to_eat": "A cooked, safer choice than raw laab; eat it with sticky rice and herbs.",
+    "story": "'Khûa' means dry-fried in a pan.",
+    "unit": "จาน"
+  },
+  {
+    "id": "kaeng-khae",
+    "thai_name": "แกงแค",
+    "romanized": "gaeng khae",
+    "english_name": "Kaeng Khae (Northern herb curry)",
+    "description": "Clear, herbal Northern curry with many local vegetables and leaves, usually with chicken or frog.",
+    "ingredients": [
+      "chicken",
+      "local greens",
+      "Thai eggplant",
+      "acacia leaves",
+      "chilli paste"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice; the mix of vegetables changes by season.",
+    "story": "A country-style curry without coconut milk, typical of Lanna home cooking.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "kaeng-om",
+    "thai_name": "แกงอ่อม",
+    "romanized": "gaeng àwm",
+    "english_name": "Kaeng Om (Northern stewed curry)",
+    "description": "Thin, spicy stewed curry, often with beef or pork and offal, flavoured with dill and herbs.",
+    "ingredients": [
+      "beef or pork",
+      "offal",
+      "chilli paste",
+      "herbs",
+      "lemongrass"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice; ask 'mâi sài khrûeang nai' if you don't want offal.",
+    "story": "A slow-cooked Northern home dish without coconut milk.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khaep-moo",
+    "thai_name": "แคบหมู",
+    "romanized": "khàep mŭu",
+    "english_name": "Khaep Moo (pork crackling)",
+    "description": "Crunchy puffed pork rind, sometimes with a layer of fat attached.",
+    "ingredients": [
+      "pork skin",
+      "salt"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Use it to scoop up nam prik noom and nam prik ong.",
+    "story": "A classic Chiang Mai snack and souvenir, sold in big bags at markets.",
+    "unit": "ที่"
+  },
+  {
+    "id": "naem",
+    "thai_name": "แหนม",
+    "romanized": "nǎem",
+    "english_name": "Naem (sour fermented pork)",
+    "description": "Tangy fermented pork sausage with garlic and chilli, eaten raw-fermented or fried.",
+    "ingredients": [
+      "pork",
+      "pork skin",
+      "garlic",
+      "sticky rice",
+      "chilli"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with fresh ginger, shallots, peanuts and chilli; or order 'nǎem thâwt' fried with egg.",
+    "story": "Called jin som (จิ๊นส้ม) in Northern Thai; it is sour from fermentation, not vinegar.",
+    "unit": "ที่"
+  },
+  {
+    "id": "tam-khanun",
+    "thai_name": "ตำขนุน",
+    "romanized": "tam khà-nŭn",
+    "english_name": "Tam Khanun (young jackfruit salad)",
+    "description": "Boiled young jackfruit pounded with chilli paste, pork and herbs.",
+    "ingredients": [
+      "young jackfruit",
+      "minced pork",
+      "chilli paste",
+      "garlic",
+      "herbs"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice and pork crackling.",
+    "story": "Jackfruit (khà-nŭn) sounds like 'support', so it is often cooked for ceremonies and housewarmings.",
+    "unit": "จาน"
+  },
+  {
+    "id": "kaeng-khanun",
+    "thai_name": "แกงขนุน",
+    "romanized": "gaeng khà-nŭn",
+    "english_name": "Kaeng Khanun (young jackfruit curry)",
+    "description": "Northern curry of young jackfruit with pork ribs, tomato and herbs.",
+    "ingredients": [
+      "young jackfruit",
+      "pork ribs",
+      "tomato",
+      "chilli paste",
+      "cha-om"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice.",
+    "story": "A traditional Lanna curry made without coconut milk.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "khao-kan-jin",
+    "thai_name": "ข้าวกั๊นจิ๊น",
+    "romanized": "khâao gán jín",
+    "english_name": "Khao Kan Jin (steamed blood rice)",
+    "description": "Rice mixed with pork and pork blood, wrapped in banana leaf and steamed.",
+    "ingredients": [
+      "rice",
+      "minced pork",
+      "pork blood",
+      "garlic",
+      "banana leaf"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with fried garlic, dried chilli, cucumber and spring onion on the side.",
+    "story": "A Northern Thai and Shan dish; 'gán jín' means 'squeezed meat' in Northern Thai.",
+    "unit": "ที่"
+  },
+  {
+    "id": "khao-lam",
+    "thai_name": "ข้าวหลาม",
+    "romanized": "khâao lăam",
+    "english_name": "Khao Lam (sticky rice in bamboo)",
+    "description": "Sweet sticky rice with coconut milk and beans, roasted inside a bamboo tube.",
+    "ingredients": [
+      "sticky rice",
+      "coconut milk",
+      "black beans",
+      "sugar",
+      "bamboo tube"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Peel the bamboo back in strips and eat the rice from the thin inner skin.",
+    "story": "Roasting in bamboo is an old rural way of cooking rice while travelling.",
+    "unit": "ที่"
+  },
+  {
+    "id": "kaeng-hoh",
+    "thai_name": "แกงโฮะ",
+    "romanized": "gaeng hó",
+    "english_name": "Kaeng Hoh (Northern mixed curry)",
+    "description": "Stir-fried mix of leftover curries with glass noodles, bamboo shoots and herbs.",
+    "ingredients": [
+      "mixed curry",
+      "glass noodles",
+      "bamboo shoots",
+      "pork",
+      "kaffir lime leaf"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice.",
+    "story": "'Hó' means 'mixed together': traditionally made from leftovers after festivals.",
+    "unit": "จาน"
+  },
+  {
+    "id": "yam-jin-gai",
+    "thai_name": "ยำจิ๊นไก่",
+    "romanized": "yam jín gài",
+    "english_name": "Yam Jin Gai (Northern chicken salad)",
+    "description": "Shredded boiled chicken mixed with Northern chilli paste, herbs and chicken broth.",
+    "ingredients": [
+      "chicken",
+      "chilli paste",
+      "herbs",
+      "shallot",
+      "garlic"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice and fresh vegetables.",
+    "story": "'Jín' means 'meat' in Northern Thai.",
+    "unit": "จาน"
+  },
+  {
+    "id": "khao-niao",
+    "thai_name": "ข้าวเหนียว",
+    "romanized": "khâao nĭao",
+    "english_name": "Sticky Rice",
+    "description": "Steamed glutinous rice, served in a small basket or bag and eaten by hand.",
+    "ingredients": [
+      "glutinous rice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Roll a small ball with your right hand and use it to scoop dips and meat.",
+    "story": "The everyday staple of Northern and Northeastern Thailand, served in a woven kratip basket.",
+    "unit": "ที่"
+  },
+  {
+    "id": "jor-pak-kad",
+    "thai_name": "จอผักกาด",
+    "romanized": "jaw phàk gàat",
+    "english_name": "Jor Pak Kad (mustard green soup)",
+    "description": "Sour soup of mustard greens with pork ribs, tamarind and fermented soybean.",
+    "ingredients": [
+      "mustard greens",
+      "pork ribs",
+      "tamarind",
+      "fermented soybean",
+      "dried chilli"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice and a Northern chilli dip.",
+    "story": "A cool-season Lanna soup, made when mustard greens are flowering.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "kaeng-yuak",
+    "thai_name": "แกงหยวก",
+    "romanized": "gaeng yùak",
+    "english_name": "Kaeng Yuak (banana stem curry)",
+    "description": "Northern curry of tender banana stem with chicken or pork and herbs.",
+    "ingredients": [
+      "banana stem",
+      "chicken or pork",
+      "chilli paste",
+      "lemongrass",
+      "cha-om"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice.",
+    "story": "A thrifty Lanna dish that uses the soft inner banana trunk.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "aep-moo",
+    "thai_name": "แอ๊บหมู",
+    "romanized": "áep mŭu",
+    "english_name": "Aep Moo (pork grilled in banana leaf)",
+    "description": "Minced pork with egg, chilli paste and herbs, wrapped in banana leaf and grilled.",
+    "ingredients": [
+      "minced pork",
+      "egg",
+      "chilli paste",
+      "herbs",
+      "banana leaf"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Unwrap it and eat with sticky rice.",
+    "story": "'Áep' is a Northern way of grilling food in a flat banana-leaf parcel.",
+    "unit": "ที่"
+  },
+  {
+    "id": "nam-prik-taa-daeng",
+    "thai_name": "น้ำพริกตาแดง",
+    "romanized": "náam phrík dtaa daeng",
+    "english_name": "Nam Prik Taa Daeng (red-eye chilli paste)",
+    "description": "Dry, smoky red chilli paste of roasted dried chillies, garlic and shallots.",
+    "ingredients": [
+      "dried chilli",
+      "garlic",
+      "shallot",
+      "salt"
+    ],
+    "spice_level": 3,
+    "northern_specialty": true,
+    "how_to_eat": "Use it sparingly with sticky rice and vegetables; it is very hot.",
+    "story": "A Northern pantry staple that keeps for a long time.",
+    "unit": "ที่"
+  },
+  {
+    "id": "tam-makhuea",
+    "thai_name": "ตำมะเขือ",
+    "romanized": "tam má-khŭea",
+    "english_name": "Tam Makhuea (roasted eggplant dip)",
+    "description": "Smoky roasted long eggplant pounded with chilli, garlic, shallot and boiled egg.",
+    "ingredients": [
+      "long eggplant",
+      "chilli",
+      "garlic",
+      "shallot",
+      "egg"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it with sticky rice and pork crackling.",
+    "story": "A simple Northern countryside dip.",
+    "unit": "ที่"
+  },
+  {
+    "id": "hor-nueng-gai",
+    "thai_name": "ห่อนึ่งไก่",
+    "romanized": "hàw nûeng gài",
+    "english_name": "Hor Nueng Gai (steamed chicken in banana leaf)",
+    "description": "Chicken with Northern curry paste, herbs and vegetables, wrapped in banana leaf and steamed.",
+    "ingredients": [
+      "chicken",
+      "chilli paste",
+      "herbs",
+      "vegetables",
+      "banana leaf"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Open the parcel and eat it with sticky rice.",
+    "story": "'Hàw nûeng' means 'wrapped and steamed'; it is common at Northern markets.",
+    "unit": "ที่"
+  },
+  {
+    "id": "khao-soi-nuea",
+    "thai_name": "ข้าวซอยเนื้อ",
+    "romanized": "khâao soi núea",
+    "english_name": "Khao Soi (beef)",
+    "description": "Northern coconut curry noodle soup with tender beef, topped with crispy noodles.",
+    "ingredients": [
+      "beef",
+      "egg noodles",
+      "coconut milk",
+      "curry paste"
+    ],
+    "spice_level": 2,
+    "northern_specialty": true,
+    "how_to_eat": "Add lime, pickled mustard greens, shallots and chilli oil from the side.",
+    "story": "Beef khao soi is common at the Chiang Mai shops with Chinese-Muslim (Haw) roots.",
+    "unit": "ชาม"
+  },
+  {
+    "id": "miang",
+    "thai_name": "เมี่ยง",
+    "romanized": "mîang",
+    "english_name": "Miang (fermented tea leaves)",
+    "description": "Fermented wild tea leaves, chewed with salt or ginger as a traditional snack.",
+    "ingredients": [
+      "fermented tea leaves",
+      "salt",
+      "ginger"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Chew it slowly like gum; it is mildly caffeinated.",
+    "story": "The hill forests around Chiang Mai have grown tea for fermenting as miang for centuries.",
+    "unit": "ที่"
+  },
+  {
+    "id": "khao-taen",
+    "thai_name": "ข้าวแต๋น",
+    "romanized": "khâao dtǎen",
+    "english_name": "Khao Taen (rice crackers)",
+    "description": "Crispy fried sticky rice crackers drizzled with caramelised cane sugar.",
+    "ingredients": [
+      "sticky rice",
+      "watermelon juice",
+      "cane sugar",
+      "oil"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Buy a bag as a snack or souvenir.",
+    "story": "A famous product of Lampang and other Northern provinces.",
+    "unit": "ที่"
+  },
+  {
+    "id": "kaeng-kradang",
+    "thai_name": "แกงกระด้าง",
+    "romanized": "gaeng grà-dâang",
+    "english_name": "Kaeng Kradang (jellied pork curry)",
+    "description": "Pork trotter curry that sets into a cold, savoury jelly.",
+    "ingredients": [
+      "pork trotters",
+      "pork skin",
+      "chilli paste",
+      "spices"
+    ],
+    "spice_level": 1,
+    "northern_specialty": true,
+    "how_to_eat": "Eat it cold with sticky rice.",
+    "story": "A cool-season Lanna dish: the jelly sets naturally in the cold weather.",
+    "unit": "ที่"
+  },
+  {
+    "id": "tua-nao",
+    "thai_name": "ถั่วเน่า",
+    "romanized": "thùa nâo",
+    "english_name": "Thua Nao (fermented soybean)",
+    "description": "Fermented soybeans pressed into dry discs or a paste, used to season Northern food.",
+    "ingredients": [
+      "soybeans",
+      "salt"
+    ],
+    "spice_level": 0,
+    "northern_specialty": true,
+    "how_to_eat": "Look for it grilled as a snack or inside Northern curries and chilli dips.",
+    "story": "A Shan and Northern Thai staple that gives many Lanna dishes their deep flavour.",
+    "unit": "ที่"
+  }
+]
