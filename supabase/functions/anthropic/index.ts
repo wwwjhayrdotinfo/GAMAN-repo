@@ -21,9 +21,7 @@ export async function handler(request: Request): Promise<Response> {
   if (request.method !== "POST") return reply(405, "Use POST.");
 
   const apiKey = Deno.env.get("ANTHROPIC_API_KEY");
-  const token = Deno.env.get("GAMAN_PROXY_TOKEN");
-  if (!apiKey || !token) return reply(503, "Set ANTHROPIC_API_KEY and GAMAN_PROXY_TOKEN in Supabase secrets.");
-  if (request.headers.get("x-proxy-token") !== token) return reply(401, "Invalid proxy access token. Check Settings.");
+  if (!apiKey) return reply(503, "Set ANTHROPIC_API_KEY in Supabase secrets.");
   if (!request.headers.get("content-type")?.toLowerCase().startsWith("application/json")) {
     return reply(415, "Send application/json.");
   }
@@ -59,7 +57,6 @@ export async function handler(request: Request): Promise<Response> {
     return reply(400, "A non-empty messages array is required.");
   }
   const model = Deno.env.get("ANTHROPIC_MODEL") || "claude-sonnet-4-5";
-  if (body.model && body.model !== model) return reply(400, `Set the app model to ${model}.`);
 
   try {
     const upstream = await fetch("https://api.anthropic.com/v1/messages", {

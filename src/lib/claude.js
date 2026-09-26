@@ -1,3 +1,5 @@
+import { MENU_API_URL } from './settings.js'
+
 // Menu photo (or dish name) → structured dish cards, via Claude.
 // Uses forced tool-use so the response is always valid JSON matching DISH_SCHEMA.
 
@@ -33,7 +35,7 @@ Given a menu photo or a dish name, identify each dish and explain it for a forei
 Be accurate and concise. If a menu item is unreadable, skip it. Limit to the 12 most relevant dishes.
 If you are unsure about a historical or cultural fact, keep the story general rather than inventing specifics.`
 
-export async function analyzeMenu({ settings, image, text }) {
+export async function analyzeMenu({ image, text }) {
   const content = []
   if (image) {
     content.push({ type: 'image', source: { type: 'base64', media_type: image.mediaType, data: image.base64 } })
@@ -43,7 +45,6 @@ export async function analyzeMenu({ settings, image, text }) {
   }
 
   const body = {
-    model: settings.model,
     max_tokens: 4096,
     system: SYSTEM,
     tools: [{ name: 'return_dishes', description: 'Return the explained dishes', input_schema: DISH_SCHEMA }],
@@ -51,22 +52,9 @@ export async function analyzeMenu({ settings, image, text }) {
     messages: [{ role: 'user', content }],
   }
 
-  const useProxy = Boolean(settings.proxyUrl)
-  if (!useProxy && !settings.apiKey) throw new Error('Add your Claude API key in Settings (⚙️) first, or use the demo menu.')
-
-  const res = await fetch(useProxy ? settings.proxyUrl : 'https://api.anthropic.com/v1/messages', {
+  const res = await fetch(MENU_API_URL, {
     method: 'POST',
-    headers: useProxy
-      ? {
-          'content-type': 'application/json',
-          ...(settings.proxyToken ? { 'x-proxy-token': settings.proxyToken.trim() } : {}),
-        }
-      : {
-          'content-type': 'application/json',
-          'x-api-key': settings.apiKey,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true',
-        },
+    headers: { 'content-type': 'application/json' },
     body: JSON.stringify(body),
   })
 

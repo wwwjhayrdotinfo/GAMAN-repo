@@ -22,13 +22,11 @@ npm run dev      # open the "Network" URL on your phone (same Wi-Fi)
 npm run build    # production build → dist/
 ```
 
-## Claude API key
+## AI connection
 
-GitHub Pages is static, so there is **no key in the code**. Three options:
+The app automatically calls the public Supabase `anthropic` function. Testers do not need an API key, proxy token, or connection settings. The Anthropic key is stored only in Supabase secrets.
 
-- **Quick (hackathon):** open ⚙️ Settings in the app and paste your key. It's stored in that browser's localStorage only and sent directly to `api.anthropic.com`.
-- **Supabase (recommended):** follow [the setup guide](supabase/README.md). The Anthropic key stays in Supabase secrets; paste the function URL and proxy access token into Settings.
-- **Cloudflare alternative:** deploy `proxy/worker.js` as a Cloudflare Worker with the key as a secret, then put the Worker URL in Settings → Proxy URL.
+See [the Supabase setup guide](supabase/README.md) to deploy or update the function. This endpoint is intentionally open during core-feature testing.
 
 ## Deploy (GitHub Pages)
 
@@ -47,7 +45,7 @@ src/
     OrderScreen.jsx        order builder + Thai sentence
     VendorView.jsx         vendor-facing view + reply buttons + phrases
     MyThai.jsx             saved phrases
-    SettingsScreen.jsx     API key / proxy / model
+    SettingsScreen.jsx     polite ending preference
   lib/
     claude.js              menu → dishes (forced tool-use JSON)
     order.js               Thai order sentence templates

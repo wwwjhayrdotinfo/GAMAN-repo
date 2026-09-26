@@ -1,5 +1,5 @@
 project_id = "gaman"
 
 [functions.anthropic]
-# The handler authenticates x-proxy-token; this app does not use Supabase Auth.
+# Intentionally public during core-feature testing; no user authentication.
 verify_jwt = false

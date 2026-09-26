@@ -1,24 +1,21 @@
-// Settings live in localStorage only. Nothing here is ever committed or sent anywhere except the API.
+// Public endpoint; the Anthropic API key stays in Supabase secrets.
+export const MENU_API_URL = 'https://mvbdtvwamydfojoetdca.supabase.co/functions/v1/anthropic'
 const KEY = 'gaman.settings.v1'
 
-export const DEFAULT_SETTINGS = {
-  apiKey: '',
-  proxyUrl: '', // optional: Supabase Edge Function or Cloudflare Worker URL
-  proxyToken: '', // shared access token for the Supabase function
-  model: 'claude-sonnet-4-5',
-  particle: 'male',
-}
+export const DEFAULT_SETTINGS = { particle: 'male' }
 
 export function loadSettings() {
   try {
-    return { ...DEFAULT_SETTINGS, ...JSON.parse(localStorage.getItem(KEY) || '{}') }
+    const saved = JSON.parse(localStorage.getItem(KEY) || '{}')
+    // Ignore legacy API keys, proxy URLs, tokens and models stored by older builds.
+    return { particle: saved?.particle === 'female' ? 'female' : 'male' }
   } catch {
     return { ...DEFAULT_SETTINGS }
   }
 }
 
 export function saveSettings(s) {
-  localStorage.setItem(KEY, JSON.stringify(s))
+  localStorage.setItem(KEY, JSON.stringify({ particle: s.particle }))
 }
 
 const PHRASES_KEY = 'gaman.myThai.v1'
