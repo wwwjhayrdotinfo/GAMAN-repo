@@ -3,7 +3,8 @@ const KEY = 'gaman.settings.v1'
 
 export const DEFAULT_SETTINGS = {
   apiKey: '',
-  proxyUrl: '', // optional: a Cloudflare Worker URL that holds the key server-side
+  proxyUrl: '', // optional: Supabase Edge Function or Cloudflare Worker URL
+  proxyToken: '', // shared access token for the Supabase function
   model: 'claude-sonnet-4-5',
   particle: 'male',
 }

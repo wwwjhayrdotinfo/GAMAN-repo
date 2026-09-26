@@ -1,0 +1,5 @@
+project_id = "gaman"
+
+[functions.anthropic]
+# The handler authenticates x-proxy-token; this app does not use Supabase Auth.
+verify_jwt = false

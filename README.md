@@ -2,7 +2,7 @@
 
 **Goal:** Help newcomers in Chiang Mai understand local dishes and confidently order them in Thai, turning every meal at a local food spot into a real exchange with the vendor instead of a moment of confusion.
 
-Mobile-first web app, hosted on GitHub Pages. No app store and no backend required.
+Mobile-first web app, hosted on GitHub Pages. No app store required. AI calls can run through a Supabase Edge Function.
 
 ## How it works
 
@@ -24,10 +24,11 @@ npm run build    # production build → dist/
 
 ## Claude API key
 
-GitHub Pages is static, so there is **no key in the code**. Two options:
+GitHub Pages is static, so there is **no key in the code**. Three options:
 
 - **Quick (hackathon):** open ⚙️ Settings in the app and paste your key. It's stored in that browser's localStorage only and sent directly to `api.anthropic.com`.
-- **Cleaner:** deploy `proxy/worker.js` as a Cloudflare Worker with the key as a secret, then put the Worker URL in Settings → Proxy URL.
+- **Supabase (recommended):** follow [the setup guide](supabase/README.md). The Anthropic key stays in Supabase secrets; paste the function URL and proxy access token into Settings.
+- **Cloudflare alternative:** deploy `proxy/worker.js` as a Cloudflare Worker with the key as a secret, then put the Worker URL in Settings → Proxy URL.
 
 ## Deploy (GitHub Pages)
 
@@ -55,6 +56,8 @@ src/
   data/
     dishes.js              offline demo dishes
     phrases.js             phrases, vendor replies, quick answers
+supabase/functions/anthropic/index.ts  Supabase Edge Function proxy
+supabase/README.md        Supabase deployment and testing guide
 proxy/worker.js            optional Cloudflare Worker proxy
 ```
 

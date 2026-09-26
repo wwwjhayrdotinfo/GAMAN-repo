@@ -12,8 +12,11 @@ export default function SettingsScreen({ settings, onSave, onBack }) {
         <Field label="Claude API key" hint="Stored only in this browser (localStorage). Never committed.">
           <input type="password" value={s.apiKey} onChange={set('apiKey')} placeholder="sk-ant-…" className={inputCls} autoComplete="off" />
         </Field>
-        <Field label="Proxy URL (optional)" hint="If set, requests go here instead (e.g. a Cloudflare Worker holding the key). The key field is ignored.">
-          <input value={s.proxyUrl} onChange={set('proxyUrl')} placeholder="https://gaman-proxy.<you>.workers.dev" className={inputCls} />
+        <Field label="Proxy URL (optional)" hint="Your Supabase function or Cloudflare Worker URL. When set, the Claude API key above is ignored.">
+          <input type="url" value={s.proxyUrl} onChange={set('proxyUrl')} placeholder="https://<project-ref>.supabase.co/functions/v1/anthropic" className={inputCls} />
+        </Field>
+        <Field label="Proxy access token" hint="For Supabase, enter the GAMAN_PROXY_TOKEN you set in function secrets. Stored in this browser. Leave empty for the original Cloudflare proxy.">
+          <input type="password" value={s.proxyToken || ''} onChange={set('proxyToken')} autoComplete="off" className={inputCls} />
         </Field>
         <Field label="Model">
           <input value={s.model} onChange={set('model')} className={inputCls} />

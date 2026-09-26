@@ -57,7 +57,10 @@ export async function analyzeMenu({ settings, image, text }) {
   const res = await fetch(useProxy ? settings.proxyUrl : 'https://api.anthropic.com/v1/messages', {
     method: 'POST',
     headers: useProxy
-      ? { 'content-type': 'application/json' }
+      ? {
+          'content-type': 'application/json',
+          ...(settings.proxyToken ? { 'x-proxy-token': settings.proxyToken.trim() } : {}),
+        }
       : {
           'content-type': 'application/json',
           'x-api-key': settings.apiKey,
