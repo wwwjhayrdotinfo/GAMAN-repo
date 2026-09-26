@@ -48,10 +48,9 @@ export default function App() {
 
   function handleText(text) {
     setPreview(null)
-    // Our 100-dish library first (instant, free, checked); fall back to Claude when a key/proxy is configured.
+    // Our 100-dish library first (instant, free, checked); otherwise ask Claude via the Supabase function.
     const local = searchLibrary(text).map((d) => ({ ...d, verified: 'exact', library_id: d.id }))
     if (local.length) { setDishes(local); go('dishes'); return }
-    if (!(settings.apiKey || settings.proxyUrl)) { setError(`"${text}" isn't in the offline list. Add an API key in Settings to look up any dish.`); return }
     run({ text })
   }
 

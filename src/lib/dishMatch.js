@@ -9,11 +9,16 @@ import DISH_LIBRARY from '../data/dish-library.json'
 export { DISH_LIBRARY }
 
 // Protein/topping words that commonly end a dish name on Thai menus. Longest first.
-const SUFFIXES = ['ปลาหมึก', 'หมูสับ', 'หมูกรอบ', 'หมูชิ้น', 'ไข่ดาว', 'ทะเล', 'พิเศษ', 'เนื้อ', 'กุ้ง', 'หมู', 'ไก่', 'ปลา', 'ปู', 'ไทย']
+const SUFFIXES = ['ปลาหมึก', 'เนื้อสับ', 'ไก่สับ', 'หมูสับ', 'หมูกรอบ', 'หมูชิ้น', 'ไข่ดาว', 'ทะเล', 'พิเศษ', 'เนื้อ', 'กุ้ง', 'หมู', 'ไก่', 'ปลา', 'ปู', 'ไทย']
 const MIN_BASE_LENGTH = 4 // avoid over-general keys such as "ผัด"
 
 // Common menu spellings → the spelling used in the library.
-const SPELLING = [[/กระเพรา|กะเพา|กระเพา/g, 'กะเพรา']]
+const SPELLING = [
+  [/กระเพรา|กะเพา|กระเพา/g, 'กะเพรา'],
+  [/^ข้าว(ผัด)?กะเพรา/, 'ผัดกะเพรา'], // "ข้าวกะเพราไก่" (basil stir-fry on rice) is our pad kra pao
+  [/ไข่(เป็ด)?ดาว$/, 'ไข่ดาว'], // "ใส่ไข่ดาว" / "ไข่เป็ดดาว" = with a fried egg
+  [/ใส่ไข่ดาว$/, 'ไข่ดาว'],
+]
 
 export function normalizeThai(name = '') {
   let s = name.replace(/\(.*?\)/g, '') // drop "(หมู/ไก่)" style options
