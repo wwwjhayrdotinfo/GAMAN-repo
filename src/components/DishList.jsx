@@ -7,6 +7,12 @@ function DishCard({ dish, onOrder }) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <h2 className="thai text-2xl font-bold text-amber-950">{dish.thai_name}</h2>
+            {dish.verified && (
+              <span
+                title={dish.verified === 'exact' ? 'From our checked dish list' : 'Tips and story from our checked dish list'}
+                className="text-[11px] font-semibold uppercase tracking-wide bg-sky-100 text-sky-800 rounded-full px-2 py-0.5"
+              >✓ Dish list</span>
+            )}
             {dish.northern_specialty && (
               <span className="text-[11px] font-semibold uppercase tracking-wide bg-emerald-100 text-emerald-800 rounded-full px-2 py-0.5">⭐ Northern</span>
             )}

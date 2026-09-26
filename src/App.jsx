@@ -7,6 +7,7 @@ import SettingsScreen from './components/SettingsScreen'
 import MyThai from './components/MyThai'
 import { DEMO_DISHES } from './data/dishes'
 import { analyzeMenu } from './lib/claude'
+import { applyLibrary, searchLibrary } from './lib/dishMatch'
 import { fileToResizedBase64 } from './lib/image'
 import { loadMyThai, loadSettings, saveMyThai, saveSettings } from './lib/settings'
 
@@ -29,7 +30,8 @@ export default function App() {
     setLoading(true)
     try {
       const result = await analyzeMenu({ settings, ...input })
-      setDishes(result)
+      // Swap in our checked library cards wherever the scanned dish matches.
+      setDishes(result.map(applyLibrary))
       go('dishes')
     } catch (e) {
       setError(e.message)
@@ -46,12 +48,9 @@ export default function App() {
 
   function handleText(text) {
     setPreview(null)
-    const q = text.toLowerCase().replace(/\s+/g, '')
-    const local = DEMO_DISHES.filter((d) =>
-      [d.english_name, d.romanized, d.thai_name, d.id].some((f) => f.toLowerCase().replace(/[\s-]+/g, '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').includes(q)),
-    )
-    // Offline match first; fall back to Claude when a key/proxy is configured.
-    if (local.length && !(settings.apiKey || settings.proxyUrl)) { setDishes(local); go('dishes'); return }
+    // Our 100-dish library first (instant, free, checked); fall back to Claude when a key/proxy is configured.
+    const local = searchLibrary(text).map((d) => ({ ...d, verified: 'exact', library_id: d.id }))
+    if (local.length) { setDishes(local); go('dishes'); return }
     if (!(settings.apiKey || settings.proxyUrl)) { setError(`"${text}" isn't in the offline list. Add an API key in Settings to look up any dish.`); return }
     run({ text })
   }
