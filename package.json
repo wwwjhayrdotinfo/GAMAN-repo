@@ -7,7 +7,8 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview --host",
-    "validate:dishes": "node scripts/validate-dishes.mjs"
+    "validate:dishes": "node scripts/validate-dishes.mjs",
+    "score:testset": "node scripts/score-testset.mjs"
   },
   "dependencies": {
     "react": "^19.3.0",

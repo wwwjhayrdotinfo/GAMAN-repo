@@ -1,0 +1,251 @@
+{
+  "image": "chiang-saen-chinese-board.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:2014_Chiang_Saen_Chinese_restaurant.jpg",
+  "license": "CC BY-SA 3.0, User:Takeaway",
+  "languages": [
+    "th",
+    "zh"
+  ],
+  "conditions": [
+    "handwritten",
+    "wall board",
+    "wide shot",
+    "small text",
+    "Northern Thailand (Chiang Rai)"
+  ],
+  "note": "Yunnan/Chinese restaurant. Many dishes are not in our library. Thai names are my reading of handwriting; several are uncertain (marked). Two cards at the far right edge are cut off.",
+  "dishes": [
+    {
+      "thai": "ไก่ทอดพริกแห้ง",
+      "english": "Fried chicken with dried chillies (la zi ji)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ยำไข่เยี่ยวม้า",
+      "english": "Century egg salad",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "ขาหมูน้ำแดง",
+      "english": "Braised pork knuckle in red sauce",
+      "price": null,
+      "expected_library_id": null,
+      "also_ok": [
+        "khao-kha-moo"
+      ]
+    },
+    {
+      "thai": "หมูเค็มยูนนาน",
+      "english": "Yunnan cured pork (with green chilli)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "กระเพาะหมูผัดเกี่ยมฉ่าย",
+      "english": "Pork tripe stir-fried with pickled greens",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "ก้อนหินผัดเซียงจี๋",
+      "english": "Stir-fried pork kidney (\"stone\") dish",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "กุ้งอบเกลือ",
+      "english": "Salt-baked prawns",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ซี่โครงหมูทอด",
+      "english": "Fried pork ribs",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ปลาหมึกไฟแดง",
+      "english": "Squid flash-fried over high heat",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ยำหูหมู",
+      "english": "Pig ear salad",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ไก่ผัดเม็ดมะม่วง",
+      "english": "Chicken with cashew nuts (kung pao style)",
+      "price": null,
+      "expected_library_id": "gai-pad-med-mamuang"
+    },
+    {
+      "thai": "เห็ดหูหนูผัดหมู",
+      "english": "Wood-ear mushroom stir-fried with pork",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ซี่โครงหมูเปรี้ยวหวาน",
+      "english": "Sweet and sour pork ribs",
+      "price": null,
+      "expected_library_id": null,
+      "also_ok": [
+        "pad-priew-wan"
+      ]
+    },
+    {
+      "thai": "วุ้นเส้นเสฉวน",
+      "english": "Sichuan glass noodles (ants climbing a tree)",
+      "price": null,
+      "expected_library_id": null,
+      "also_ok": [
+        "pad-woon-sen"
+      ]
+    },
+    {
+      "thai": "มะเขือผัดซอสเสฉวน",
+      "english": "Aubergine in Sichuan sauce",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "หมูผัดเต้าเจี้ยว",
+      "english": "Twice-cooked pork with bean paste",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "เต้าหู้เสฉวน",
+      "english": "Mapo tofu",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เสี่ยวหลงเปาเซี่ยงไฮ้",
+      "english": "Shanghai soup dumplings (xiao long bao)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เกี๊ยวซ่า",
+      "english": "Pan-fried dumplings (guo tie)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เซี่ยงไฮ้เสี่ยวหลงเปาทอด",
+      "english": "Pan-fried soup buns (sheng jian bao)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เกี๊ยวนึ่ง",
+      "english": "Steamed dumplings",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เกี๊ยวเซี่ยงไฮ้",
+      "english": "Boiled dumplings (shui jiao)",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "หม่าล่าเส้นเสฉวน",
+      "english": "Mala (numbing-spicy) noodles",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "ซี่โครงหมูตุ๋นเยื่อไผ่",
+      "english": "Pork rib soup with bamboo shoots",
+      "price": null,
+      "expected_library_id": null,
+      "uncertain": true
+    },
+    {
+      "thai": "ผักกาดดองแห้งผัดหมู",
+      "english": "Dried pickled mustard greens stir-fried with pork",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "มะระตุ๋น",
+      "english": "Bitter melon soup",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ไก่ตุ๋นยาจีน",
+      "english": "Chicken soup with Chinese herbs",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "หมูอบยูนนาน",
+      "english": "Yunnan braised pork belly (kou rou)",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "คะน้าหมูเค็ม",
+      "english": "Chinese kale with cured pork",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "กุยช่ายผัดไข่",
+      "english": "Garlic chives stir-fried with egg",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ปลานึ่งเต้าซี่",
+      "english": "Steamed fish with black beans",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เห็ดหอมอบซีอิ๊ว",
+      "english": "Shiitake braised in soy/oyster sauce",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "เนื้อวัวแห้งทอด",
+      "english": "Fried dried beef",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": "ต้มยำปลา / ต้มยำทะเล",
+      "english": "Tom yum with fish or seafood (one card)",
+      "price": null,
+      "expected_library_id": "tom-yum-goong"
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "Chinese characters under each Thai name",
+      "why": "translation of the same dish"
+    },
+    {
+      "text": "calendar / posters",
+      "why": "not menu"
+    }
+  ]
+}

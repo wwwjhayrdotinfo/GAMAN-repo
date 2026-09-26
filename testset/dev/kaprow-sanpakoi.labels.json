@@ -1,0 +1,90 @@
+{
+  "image": "kaprow-sanpakoi.jpg",
+  "split": "dev",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "GAMAN team photo, Kaprow Sanpakoi (Chiang Mai), posted in the GAMAN channel",
+  "license": "Team photo, internal use",
+  "languages": [
+    "th"
+  ],
+  "conditions": [
+    "printed",
+    "photo menu",
+    "hand-held",
+    "slight tilt"
+  ],
+  "dishes": [
+    {
+      "thai": "ข้าวกะเพราวากิวสไลด์",
+      "english": "Holy basil stir-fry with sliced AU wagyu, on rice",
+      "price": "199",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราพิคานย่า",
+      "english": "Holy basil stir-fry with AU picanha, on rice",
+      "price": "199",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราเต๋า วากิว",
+      "english": "Holy basil stir-fry with diced AU wagyu, on rice",
+      "price": "215",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราเนื้อสับ",
+      "english": "Holy basil stir-fry with minced beef, on rice",
+      "price": "85",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราหมูสับ",
+      "english": "Holy basil stir-fry with minced pork, on rice",
+      "price": "75",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราไก่",
+      "english": "Holy basil stir-fry with chicken, on rice",
+      "price": "75",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพรากุ้ง",
+      "english": "Holy basil stir-fry with prawns, on rice",
+      "price": "120",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราหมูกรอบ",
+      "english": "Holy basil stir-fry with crispy pork, on rice",
+      "price": "85",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": "ข้าวกะเพราปลาหมึก",
+      "english": "Holy basil stir-fry with squid, on rice",
+      "price": "95",
+      "expected_library_id": "pad-kra-pao"
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "ไข่เป็ดดาว 15",
+      "why": "add-on: fried duck egg (shown under the wagyu/picanha dishes)"
+    },
+    {
+      "text": "ไข่ดาว 15",
+      "why": "add-on: fried egg (shown under most dishes)"
+    },
+    {
+      "text": "เปลี่ยนข้าวเป็นเส้นมาม่า",
+      "why": "option: swap rice for instant noodles"
+    },
+    {
+      "text": "สันคอ / สะโพกบน / สันใน",
+      "why": "cut names on photos, not dishes"
+    }
+  ]
+}

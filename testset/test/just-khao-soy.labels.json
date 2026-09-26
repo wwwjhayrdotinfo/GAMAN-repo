@@ -1,0 +1,73 @@
+{
+  "image": "just-khao-soy.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:Just_Khao_Soi_(5357320465).jpg",
+  "license": "CC BY 2.0, Flickr (see file page for author)",
+  "languages": [
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "laminated",
+    "glare",
+    "tilted",
+    "Northern (Chiang Mai)"
+  ],
+  "dishes": [
+    {
+      "thai": null,
+      "english": "Khao Soy - Gai Muang (free-range chicken on the bone)",
+      "price": "99/149",
+      "expected_library_id": "khao-soi"
+    },
+    {
+      "thai": null,
+      "english": "Khao Soy - Gai Sam Sai (chicken breast)",
+      "price": "99/149",
+      "expected_library_id": "khao-soi"
+    },
+    {
+      "thai": null,
+      "english": "Khao Soy - Jay (vegetarian)",
+      "price": "99/149",
+      "expected_library_id": "khao-soi"
+    },
+    {
+      "thai": null,
+      "english": "Khao Soy - Ta Ley Luam (mixed seafood)",
+      "price": "199/249",
+      "expected_library_id": "khao-soi"
+    },
+    {
+      "thai": null,
+      "english": "Khao Soy - Gai Peek Bon (chicken leg and wing)",
+      "price": "99/149",
+      "expected_library_id": "khao-soi"
+    },
+    {
+      "thai": null,
+      "english": "Khao Soy - Nua (beef)",
+      "price": "99/149",
+      "expected_library_id": "khao-soi-nuea"
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "Mild / Medium / Spicy",
+      "why": "step 2 option"
+    },
+    {
+      "text": "Round Noodles or Flat Noodles",
+      "why": "step 3 option"
+    },
+    {
+      "text": "Lanna Original or Chiang Mai Classic",
+      "why": "step 4 option (broth style)"
+    },
+    {
+      "text": "medium/large",
+      "why": "size option"
+    }
+  ]
+}

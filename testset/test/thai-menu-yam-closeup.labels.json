@@ -1,0 +1,61 @@
+{
+  "image": "thai-menu-yam-closeup.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:Interesting_Thai_Menu_Choices_(6729086361).jpg",
+  "license": "CC BY 2.0, Flickr (see file page for author)",
+  "languages": [
+    "th",
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "close-up",
+    "partly cut off",
+    "machine-translated English"
+  ],
+  "dishes": [
+    {
+      "thai": null,
+      "english": "Spicy fried cashew nut salad (Thai name cut off)",
+      "price": null,
+      "expected_library_id": null,
+      "partial": true
+    },
+    {
+      "thai": "ยำสาหร่ายทะเล",
+      "english": "Spicy seaweed salad",
+      "price": "80",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ยำรวมญาติ",
+      "english": "Spicy mixed salad",
+      "price": "80",
+      "expected_library_id": null,
+      "also_ok": [
+        "yam-talay"
+      ]
+    },
+    {
+      "thai": "กุ้งแช่น้ำปลา",
+      "english": "Raw prawns in fish sauce with chilli-lime dressing",
+      "price": "100",
+      "expected_library_id": null
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "Seaweed with Spicy Salad",
+      "why": "English gloss"
+    },
+    {
+      "text": "mix total up the relative",
+      "why": "English gloss"
+    },
+    {
+      "text": "Fresh Shrimp Dressed with Spicy Salad",
+      "why": "English gloss"
+    }
+  ]
+}

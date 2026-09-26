@@ -1,0 +1,43 @@
+{
+  "image": "wua-thong-grill.jpg",
+  "split": "dev",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "GAMAN team photo, Wua Thong (วัวทอง) grill menu, posted in the GAMAN channel",
+  "license": "Team photo, internal use",
+  "languages": [
+    "th",
+    "en",
+    "zh"
+  ],
+  "conditions": [
+    "printed",
+    "photo menu",
+    "glossy"
+  ],
+  "dishes": [
+    {
+      "thai": "เนื้อใบพายย่าง",
+      "english": "Grilled oyster blade beef skewers",
+      "price": "159",
+      "expected_library_id": null
+    },
+    {
+      "thai": "เนื้อโคขุนย่าง",
+      "english": "Grilled lean (fattened-cattle) beef skewers",
+      "price": "99",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ลูกชิ้นเนื้อย่าง",
+      "english": "Grilled beef meatballs",
+      "price": "59",
+      "expected_library_id": null
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "RECOMMENDED",
+      "why": "badge"
+    }
+  ]
+}

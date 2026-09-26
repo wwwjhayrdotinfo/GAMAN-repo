@@ -1,0 +1,117 @@
+{
+  "image": "sawadee-sets.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:Menu_of_Sawadee_Thai_Restaurant_(p1)_2024-10-05.jpg",
+  "license": "CC0, User:Onthewings",
+  "languages": [
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "hand-held",
+    "restaurant outside Thailand (UK)",
+    "repeated dishes across set menus"
+  ],
+  "note": "Dishes repeat across sets; each distinct dish is listed once.",
+  "dishes": [
+    {
+      "thai": null,
+      "english": "Chicken Satay",
+      "price": null,
+      "expected_library_id": "satay"
+    },
+    {
+      "thai": null,
+      "english": "Thai Spring Rolls",
+      "price": null,
+      "expected_library_id": "poh-pia-tod"
+    },
+    {
+      "thai": null,
+      "english": "Chicken Masaman Curry",
+      "price": null,
+      "expected_library_id": "massaman"
+    },
+    {
+      "thai": null,
+      "english": "Duck Ga-prao",
+      "price": null,
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": null,
+      "english": "Vegetable Stir Fry",
+      "price": null,
+      "expected_library_id": "pad-pak-ruam"
+    },
+    {
+      "thai": null,
+      "english": "Steamed Thai Jasmine Rice",
+      "price": null,
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "Mushroom Satay",
+      "price": null,
+      "expected_library_id": "satay"
+    },
+    {
+      "thai": null,
+      "english": "Red Curry Beancurd",
+      "price": null,
+      "expected_library_id": "gaeng-daeng"
+    },
+    {
+      "thai": null,
+      "english": "Tao-hu Khing (beancurd with ginger)",
+      "price": null,
+      "expected_library_id": "gai-pad-king"
+    },
+    {
+      "thai": null,
+      "english": "Chicken Green Curry",
+      "price": null,
+      "expected_library_id": "gaeng-keow-wan"
+    },
+    {
+      "thai": null,
+      "english": "Pork Ga-prao",
+      "price": null,
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": null,
+      "english": "Duck Masaman Curry",
+      "price": null,
+      "expected_library_id": "massaman"
+    },
+    {
+      "thai": null,
+      "english": "Pork Gra-tiam (garlic and white pepper)",
+      "price": null,
+      "expected_library_id": "moo-tod-kratiam"
+    },
+    {
+      "thai": null,
+      "english": "Prawn Ga-prao",
+      "price": null,
+      "expected_library_id": "pad-kra-pao"
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "SET A / SET B / SET V / Special SET + prices",
+      "why": "set headers"
+    },
+    {
+      "text": "Starters / Main Course",
+      "why": "section headers"
+    },
+    {
+      "text": "allergen footer",
+      "why": "not a dish"
+    }
+  ]
+}

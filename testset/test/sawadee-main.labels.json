@@ -1,0 +1,281 @@
+{
+  "image": "sawadee-main.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:Menu_of_Sawadee_Thai_Restaurant_(p2-3)_2024-10-05.jpg",
+  "license": "CC0, User:Onthewings",
+  "languages": [
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "two-page spread",
+    "small text",
+    "restaurant outside Thailand (UK)"
+  ],
+  "dishes": [
+    {
+      "thai": null,
+      "english": "1: Chicken Satay",
+      "price": "7.50",
+      "expected_library_id": "satay"
+    },
+    {
+      "thai": null,
+      "english": "2: Mushroom Satay",
+      "price": "6.95",
+      "expected_library_id": "satay"
+    },
+    {
+      "thai": null,
+      "english": "3: Thai Tempura",
+      "price": "6.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "4: Vegetable Tempura",
+      "price": "5.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "5: Thai Spring Rolls",
+      "price": "6.95",
+      "expected_library_id": "poh-pia-tod"
+    },
+    {
+      "thai": null,
+      "english": "6: Thai Fish Cakes",
+      "price": "6.95",
+      "expected_library_id": "tod-mun-pla"
+    },
+    {
+      "thai": null,
+      "english": "8a: Salt & Pepper Squid",
+      "price": "7.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "10: Dumplings",
+      "price": "6.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "16: Crispy Duck Pancakes",
+      "price": "15.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "17: Goong Ma Prao (coconut prawns)",
+      "price": "7.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "18: Sawadee Mixed Starters",
+      "price": "15.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "18b: Thai Prawn Crackers",
+      "price": "3.50",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "20: Tom Yum",
+      "price": "6.50-7.95",
+      "expected_library_id": "tom-yum-goong"
+    },
+    {
+      "thai": null,
+      "english": "25: Papaya Salad",
+      "price": "7.95",
+      "expected_library_id": "som-tam"
+    },
+    {
+      "thai": null,
+      "english": "26: Beef Salad",
+      "price": "11.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "27: Squid Salad",
+      "price": "11.95",
+      "expected_library_id": null,
+      "also_ok": [
+        "yam-talay"
+      ]
+    },
+    {
+      "thai": null,
+      "english": "29: Red Curry",
+      "price": "9.95-10.95",
+      "expected_library_id": "gaeng-daeng"
+    },
+    {
+      "thai": null,
+      "english": "30: Green Curry",
+      "price": "9.95-10.95",
+      "expected_library_id": "gaeng-keow-wan"
+    },
+    {
+      "thai": null,
+      "english": "33: Massaman Curry",
+      "price": "9.95-10.95",
+      "expected_library_id": "massaman"
+    },
+    {
+      "thai": null,
+      "english": "34: Fruity Duck Curry",
+      "price": "11.95",
+      "expected_library_id": null,
+      "also_ok": [
+        "gaeng-daeng"
+      ]
+    },
+    {
+      "thai": null,
+      "english": "35: Duck Massaman Curry",
+      "price": "11.95",
+      "expected_library_id": "massaman"
+    },
+    {
+      "thai": null,
+      "english": "48: Ga Prao",
+      "price": "9.95-10.95",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": null,
+      "english": "49: Pad Khing",
+      "price": "9.95-10.95",
+      "expected_library_id": "gai-pad-king"
+    },
+    {
+      "thai": null,
+      "english": "51: Gra-tiam",
+      "price": "9.95-10.95",
+      "expected_library_id": "moo-tod-kratiam"
+    },
+    {
+      "thai": null,
+      "english": "52: Pa-naeng",
+      "price": "9.95-10.95",
+      "expected_library_id": "panang"
+    },
+    {
+      "thai": null,
+      "english": "54: Fruity Sweet & Sour",
+      "price": "9.95-10.95",
+      "expected_library_id": "pad-priew-wan"
+    },
+    {
+      "thai": null,
+      "english": "57: Chicken Pad Prig Haeng (dry chillies, cashews)",
+      "price": "9.95",
+      "expected_library_id": null,
+      "also_ok": [
+        "gai-pad-med-mamuang"
+      ]
+    },
+    {
+      "thai": null,
+      "english": "58: Beef and Mushroom in Oyster Sauce",
+      "price": "10.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "59: Duck Ga Prao",
+      "price": "11.95",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": null,
+      "english": "60: Duck Pa-naeng",
+      "price": "11.95",
+      "expected_library_id": "panang"
+    },
+    {
+      "thai": null,
+      "english": "61: Duck in Black Bean Sauce",
+      "price": "11.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "62: Duck Pad Khing",
+      "price": "11.95",
+      "expected_library_id": "gai-pad-king"
+    },
+    {
+      "thai": null,
+      "english": "6?: Pla Chu Chi",
+      "price": "12.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "64: Pla Preow Wahn (sweet and sour fish)",
+      "price": "12.95",
+      "expected_library_id": "pad-priew-wan"
+    },
+    {
+      "thai": null,
+      "english": "65: Pad Ta-ley (mixed seafood stir-fry)",
+      "price": "13.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "67: Goong Pad Hed",
+      "price": "11.95",
+      "expected_library_id": null
+    },
+    {
+      "thai": null,
+      "english": "69: Goong Pad Khing",
+      "price": "11.95",
+      "expected_library_id": "gai-pad-king"
+    },
+    {
+      "thai": null,
+      "english": "70: Goong Gra-tiem",
+      "price": "11.95",
+      "expected_library_id": "moo-tod-kratiam"
+    },
+    {
+      "thai": null,
+      "english": "71: Goong Ga Prao",
+      "price": "11.95",
+      "expected_library_id": "pad-kra-pao"
+    },
+    {
+      "thai": null,
+      "english": "72: Pa-naeng Prawns",
+      "price": "11.95",
+      "expected_library_id": "panang"
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "(Pork / Chicken ... Beef / Prawns ...) price options",
+      "why": "protein choice, not separate dishes"
+    },
+    {
+      "text": "section headers",
+      "why": "Starters, Thai Soup, Thai Salad, Thai Curry, Stir Fry, Duck Stir Fry, Seafood"
+    },
+    {
+      "text": "allergen footer",
+      "why": "not a dish"
+    }
+  ]
+}

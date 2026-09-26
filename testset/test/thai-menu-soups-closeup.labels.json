@@ -1,0 +1,52 @@
+{
+  "image": "thai-menu-soups-closeup.jpg",
+  "split": "test",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "https://commons.wikimedia.org/wiki/File:Interesting_Thai_Menu_Choices_(6729084651).jpg",
+  "license": "CC BY 2.0, Flickr (see file page for author)",
+  "languages": [
+    "th",
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "close-up",
+    "glare",
+    "partly cut off",
+    "machine-translated English"
+  ],
+  "dishes": [
+    {
+      "thai": "แกงส้มชะอมกุ้ง",
+      "english": "Sour curry with cha-om omelette and prawns",
+      "price": "80/130",
+      "expected_library_id": "gaeng-som"
+    },
+    {
+      "thai": "ต้มโป๊ะแตกทะเล",
+      "english": "Spicy herbal seafood soup (tom po taek)",
+      "price": "150",
+      "expected_library_id": null,
+      "also_ok": [
+        "tom-yum-goong"
+      ]
+    },
+    {
+      "thai": null,
+      "english": "Steamed snakehead fish with spicy sauce (Thai name cut off)",
+      "price": null,
+      "expected_library_id": null,
+      "partial": true
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "sour soup made of tamarine acacia shrimp paste",
+      "why": "English gloss of the line above"
+    },
+    {
+      "text": "boil broken sea lampshade",
+      "why": "English gloss of the line above"
+    }
+  ]
+}
