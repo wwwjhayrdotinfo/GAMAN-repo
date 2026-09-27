@@ -4,6 +4,7 @@
 export const DEMO_DISHES = [
   {
     id: 'khao-soi',
+    allowed_options: [],
     thai_name: 'ข้าวซอยไก่',
     romanized: 'khâao soi gài',
     english_name: 'Khao Soi (chicken)',
@@ -17,6 +18,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'khanom-jeen-nam-ngiao',
+    allowed_options: [],
     thai_name: 'ขนมจีนน้ำเงี้ยว',
     romanized: 'khà-nǒm jeen nám ngíao',
     english_name: 'Khanom Jeen Nam Ngiao',
@@ -30,6 +32,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'sai-ua',
+    allowed_options: [],
     thai_name: 'ไส้อั่ว',
     romanized: 'sâi ùa',
     english_name: 'Sai Ua (Northern sausage)',
@@ -43,6 +46,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'nam-prik-noom',
+    allowed_options: [],
     thai_name: 'น้ำพริกหนุ่ม',
     romanized: 'nám phrík nùm',
     english_name: 'Nam Prik Noom (green chilli dip)',
@@ -56,6 +60,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'gaeng-hung-lay',
+    allowed_options: [],
     thai_name: 'แกงฮังเล',
     romanized: 'gaeng hang-lee',
     english_name: 'Gaeng Hung Lay (pork belly curry)',
@@ -69,6 +74,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'khao-kha-moo',
+    allowed_options: ["no-coriander"],
     thai_name: 'ข้าวขาหมู',
     romanized: 'khâao khǎa mǔu',
     english_name: 'Khao Kha Moo (stewed pork leg rice)',
@@ -82,6 +88,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'pad-kra-pao',
+    allowed_options: ["spice", "fried-egg"],
     thai_name: 'ผัดกะเพราหมูสับ',
     romanized: 'phàt grà-phrao mǔu sàp',
     english_name: 'Pad Kra Pao (holy basil pork)',
@@ -95,6 +102,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'som-tam',
+    allowed_options: ["spice"],
     thai_name: 'ส้มตำไทย',
     romanized: 'sôm tam thai',
     english_name: 'Som Tam (papaya salad)',
@@ -108,6 +116,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'mango-sticky-rice',
+    allowed_options: [],
     thai_name: 'ข้าวเหนียวมะม่วง',
     romanized: 'khâao nǐao má-mûang',
     english_name: 'Mango Sticky Rice',
@@ -121,6 +130,7 @@ export const DEMO_DISHES = [
   },
   {
     id: 'cha-yen',
+    allowed_options: ["less-sweet"],
     thai_name: 'ชาเย็น',
     romanized: 'chaa yen',
     english_name: 'Thai Iced Tea',

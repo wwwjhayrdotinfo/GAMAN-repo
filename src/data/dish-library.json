@@ -15,7 +15,8 @@
     "northern_specialty": true,
     "how_to_eat": "Add lime, pickled mustard greens and shallots from the side plate, then chilli oil to taste.",
     "story": "Chiang Mai's signature dish, linked to Chinese-Muslim (Haw) caravan traders who travelled through the north.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "khanom-jeen-nam-ngiao",
@@ -34,7 +35,8 @@
     "northern_specialty": true,
     "how_to_eat": "Top with crispy garlic, bean sprouts and cabbage from the side, plus a squeeze of lime.",
     "story": "Named after the Ngiao (Shan) people, it reflects the Shan influence on Lanna cooking.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "sai-ua",
@@ -53,7 +55,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat with sticky rice, fresh cabbage and raw chillies or ginger on the side.",
     "story": "A market staple and a classic Chiang Mai souvenir that people take home to Bangkok.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "nam-prik-noom",
@@ -72,7 +75,8 @@
     "northern_specialty": true,
     "how_to_eat": "Dip pork rinds (khaep mu), steamed vegetables or a ball of sticky rice into it.",
     "story": "\"Noom\" means young. The dish is named after the young chillies, and it's on every Lanna table.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "gaeng-hung-lay",
@@ -91,7 +95,8 @@
     "northern_specialty": true,
     "how_to_eat": "Order with steamed or sticky rice. It's often better the day after it's made.",
     "story": "Burmese in origin, adopted into Lanna cuisine. It's a festival and temple-fair favourite.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "khao-kha-moo",
@@ -110,7 +115,10 @@
     "northern_specialty": false,
     "how_to_eat": "Bite a raw garlic clove or chilli between mouthfuls, and use the sour chilli sauce.",
     "story": "Thai-Chinese comfort food. The cowboy-hat lady at Chang Phuak Gate made it famous in Chiang Mai.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "pad-kra-pao",
@@ -129,7 +137,11 @@
     "northern_specialty": false,
     "how_to_eat": "Add a fried egg (khai dao). Almost every Thai person does.",
     "story": "Thailand's go-to \"I don't know what to eat\" dish. Ask for it anywhere.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice",
+      "fried-egg"
+    ]
   },
   {
     "id": "som-tam",
@@ -149,7 +161,10 @@
     "northern_specialty": false,
     "how_to_eat": "Share it with sticky rice and grilled chicken (gai yang).",
     "story": "From Isan (the northeast). Vendors pound each order fresh, so you can set your chilli count.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "mango-sticky-rice",
@@ -167,7 +182,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it at room temperature, and pour the extra coconut cream over it.",
     "story": "It's best in the hot season (around March to May), when mangoes are at their peak.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "cha-yen",
@@ -185,7 +201,10 @@
     "northern_specialty": false,
     "how_to_eat": "Say \"wǎan nói\" (หวานน้อย) if you want it less sweet.",
     "story": "Found at nearly every street stall. The bright orange colour comes from the tea blend.",
-    "unit": "แก้ว"
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ]
   },
   {
     "id": "pad-thai",
@@ -205,7 +224,8 @@
     "northern_specialty": false,
     "how_to_eat": "Season it yourself with the lime, crushed peanuts, sugar and chilli flakes on the table.",
     "story": "Promoted as a national dish in the mid-20th century, it is now Thailand's best-known noodle dish abroad.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "tom-yum-goong",
@@ -225,7 +245,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice and don't chew the lemongrass, galangal or lime leaves, they are there for flavour.",
     "story": "One of Thailand's most famous soups; ask for 'nám khôn' for the creamy version or 'nám săi' for the clear one.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "tom-kha-gai",
@@ -245,7 +266,8 @@
     "northern_specialty": false,
     "how_to_eat": "Spoon it over rice; the galangal slices are for flavour, not for eating.",
     "story": "'Khàa' means galangal, the ginger-like root that gives the soup its name.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "gaeng-keow-wan",
@@ -264,7 +286,8 @@
     "northern_specialty": false,
     "how_to_eat": "Pour it over rice, or eat it with fresh rice noodles (khanom jeen).",
     "story": "The name means 'sweet green curry', from the colour of the fresh green chillies in the paste.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "gaeng-daeng",
@@ -283,7 +306,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with plain rice, which balances the richness.",
     "story": "A central Thai staple; the red version with roast duck (gaeng phet bpet) is a popular variation.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "massaman",
@@ -303,7 +327,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice or roti; it is a good choice if you don't like much heat.",
     "story": "Its dried spices show the Persian and Muslim trading influences on Thai cooking.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "panang",
@@ -322,7 +347,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice; the sauce is thick, so a little goes a long way.",
     "story": "Drier and richer than most Thai curries, it is often topped with a swirl of coconut cream.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "khao-man-gai",
@@ -342,7 +368,10 @@
     "northern_specialty": false,
     "how_to_eat": "Dip each bite of chicken in the ginger and fermented soybean sauce; the soup comes free on the side.",
     "story": "Brought by Hainanese Chinese immigrants, it is now a Thai lunchtime classic.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "khao-pad",
@@ -361,7 +390,10 @@
     "northern_specialty": false,
     "how_to_eat": "Squeeze the lime wedge over it and add prik nam pla (fish sauce with chilli) to taste.",
     "story": "A safe everyday dish found everywhere; say 'khâao phàt gài' for chicken or 'gûng' for prawn.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "fried-egg"
+    ]
   },
   {
     "id": "pad-see-ew",
@@ -380,7 +412,8 @@
     "northern_specialty": false,
     "how_to_eat": "Add chilli vinegar and sugar from the condiment tray if you want more kick.",
     "story": "A Chinese-Thai wok dish; the slightly charred, smoky noodles are the sign of a good one.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "rad-na",
@@ -399,7 +432,8 @@
     "northern_specialty": false,
     "how_to_eat": "Add chilli vinegar to cut through the gravy; you can ask for crispy egg noodles (mìi gròp) instead.",
     "story": "'Râat nâa' means 'poured on top', describing the gravy ladled over the noodles.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "pad-kee-mao",
@@ -418,7 +452,10 @@
     "northern_specialty": false,
     "how_to_eat": "Ask for 'phèt nít nòi' (a little spicy) if you are careful with heat.",
     "story": "'Khîi mao' means 'drunkard'; one story is that it was cooked as a late-night dish after drinking.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "kuay-teow-nam",
@@ -437,7 +474,10 @@
     "northern_specialty": false,
     "how_to_eat": "Choose the noodle size (sên lék thin, sên yài wide) and season with the four condiments: sugar, fish sauce, chilli flakes and vinegar.",
     "story": "Thailand's everyday street food, originally brought by Chinese immigrants.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "kuay-teow-rua",
@@ -456,7 +496,10 @@
     "northern_specialty": false,
     "how_to_eat": "Bowls are small, so people order several; stack the empty bowls to count the bill.",
     "story": "Once sold from boats on Bangkok's canals, which is why the bowls are small.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "bamee-moo-daeng",
@@ -475,7 +518,10 @@
     "northern_specialty": false,
     "how_to_eat": "Say 'hâeng' for dry noodles or 'náam' for soup.",
     "story": "A Chinese-Thai classic, often sold at the same stall as rice with red pork.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "khao-moo-daeng",
@@ -494,7 +540,10 @@
     "northern_specialty": false,
     "how_to_eat": "Add the sliced chillies in soy sauce on the side for contrast.",
     "story": "A Teochew Chinese dish that became a Thai lunchtime staple.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "khao-moo-krob",
@@ -512,7 +561,10 @@
     "northern_specialty": false,
     "how_to_eat": "Dip the pork in the chilli soy sauce served on the side.",
     "story": "Often sold at the same stall as rice with red pork; order both as 'khâao mŭu daeng mŭu gròp'.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "jok",
@@ -531,7 +583,10 @@
     "northern_specialty": false,
     "how_to_eat": "Stir in the egg, then add pepper and fried garlic; it is a common breakfast.",
     "story": "A Chinese-style congee eaten across Thailand, especially in the morning.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "khao-tom",
@@ -550,7 +605,10 @@
     "northern_specialty": false,
     "how_to_eat": "Add pepper and a little fish sauce; it is a popular breakfast and late-night meal.",
     "story": "Unlike jok, the rice grains stay whole in a clear soup.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "moo-ping",
@@ -569,7 +627,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with a small bag of sticky rice as a grab-and-go breakfast.",
     "story": "A morning street-food staple; buy a few skewers and a bag of sticky rice.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "gai-yang",
@@ -588,7 +647,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with sticky rice and som tam, tearing the chicken with your fingers.",
     "story": "Strongly linked to Isan (the northeast), where it is eaten with sticky rice and papaya salad.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "larb",
@@ -608,7 +668,10 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with sticky rice and raw vegetables like cabbage and long beans.",
     "story": "The Isan (northeastern) version is sour and spicy; the Northern version, laab mueang, is quite different.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "nam-tok-moo",
@@ -628,7 +691,10 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with sticky rice and fresh vegetables.",
     "story": "'Náam tòk' means 'waterfall', often said to refer to the meat juices dripping as it grills.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "moo-manao",
@@ -648,7 +714,10 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it as a shared dish with drinks or rice; the raw garlic and chilli are strong.",
     "story": "A popular drinking snack (gàp glâem) at Thai restaurants and bars.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "yam-woon-sen",
@@ -668,7 +737,10 @@
     "northern_specialty": false,
     "how_to_eat": "Share it as a side dish with rice.",
     "story": "'Yam' is the Thai family of sour, spicy, salad-like dishes.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "pla-pao",
@@ -686,7 +758,8 @@
     "northern_specialty": false,
     "how_to_eat": "Peel off the salty skin and wrap the fish with noodles and vegetables in lettuce, dipped in seafood sauce.",
     "story": "A night-market favourite; the salt crust keeps the fish moist.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "pla-kapong-neung-manao",
@@ -705,7 +778,8 @@
     "northern_specialty": false,
     "how_to_eat": "Share the fish from the middle of the table and spoon the broth over rice.",
     "story": "Often served in a fish-shaped pot kept hot with a flame at the table.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "tod-mun-pla",
@@ -723,7 +797,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip them in the sweet cucumber relish served on the side.",
     "story": "A common starter and street snack.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "poh-pia-tod",
@@ -742,7 +817,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip them in sweet chilli sauce.",
     "story": "A Chinese-origin snack found at markets across Thailand.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "satay",
@@ -761,7 +837,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip in peanut sauce and eat with the cucumber relish and toasted bread.",
     "story": "Came to Thailand from the Malay world in the south.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "kai-jeow",
@@ -778,7 +855,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it on rice with sriracha or chilli fish sauce.",
     "story": "A cheap comfort food that almost every Thai person grows up eating.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "kai-dao",
@@ -794,7 +872,8 @@
     "northern_specialty": false,
     "how_to_eat": "Add one on top of pad kra pao or fried rice by saying 'sài khài daao'.",
     "story": "'Khài daao' means 'star egg', from its shape.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "pad-pak-bung",
@@ -813,7 +892,11 @@
     "northern_specialty": false,
     "how_to_eat": "Order it as a shared vegetable side with rice.",
     "story": "Cooked over very high heat; at some places the flames rise dramatically from the wok.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice",
+      "fried-egg"
+    ]
   },
   {
     "id": "pad-pak-ruam",
@@ -831,7 +914,10 @@
     "northern_specialty": false,
     "how_to_eat": "A good vegetarian-friendly side; say 'mâi sài núea sàt' for no meat.",
     "story": "A standard dish at every made-to-order (aahăan taam sàng) shop.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "fried-egg"
+    ]
   },
   {
     "id": "gai-pad-med-mamuang",
@@ -850,7 +936,11 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice; the dried chillies are mostly for aroma.",
     "story": "A Chinese-influenced stir-fry that is very popular with visitors.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice",
+      "fried-egg"
+    ]
   },
   {
     "id": "pad-priew-wan",
@@ -869,7 +959,10 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice; good for kids and anyone avoiding heat.",
     "story": "A Chinese-Thai dish found at most made-to-order shops.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "fried-egg"
+    ]
   },
   {
     "id": "khao-kluk-kapi",
@@ -889,7 +982,8 @@
     "northern_specialty": false,
     "how_to_eat": "Mix all the toppings into the rice before eating.",
     "story": "A central Thai dish that balances salty, sweet and sour in one plate.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "kuay-jab",
@@ -908,7 +1002,10 @@
     "northern_specialty": false,
     "how_to_eat": "Ask for 'mâi ao khrûeang nai' if you don't want offal.",
     "story": "A Teochew Chinese noodle soup; the noodles curl into little tubes as they cook.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "yen-ta-fo",
@@ -927,7 +1024,10 @@
     "northern_specialty": false,
     "how_to_eat": "Season with the table condiments; it tastes slightly sweet.",
     "story": "Its bright pink colour makes it easy to spot on a menu photo.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "khanom-jeen-nam-ya",
@@ -945,7 +1045,8 @@
     "northern_specialty": false,
     "how_to_eat": "Help yourself to the free fresh vegetables and herbs, and add them on top.",
     "story": "Khanom jeen is one of Thailand's oldest noodles, made from fermented rice.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "gaeng-som",
@@ -963,7 +1064,8 @@
     "northern_specialty": false,
     "how_to_eat": "Spoon it over rice; it is sour and spicy, not creamy.",
     "story": "A central and southern Thai curry; the southern version (gaeng lueang) is yellow and fiery.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "gaeng-jued-tao-hoo",
@@ -982,7 +1084,10 @@
     "northern_specialty": false,
     "how_to_eat": "Order it to share alongside spicy dishes; it cools the palate.",
     "story": "'Jùet' means 'bland': it is the gentle soup on a Thai table.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": [
+      "no-coriander"
+    ]
   },
   {
     "id": "tom-saep",
@@ -1002,7 +1107,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with sticky rice; it is spicier and more herbal than tom yum.",
     "story": "'Sâep' is the Isan word for 'delicious' and spicy.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "moo-krata",
@@ -1022,7 +1128,8 @@
     "northern_specialty": false,
     "how_to_eat": "Rub pork fat on the dome first, grill on top, and let the juices run into the soup below.",
     "story": "A hugely popular social meal, usually buffet-style, eaten with friends and beer.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "suki",
@@ -1041,7 +1148,8 @@
     "northern_specialty": false,
     "how_to_eat": "Mix in the red, chilli-garlic suki sauce to taste.",
     "story": "A Thai take on Japanese sukiyaki, very different from the original.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "hoy-tod",
@@ -1059,7 +1167,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip it in sriracha sauce.",
     "story": "A Chinese-Thai street-food favourite cooked on a big flat griddle.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "goong-ob-woon-sen",
@@ -1079,7 +1188,8 @@
     "northern_specialty": false,
     "how_to_eat": "Mix the noodles well; they soak up all the prawn juices.",
     "story": "A Chinese-Thai seafood dish served in its clay pot.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "pla-muk-yang",
@@ -1098,7 +1208,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip it in the green nám jîm sii-fúut; it is very spicy.",
     "story": "A common night-market and beach snack.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "sai-krok-isan",
@@ -1116,7 +1227,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with fresh ginger, raw chilli and cabbage in the same bite.",
     "story": "The sourness comes from fermentation, a traditional northeastern way to preserve meat.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "kor-moo-yang",
@@ -1134,7 +1246,8 @@
     "northern_specialty": false,
     "how_to_eat": "Dip each slice in the jaew (chilli and toasted rice sauce) and eat it with sticky rice.",
     "story": "An Isan-style grill favourite, often ordered with drinks.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "gai-tod",
@@ -1152,7 +1265,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with sticky rice and sweet chilli sauce.",
     "story": "Thai street-style fried chicken; Hat Yai in the south is famous for its version.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "roti",
@@ -1171,7 +1285,8 @@
     "northern_specialty": false,
     "how_to_eat": "Order 'roo-tii glûay khài' for banana and egg.",
     "story": "Brought by South Asian and Muslim communities; in Thailand it is mostly eaten as a sweet snack.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "khanom-krok",
@@ -1189,7 +1304,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat them hot straight from the pan.",
     "story": "'Khrók' is the mortar the cast-iron pan resembles.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "bua-loy",
@@ -1208,7 +1324,8 @@
     "northern_specialty": false,
     "how_to_eat": "Ask for a sweet egg on top with 'bua loi khài wăan'.",
     "story": "'Bua loi' means 'floating lotus', from the way the balls float.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "tub-tim-krob",
@@ -1227,7 +1344,8 @@
     "northern_specialty": false,
     "how_to_eat": "Stir everything together so each spoon has coconut milk and ice.",
     "story": "'Tháp-thim' means ruby, from their red colour.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "kluay-buat-chee",
@@ -1245,7 +1363,8 @@
     "northern_specialty": false,
     "how_to_eat": "It is served warm; a good dessert after spicy food.",
     "story": "The name means 'bananas ordained as nuns', from the white coconut milk.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "cha-manao",
@@ -1263,7 +1382,10 @@
     "northern_specialty": false,
     "how_to_eat": "Say 'wăan nói' for less sweet.",
     "story": "A refreshing alternative to milky cha yen, sold at the same stalls.",
-    "unit": "แก้ว"
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ]
   },
   {
     "id": "oliang",
@@ -1281,7 +1403,10 @@
     "northern_specialty": false,
     "how_to_eat": "Say 'mâi sài nám dtaan' for no sugar.",
     "story": "A traditional Chinese-Thai coffee shop drink, older than the modern café scene.",
-    "unit": "แก้ว"
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ]
   },
   {
     "id": "nam-maprao",
@@ -1296,7 +1421,8 @@
     "northern_specialty": false,
     "how_to_eat": "Scrape out the soft flesh with a spoon after drinking.",
     "story": "Young coconuts are sold chilled at markets and fruit stalls.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "pad-woon-sen",
@@ -1315,7 +1441,8 @@
     "northern_specialty": false,
     "how_to_eat": "Add chilli fish sauce if you want more flavour.",
     "story": "A light made-to-order dish, less oily than most noodle stir-fries.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "gai-pad-king",
@@ -1334,7 +1461,10 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with rice; the ginger gives warmth rather than heat.",
     "story": "A mild Chinese-Thai stir-fry.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "fried-egg"
+    ]
   },
   {
     "id": "pla-rad-prik",
@@ -1353,7 +1483,8 @@
     "northern_specialty": false,
     "how_to_eat": "Share it at the table; eat the crispy fins too.",
     "story": "'Râat phrík' means 'topped with chilli'.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "moo-tod-kratiam",
@@ -1371,7 +1502,10 @@
     "northern_specialty": false,
     "how_to_eat": "Add a fried egg and chilli fish sauce.",
     "story": "A mild made-to-order favourite, good for anyone avoiding chilli.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "fried-egg"
+    ]
   },
   {
     "id": "gaeng-pa",
@@ -1390,7 +1524,8 @@
     "northern_specialty": false,
     "how_to_eat": "Eat it with plenty of rice; it is one of the spiciest curries.",
     "story": "'Bpàa' means forest: a country-style curry made without coconut.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "yam-talay",
@@ -1410,7 +1545,10 @@
     "northern_specialty": false,
     "how_to_eat": "Share it as a side with rice or drinks.",
     "story": "A 'yam' salad; the dressing is sour, salty, sweet and spicy.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": [
+      "spice"
+    ]
   },
   {
     "id": "nam-prik-ong",
@@ -1429,7 +1567,8 @@
     "northern_specialty": true,
     "how_to_eat": "Scoop it with pork crackling (khaep moo), raw or boiled vegetables and sticky rice.",
     "story": "One of the best-known Northern chilli dips, often served next to nam prik noom.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "laab-mueang",
@@ -1448,7 +1587,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice and bitter fresh herbs; ask 'sùk' for fully cooked, since some versions are raw.",
     "story": "Unlike the lime-sour Isan larb, the Northern version gets its flavour from a dry spice blend.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "laab-khua",
@@ -1467,7 +1607,8 @@
     "northern_specialty": true,
     "how_to_eat": "A cooked, safer choice than raw laab; eat it with sticky rice and herbs.",
     "story": "'Khûa' means dry-fried in a pan.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "kaeng-khae",
@@ -1486,7 +1627,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice; the mix of vegetables changes by season.",
     "story": "A country-style curry without coconut milk, typical of Lanna home cooking.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "kaeng-om",
@@ -1505,7 +1647,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice; ask 'mâi sài khrûeang nai' if you don't want offal.",
     "story": "A slow-cooked Northern home dish without coconut milk.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "khaep-moo",
@@ -1521,7 +1664,8 @@
     "northern_specialty": true,
     "how_to_eat": "Use it to scoop up nam prik noom and nam prik ong.",
     "story": "A classic Chiang Mai snack and souvenir, sold in big bags at markets.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "naem",
@@ -1540,7 +1684,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with fresh ginger, shallots, peanuts and chilli; or order 'nǎem thâwt' fried with egg.",
     "story": "Called jin som (จิ๊นส้ม) in Northern Thai; it is sour from fermentation, not vinegar.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "tam-khanun",
@@ -1559,7 +1704,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice and pork crackling.",
     "story": "Jackfruit (khà-nŭn) sounds like 'support', so it is often cooked for ceremonies and housewarmings.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "kaeng-khanun",
@@ -1578,7 +1724,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice.",
     "story": "A traditional Lanna curry made without coconut milk.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "khao-kan-jin",
@@ -1597,7 +1744,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with fried garlic, dried chilli, cucumber and spring onion on the side.",
     "story": "A Northern Thai and Shan dish; 'gán jín' means 'squeezed meat' in Northern Thai.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "khao-lam",
@@ -1616,7 +1764,8 @@
     "northern_specialty": true,
     "how_to_eat": "Peel the bamboo back in strips and eat the rice from the thin inner skin.",
     "story": "Roasting in bamboo is an old rural way of cooking rice while travelling.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "kaeng-hoh",
@@ -1635,7 +1784,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice.",
     "story": "'Hó' means 'mixed together': traditionally made from leftovers after festivals.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "yam-jin-gai",
@@ -1654,7 +1804,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice and fresh vegetables.",
     "story": "'Jín' means 'meat' in Northern Thai.",
-    "unit": "จาน"
+    "unit": "จาน",
+    "allowed_options": []
   },
   {
     "id": "khao-niao",
@@ -1669,7 +1820,8 @@
     "northern_specialty": true,
     "how_to_eat": "Roll a small ball with your right hand and use it to scoop dips and meat.",
     "story": "The everyday staple of Northern and Northeastern Thailand, served in a woven kratip basket.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "jor-pak-kad",
@@ -1688,7 +1840,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice and a Northern chilli dip.",
     "story": "A cool-season Lanna soup, made when mustard greens are flowering.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "kaeng-yuak",
@@ -1707,7 +1860,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice.",
     "story": "A thrifty Lanna dish that uses the soft inner banana trunk.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "aep-moo",
@@ -1726,7 +1880,8 @@
     "northern_specialty": true,
     "how_to_eat": "Unwrap it and eat with sticky rice.",
     "story": "'Áep' is a Northern way of grilling food in a flat banana-leaf parcel.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "nam-prik-taa-daeng",
@@ -1744,7 +1899,8 @@
     "northern_specialty": true,
     "how_to_eat": "Use it sparingly with sticky rice and vegetables; it is very hot.",
     "story": "A Northern pantry staple that keeps for a long time.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "tam-makhuea",
@@ -1763,7 +1919,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it with sticky rice and pork crackling.",
     "story": "A simple Northern countryside dip.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "hor-nueng-gai",
@@ -1782,7 +1939,8 @@
     "northern_specialty": true,
     "how_to_eat": "Open the parcel and eat it with sticky rice.",
     "story": "'Hàw nûeng' means 'wrapped and steamed'; it is common at Northern markets.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "khao-soi-nuea",
@@ -1800,7 +1958,8 @@
     "northern_specialty": true,
     "how_to_eat": "Add lime, pickled mustard greens, shallots and chilli oil from the side.",
     "story": "Beef khao soi is common at the Chiang Mai shops with Chinese-Muslim (Haw) roots.",
-    "unit": "ชาม"
+    "unit": "ชาม",
+    "allowed_options": []
   },
   {
     "id": "miang",
@@ -1817,7 +1976,8 @@
     "northern_specialty": true,
     "how_to_eat": "Chew it slowly like gum; it is mildly caffeinated.",
     "story": "The hill forests around Chiang Mai have grown tea for fermenting as miang for centuries.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "khao-taen",
@@ -1835,7 +1995,8 @@
     "northern_specialty": true,
     "how_to_eat": "Buy a bag as a snack or souvenir.",
     "story": "A famous product of Lampang and other Northern provinces.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "kaeng-kradang",
@@ -1853,7 +2014,8 @@
     "northern_specialty": true,
     "how_to_eat": "Eat it cold with sticky rice.",
     "story": "A cool-season Lanna dish: the jelly sets naturally in the cold weather.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   },
   {
     "id": "tua-nao",
@@ -1869,6 +2031,7 @@
     "northern_specialty": true,
     "how_to_eat": "Look for it grilled as a snack or inside Northern curries and chilli dips.",
     "story": "A Shan and Northern Thai staple that gives many Lanna dishes their deep flavour.",
-    "unit": "ที่"
+    "unit": "ที่",
+    "allowed_options": []
   }
 ]

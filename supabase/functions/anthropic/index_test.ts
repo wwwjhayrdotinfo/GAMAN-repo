@@ -78,7 +78,7 @@ Deno.test("persistent cache reuses normalized text, isolates photos/models, and 
   let malformed = false;
   const dish = {thai_name: "ข้าวซอย", english_name: "Khao Soi", romanized: "khâao soi", description: "Curry noodles",
     ingredients: ["noodles", "coconut milk"], spice_level: 1, northern_specialty: true,
-    how_to_eat: "Add lime", story: "A northern Thai dish", unit: "ชาม", price: "60"};
+    how_to_eat: "Add lime", story: "A northern Thai dish", allowed_options: [], unit: "ชาม", price: "60"};
   const request = (name: string, image?: string) => new Request("https://example.com", {
     method: "POST", headers: {"content-type": "application/json"},
     body: JSON.stringify({ system: "GAMAN", messages: [{role: "user", content: image
@@ -169,7 +169,7 @@ Deno.test("hosted response does not wait for slow cache writes", async () => {
       if (String(url).includes("api.anthropic.com")) return Response.json({stop_reason: "tool_use", content: [{
         type: "tool_use", name: "return_dishes", input: {dishes: [{thai_name: "ข้าวซอย", english_name: "Khao Soi",
           romanized: "khao soi", description: "Noodles", ingredients: ["noodles"], spice_level: 1,
-          northern_specialty: true, how_to_eat: "Add lime", story: "Northern dish", unit: "ชาม"}]}
+          northern_specialty: true, how_to_eat: "Add lime", story: "Northern dish", allowed_options: [], unit: "ชาม"}]}
       }]});
       if (init?.method !== "POST") return Response.json([]);
       await writeGate;
@@ -248,6 +248,39 @@ Deno.test("names-only and variant responses are cached without saving incomplete
     assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
     assert((await handler(request())).headers.get("x-gaman-cache") === "HIT");
     assert(Number(calls) === beforeVariant + 1 && productWrites === 0);
+  } finally {
+    globalThis.fetch = previousFetch;
+    names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));
+  }
+});
+
+Deno.test("full dish cache rejects missing or invalid ordering options", async () => {
+  const names = ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "ANTHROPIC_API_KEY", "ALLOWED_ORIGIN"];
+  const saved = names.map((name) => Deno.env.get(name));
+  const previousFetch = globalThis.fetch;
+  let writes = 0;
+  let options: unknown;
+  try {
+    Deno.env.set("SUPABASE_URL", "https://db.example.com");
+    Deno.env.set("SUPABASE_SERVICE_ROLE_KEY", "test");
+    Deno.env.set("ANTHROPIC_API_KEY", "test");
+    Deno.env.delete("ALLOWED_ORIGIN");
+    const response = () => ({stop_reason: "tool_use", content: [{type: "tool_use", name: "return_dishes", input: {dishes: [{
+      thai_name: "ชาเย็น", english_name: "Thai tea", romanized: "cha yen", description: "Tea",
+      ingredients: ["tea"], spice_level: 0, northern_specialty: false,
+      how_to_eat: "Drink", story: "Thai tea", unit: "แก้ว", allowed_options: options,
+    }]}}]});
+    globalThis.fetch = async (url, init) => {
+      if (String(url).includes("api.anthropic.com")) return Response.json(response());
+      if (init?.method === "POST") { writes++; return new Response(null, {status: 201}); }
+      return Response.json([{response: response()}]); // Old/invalid cache entry must not hit.
+    };
+    for (options of [undefined, ["invalid"], ["spice", "spice"]]) {
+      const result = await handler(new Request("https://example.com", {method: "POST", headers: {"content-type": "application/json"},
+        body: JSON.stringify({messages: [{role: "user", content: [{type: "text", text: "tea"}]}]})}));
+      assert(result.headers.get("x-gaman-cache") === "SKIP");
+    }
+    assert(writes === 0, "Invalid option records must not be cached or saved as products");
   } finally {
     globalThis.fetch = previousFetch;
     names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));

@@ -1,3 +1,4 @@
+import { allowedOptions } from './orderOptions.js'
 // Builds the Thai order sentence from templates. It's instant and consistent, with no AI call.
 // Pattern: ขอ + dish + qty + classifier + options + polite particle
 
@@ -36,8 +37,9 @@ export const PARTICLES = {
 export function buildOrder(dish, { qty = 1, spice = 'normal', extras = [], where = 'here', particle = 'male' }) {
   const unitThai = UNITS[dish.unit] ? dish.unit : 'ที่'
   const [numThai, numRom] = NUMBERS[qty] ?? [String(qty), String(qty)]
-  const spiceOpt = SPICE_OPTIONS.find((s) => s.id === spice)
-  const extraOpts = EXTRA_OPTIONS.filter((e) => extras.includes(e.id))
+  const allowed = allowedOptions(dish)
+  const spiceOpt = allowed.includes('spice') ? SPICE_OPTIONS.find((s) => s.id === spice) : null
+  const extraOpts = EXTRA_OPTIONS.filter((e) => extras.includes(e.id) && allowed.includes(e.id))
   const whereOpt = WHERE_OPTIONS.find((w) => w.id === where)
   const p = PARTICLES[particle]
 

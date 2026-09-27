@@ -79,6 +79,7 @@ export function applyLibrary(aiDish) {
     northern_specialty: dish.northern_specialty,
     spice_level: dish.spice_level,
     unit: dish.unit,
+    allowed_options: dish.allowed_options,
     verified: 'base',
     library_id: dish.id,
   }

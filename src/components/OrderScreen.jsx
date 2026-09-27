@@ -1,9 +1,12 @@
+import { allowedOptions } from '../lib/orderOptions'
 import Icon from './Icon'
 import { useMemo, useState } from 'react'
 import { Chip, Header, SpeakButton } from './ui'
 import { buildOrder, EXTRA_OPTIONS, PARTICLES, SPICE_OPTIONS, WHERE_OPTIONS } from '../lib/order'
 
 export default function OrderScreen({ dish, particle, onParticle, onBack, onShowVendor, onSavePhrase, savedList = [] }) {
+  const allowed = allowedOptions(dish)
+  const availableExtras = EXTRA_OPTIONS.filter((option) => allowed.includes(option.id))
   const [qty, setQty] = useState(1)
   const [spice, setSpice] = useState('normal')
   const [extras, setExtras] = useState([])
@@ -29,19 +32,19 @@ export default function OrderScreen({ dish, particle, onParticle, onBack, onShow
           </div>
         </section>
 
-        <section className="flex flex-col gap-2">
+        {allowed.includes('spice') && <section className="flex flex-col gap-2">
           <Label>Spice</Label>
           <div className="flex flex-wrap gap-2">
             {SPICE_OPTIONS.map((s) => <Chip key={s.id} active={spice === s.id} onClick={() => setSpice(s.id)}>{s.english}</Chip>)}
           </div>
-        </section>
+        </section>}
 
-        <section className="flex flex-col gap-2">
+        {availableExtras.length > 0 && <section className="flex flex-col gap-2">
           <Label>Extras</Label>
           <div className="flex flex-wrap gap-2">
-            {EXTRA_OPTIONS.map((e) => <Chip key={e.id} active={extras.includes(e.id)} onClick={() => toggleExtra(e.id)}>{e.english}</Chip>)}
+            {availableExtras.map((e) => <Chip key={e.id} active={extras.includes(e.id)} onClick={() => toggleExtra(e.id)}>{e.english}</Chip>)}
           </div>
-        </section>
+        </section>}
 
         <section className="flex flex-col gap-2">
           <Label>Where?</Label>

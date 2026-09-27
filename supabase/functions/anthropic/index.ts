@@ -42,6 +42,11 @@ function cacheInput(payload: JsonObject): JsonObject {
   return copy;
 }
 
+function validOptions(value: unknown): boolean {
+  const allowed = ["spice", "no-coriander", "fried-egg", "less-sweet"];
+  return Array.isArray(value) && value.every((id) => allowed.includes(id)) && new Set(value).size === value.length;
+}
+
 function savedDishes(response: unknown): JsonObject[] | null {
   if (!isObject(response) || response.stop_reason !== "tool_use" || !Array.isArray(response.content)) return null;
   const tool = response.content.find((item: unknown) => isObject(item) && item.type === "tool_use" && item.name === "return_dishes");
@@ -52,6 +57,7 @@ function savedDishes(response: unknown): JsonObject[] | null {
   if (!dishes.every((dish: unknown) => isObject(dish) &&
     textFields.every((field) => typeof dish[field] === "string" && (dish[field] as string).trim().length > 0) &&
     Array.isArray(dish.ingredients) && dish.ingredients.every((item: unknown) => typeof item === "string") &&
+    validOptions(dish.allowed_options) &&
     Number.isInteger(dish.spice_level) && Number(dish.spice_level) >= 0 && Number(dish.spice_level) <= 3 &&
     typeof dish.northern_specialty === "boolean" && ["ที่", "ชาม", "จาน", "แก้ว"].includes(String(dish.unit)))) return null;
   return dishes as JsonObject[];
@@ -82,7 +88,7 @@ function cacheableResponse(response: unknown, messages: unknown): boolean {
       if (item.detail_level === "full") return !!savedDishes({stop_reason: "tool_use", content: [
         {type: "tool_use", name: "return_dishes", input: {dishes: [dish]}}
       ]});
-      return item.detail_level === "variant" && ["thai_name", "english_name", "romanized", "description"].every((key) =>
+      return item.detail_level === "variant" && (dish.allowed_options === undefined || validOptions(dish.allowed_options)) && ["thai_name", "english_name", "romanized", "description"].every((key) =>
         typeof dish[key] === "string" && (dish[key] as string).trim().length > 0) &&
         Array.isArray(dish.ingredients) && dish.ingredients.every((value: unknown) => typeof value === "string");
     });
