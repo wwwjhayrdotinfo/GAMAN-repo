@@ -200,6 +200,7 @@ Deno.test("names-only and variant responses are cached without saving incomplete
   let calls = 0;
   let productWrites = 0;
   let variant = false;
+  let itemCount = 1;
   try {
     Deno.env.set("SUPABASE_URL", "https://db.example.com");
     Deno.env.set("SUPABASE_SERVICE_ROLE_KEY", "server-only");
@@ -212,7 +213,7 @@ Deno.test("names-only and variant responses are cached without saving incomplete
           name: variant ? "return_dishes" : "return_menu_items",
           input: variant ? {dishes: [{source_index: 0, thai_name: "ข้าวซอยหมูกรอบ", english_name: "Crispy pork noodles",
             romanized: "khao soi", description: "Curry noodles with crispy pork", ingredients: ["pork", "noodles"]}]}
-            : {items: [{thai_name: "ข้าวซอยไก่", english_name: "Chicken khao soi", price: "75"}]},
+            : {items: Array.from({length: itemCount}, (_, i) => ({thai_name: `ข้าวซอยไก่ ${i}`, english_name: `Chicken khao soi ${i}`, price: "75"}))},
         }]});
       }
       if (init?.method === "POST") {
@@ -228,10 +229,25 @@ Deno.test("names-only and variant responses are cached without saving incomplete
     assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
     assert((await handler(request())).headers.get("x-gaman-cache") === "HIT");
     assert(calls === 1 && productWrites === 0);
+    for (const count of [13, 40]) {
+      itemCount = count; row = undefined;
+      const before: number = Number(calls);
+      assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
+      const cached = await handler(request());
+      assert(cached.headers.get("x-gaman-cache") === "HIT");
+      assert((await cached.json()).content[0].input.items.length === count);
+      assert(calls === before + 1 && productWrites === 0, "Names-only menus must be reused without product writes");
+    }
+    itemCount = 41; row = undefined;
+    const beforeOversized: number = Number(calls);
+    assert((await handler(request())).headers.get("x-gaman-cache") === "SKIP");
+    assert((await handler(request())).headers.get("x-gaman-cache") === "SKIP");
+    assert(calls === beforeOversized + 2 && row === undefined, "Oversized menus must not be cached");
     variant = true; row = undefined;
+    const beforeVariant: number = Number(calls);
     assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
     assert((await handler(request())).headers.get("x-gaman-cache") === "HIT");
-    assert(Number(calls) === 2 && productWrites === 0);
+    assert(Number(calls) === beforeVariant + 1 && productWrites === 0);
   } finally {
     globalThis.fetch = previousFetch;
     names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));

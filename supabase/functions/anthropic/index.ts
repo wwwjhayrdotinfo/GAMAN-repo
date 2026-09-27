@@ -1,5 +1,7 @@
 // Self-contained so this file can also be pasted into the Supabase dashboard.
 const MAX_BODY_BYTES = 8 * 1024 * 1024;
+// Match the frontend names-only scan limit; full dish-detail limits stay separate.
+const MAX_MENU_ITEMS = 40;
 
 type JsonObject = Record<string, unknown>;
 const CACHE_VERSION = "menu-v1";
@@ -64,7 +66,7 @@ function cacheableResponse(response: unknown, messages: unknown): boolean {
   if (!isObject(tool) || !isObject(tool.input)) return false;
   if (tool.name === "return_menu_items") {
     const items = tool.input.items;
-    return Array.isArray(items) && items.length <= 12 && items.every((item: unknown) => isObject(item) &&
+    return Array.isArray(items) && items.length <= MAX_MENU_ITEMS && items.every((item: unknown) => isObject(item) &&
       typeof item.thai_name === "string" && item.thai_name.trim().length > 0 &&
       typeof item.english_name === "string" && typeof item.price === "string");
   }
