@@ -55,3 +55,27 @@ This first version reuses complete results for the same typed request or identic
 If the tables are missing or the database is unavailable, the function continues with Anthropic and logs a generic cache warning. The response header `X-Gaman-Cache` reports `HIT`, `MISS`, `SKIP` (incomplete/unusable result), `DISABLED` (no database configuration), or `UNAVAILABLE` (a save failed). In browser DevTools, repeating the same dish should change this from `MISS` to `HIT`.
 
 To invalidate a result, delete its row from `menu_cache` in Table Editor. Editing `products` does not change previously cached responses. To clear all cached responses while keeping the catalog, run `delete from public.menu_cache;`. Expired rows are ignored automatically; optional maintenance can reclaim space with `delete from public.menu_cache where expires_at < now();`.
+
+## Scan latency
+
+Hosted functions register product/cache writes with `EdgeRuntime.waitUntil` so the UI receives the AI response before database writes finish. Writes run in parallel; their failures are logged and do not block a successful scan. In local runtimes without `EdgeRuntime`, saves are awaited. See [Supabase background tasks](https://supabase.com/docs/guides/functions/background-tasks).
+
+`Server-Timing` reports cache lookup, Anthropic request, and total response time in milliseconds. On a cache hit, Anthropic time is zero. `X-Gaman-Cache: MISS` means the result was generated and a save was scheduled; it does not guarantee that the background save succeeded. Check logs for save failures. The next identical request becomes a hit after the save completes.
+
+The frontend records `gaman-photo-prepare` and `gaman-scan-total` Performance entries. Photo processing uses asynchronous JPEG encoding, a 1400px maximum edge and a 1.15-megapixel cap; small images are not enlarged. This follows [Anthropic's image sizing guidance](https://platform.claude.com/docs/en/build-with-claude/vision). It shows preparation/loading immediately and prevents duplicate scans while one is running.
+
+A development-photo check on `kaprow-sanpakoi.jpg` measured 41.3s for the existing prompt versus 42.5s for an experimental shorter-description prompt. Both found the nine labelled dishes, but individual output/matching errors varied. This single pair is not a speed benchmark; the prompt experiment was reverted. The scoring script uses its own 1200px image preparation, so these numbers do not measure the new browser encoding or the undeployed background-save change.
+
+## Names-first photo scans
+
+The frontend now sends the photo once, requesting only up to 12 dish names and prices through `return_menu_items`. Exact Thai-name matches (normalizing only case/whitespace/Unicode compatibility) reuse the bundled 100-dish library. Proteins, toppings, sizes and parentheses are not stripped for a full-card match.
+
+Only unmatched items enter a second, text-only request. Existing base-dish matches generate their specific name, pronunciation, description and ingredients while reusing library tips, story, spice level and unit, consistent with the existing base-match behavior. Entirely unknown dishes receive all fields. Source indices restore original menu order even if the model reorders responses; the price from the photo always wins. There are no automatic extra retries.
+
+Both extraction responses and valid partial variant responses can be cached. Only complete cards go into `products`. No new database migration is needed, but redeploy the function to enable caching for these new response types. Existing function versions can still forward these requests, but do not cache the new shapes.
+
+This uses the bundled dish library for immediate reuse, not a semantic search over the Supabase products table. Menus with no library matches may take longer because they need two calls. Names and prices appear as soon as extraction completes. Exact library matches are ready immediately. Other cards show placeholders and fill in batches of two, with at most two detail requests in flight. Ready cards can be ordered without waiting for other batches; updates do not navigate away from the order screen. Returning from the dish list to the scan screen cancels pending client requests. A failed batch shows an error on its cards while successful cards remain usable. Small batches can increase request overhead and cost compared with a single detail request; the purpose is to make the first cards usable sooner.
+
+Validation: `node scripts/test-scan-pipeline.mjs`, `deno test --allow-env supabase/functions/anthropic/index_test.ts`, and `npm run build`. The development scorer now uses the returned cards directly, as the app does, rather than applying the library a second time.
+
+Live development-photo trial (`kaprow-sanpakoi.jpg`): old full-card request 41.3s; names-first trials 36.7s and 35.0s. The final scorer found all 9 labeled dishes, 6 exact Thai names, and 1 add-on incorrectly returned as a dish. Extraction took about 12s; completing details took about 23s. These few runs illustrate possible improvement, not a reliable general latency or accuracy guarantee. They used the existing deployed function, so the local background-save/cache-shape changes are not included in the measured gains.

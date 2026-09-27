@@ -46,7 +46,7 @@ npm run score:testset -- --split test  # frozen test split, report only
 npm run score:testset -- --image kaprow-sanpakoi
 ```
 
-Runs the real app code (`analyzeMenu` then `applyLibrary`) against the live Supabase function and prints,
+Runs the real app code (`analyzeMenu`, including extraction and library reuse) against the live Supabase function and prints,
 per photo and overall: dishes found, exact Thai names, library matches (correct / wrong / missed /
 false link), add-ons shown as dishes, and scan time. The app returns at most 12 dishes per scan,
 so large menus cannot reach 100% found.

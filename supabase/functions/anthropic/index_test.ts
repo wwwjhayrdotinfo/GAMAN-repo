@@ -150,3 +150,90 @@ Deno.test("persistent cache reuses normalized text, isolates photos/models, and 
     names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));
   }
 });
+
+Deno.test("hosted response does not wait for slow cache writes", async () => {
+  const runtimeGlobal = globalThis as typeof globalThis & { EdgeRuntime?: {waitUntil: (task: Promise<unknown>) => void} };
+  const previousRuntime = runtimeGlobal.EdgeRuntime;
+  const previousFetch = globalThis.fetch;
+  const names = ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "ANTHROPIC_API_KEY", "ALLOWED_ORIGIN"];
+  const saved = names.map((name) => Deno.env.get(name));
+  const tasks: Promise<unknown>[] = [];
+  let releaseWrites!: () => void;
+  const writeGate = new Promise<void>((resolve) => { releaseWrites = resolve; });
+  let writes = 0;
+  try {
+    names.slice(0, 3).forEach((name, i) => Deno.env.set(name, i === 0 ? "https://db.example.com" : "test"));
+    Deno.env.delete("ALLOWED_ORIGIN");
+    runtimeGlobal.EdgeRuntime = {waitUntil: (task) => { tasks.push(task); }};
+    globalThis.fetch = async (url, init) => {
+      if (String(url).includes("api.anthropic.com")) return Response.json({stop_reason: "tool_use", content: [{
+        type: "tool_use", name: "return_dishes", input: {dishes: [{thai_name: "ข้าวซอย", english_name: "Khao Soi",
+          romanized: "khao soi", description: "Noodles", ingredients: ["noodles"], spice_level: 1,
+          northern_specialty: true, how_to_eat: "Add lime", story: "Northern dish", unit: "ชาม"}]}
+      }]});
+      if (init?.method !== "POST") return Response.json([]);
+      await writeGate;
+      writes++;
+      return new Response(null, {status: 201});
+    };
+    const response = await handler(new Request("https://example.com", {method: "POST",
+      headers: {"content-type": "application/json"}, body: JSON.stringify({messages: [{role: "user", content: "menu"}]})}));
+    assert(response.status === 200 && writes === 0, "Response should arrive before writes finish");
+    assert(tasks.length === 1 && response.headers.has("server-timing"));
+    releaseWrites();
+    await Promise.all(tasks);
+    assert(Number(writes) === 2, "Both saves must finish in the registered background task");
+  } finally {
+    releaseWrites();
+    await Promise.allSettled(tasks);
+    globalThis.fetch = previousFetch;
+    runtimeGlobal.EdgeRuntime = previousRuntime;
+    names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));
+  }
+});
+
+Deno.test("names-only and variant responses are cached without saving incomplete products", async () => {
+  const names = ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "ANTHROPIC_API_KEY", "ALLOWED_ORIGIN"];
+  const saved = names.map((name) => Deno.env.get(name));
+  const previousFetch = globalThis.fetch;
+  let row: unknown;
+  let calls = 0;
+  let productWrites = 0;
+  let variant = false;
+  try {
+    Deno.env.set("SUPABASE_URL", "https://db.example.com");
+    Deno.env.set("SUPABASE_SERVICE_ROLE_KEY", "server-only");
+    Deno.env.set("ANTHROPIC_API_KEY", "test");
+    Deno.env.delete("ALLOWED_ORIGIN");
+    globalThis.fetch = async (url, init) => {
+      if (String(url).includes("api.anthropic.com")) {
+        calls++;
+        return Response.json({stop_reason: "tool_use", content: [{type: "tool_use",
+          name: variant ? "return_dishes" : "return_menu_items",
+          input: variant ? {dishes: [{source_index: 0, thai_name: "ข้าวซอยหมูกรอบ", english_name: "Crispy pork noodles",
+            romanized: "khao soi", description: "Curry noodles with crispy pork", ingredients: ["pork", "noodles"]}]}
+            : {items: [{thai_name: "ข้าวซอยไก่", english_name: "Chicken khao soi", price: "75"}]},
+        }]});
+      }
+      if (init?.method === "POST") {
+        if (String(url).includes("products?")) productWrites++;
+        else row = JSON.parse(String(init.body));
+        return new Response(null, {status: 201});
+      }
+      return Response.json(row ? [row] : []);
+    };
+    const request = () => new Request("https://example.com", {method: "POST", headers: {"content-type": "application/json"},
+      body: JSON.stringify({messages: [{role: "user", content: [{type: "text", text:
+        variant ? JSON.stringify([{source_index: 0, detail_level: "variant"}]) : "menu"}]}]})});
+    assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
+    assert((await handler(request())).headers.get("x-gaman-cache") === "HIT");
+    assert(calls === 1 && productWrites === 0);
+    variant = true; row = undefined;
+    assert((await handler(request())).headers.get("x-gaman-cache") === "MISS");
+    assert((await handler(request())).headers.get("x-gaman-cache") === "HIT");
+    assert(Number(calls) === 2 && productWrites === 0);
+  } finally {
+    globalThis.fetch = previousFetch;
+    names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));
+  }
+});

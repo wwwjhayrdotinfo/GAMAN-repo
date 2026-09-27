@@ -23,6 +23,11 @@ function DishCard({ dish, onOrder }) {
         <SpeakButton text={dish.thai_name} />
       </div>
 
+      {dish.loading || dish.detailError ? (
+        <div role="status" className="rounded-2xl bg-amber-50 p-3 text-sm text-amber-800">
+          {dish.detailError || <><div className="animate-pulse h-3 bg-amber-200 rounded mb-2" /><div className="animate-pulse h-3 bg-amber-200 rounded w-2/3 mb-2" />Loading dish details…</>}
+        </div>
+      ) : <>
       <p className="text-amber-950">{dish.description}</p>
 
       <div className="flex flex-wrap gap-1.5 items-center">
@@ -41,6 +46,7 @@ function DishCard({ dish, onOrder }) {
         onClick={() => onOrder(dish)}
         className="mt-1 rounded-2xl bg-amber-700 hover:bg-amber-800 active:scale-[0.98] transition text-white py-3 font-bold"
       >Order this in Thai →</button>
+      </>}
     </article>
   )
 }
@@ -51,6 +57,7 @@ export default function DishList({ dishes, onBack, onOrder, preview }) {
       <Header title={`${dishes.length} dishes found`} onBack={onBack} />
       <main className="px-4 py-4 flex flex-col gap-4 max-w-md mx-auto pb-10">
         {preview && <img src={preview} alt="Scanned menu" className="rounded-2xl max-h-40 object-cover w-full" />}
+        {dishes.some((dish) => dish.loading) && <p role="status" className="text-sm text-amber-800">{dishes.filter((dish) => !dish.loading && !dish.detailError).length} of {dishes.length} dishes ready. You can order any ready dish.</p>}
         {dishes.length === 0 && <p className="text-center text-amber-800 py-10">No dishes recognised. Try a clearer photo.</p>}
         {dishes.map((d) => <DishCard key={d.id} dish={d} onOrder={onOrder} />)}
       </main>

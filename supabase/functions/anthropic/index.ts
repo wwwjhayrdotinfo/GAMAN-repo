@@ -55,6 +55,38 @@ function savedDishes(response: unknown): JsonObject[] | null {
   return dishes as JsonObject[];
 }
 
+// Names-only scans and variant descriptions are useful cache entries, but must
+// never be written to the full product catalog as incomplete cards.
+function cacheableResponse(response: unknown, messages: unknown): boolean {
+  if (savedDishes(response)) return true;
+  if (!isObject(response) || response.stop_reason !== "tool_use" || !Array.isArray(response.content)) return false;
+  const tool = response.content.find((item: unknown) => isObject(item) && item.type === "tool_use");
+  if (!isObject(tool) || !isObject(tool.input)) return false;
+  if (tool.name === "return_menu_items") {
+    const items = tool.input.items;
+    return Array.isArray(items) && items.length <= 12 && items.every((item: unknown) => isObject(item) &&
+      typeof item.thai_name === "string" && item.thai_name.trim().length > 0 &&
+      typeof item.english_name === "string" && typeof item.price === "string");
+  }
+  if (tool.name !== "return_dishes" || !Array.isArray(tool.input.dishes) || !Array.isArray(messages)) return false;
+  try {
+    const requested = JSON.parse(messages[0].content[0].text);
+    const dishes = tool.input.dishes;
+    if (!Array.isArray(requested) || !requested.length || requested.length > 12 || requested.length !== dishes.length) return false;
+    const byIndex = new Map(dishes.map((dish: JsonObject) => [dish.source_index, dish]));
+    return byIndex.size === requested.length && requested.every((item: JsonObject) => {
+      const dish = byIndex.get(item.source_index);
+      if (!dish) return false;
+      if (item.detail_level === "full") return !!savedDishes({stop_reason: "tool_use", content: [
+        {type: "tool_use", name: "return_dishes", input: {dishes: [dish]}}
+      ]});
+      return item.detail_level === "variant" && ["thai_name", "english_name", "romanized", "description"].every((key) =>
+        typeof dish[key] === "string" && (dish[key] as string).trim().length > 0) &&
+        Array.isArray(dish.ingredients) && dish.ingredients.every((value: unknown) => typeof value === "string");
+    });
+  } catch { return false; }
+}
+
 function database() {
   const url = Deno.env.get("SUPABASE_URL");
   const key = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
@@ -79,6 +111,10 @@ function database() {
 }
 
 export async function handler(request: Request): Promise<Response> {
+  const started = performance.now();
+  let cacheReadMs = 0;
+  let anthropicMs = 0;
+  const timing = () => `cache;dur=${cacheReadMs.toFixed(1)}, anthropic;dur=${anthropicMs.toFixed(1)}, total;dur=${(performance.now() - started).toFixed(1)}`;
   const allowedOrigin = Deno.env.get("ALLOWED_ORIGIN") || "*";
   const cors = {
     "Access-Control-Allow-Origin": allowedOrigin,
@@ -140,15 +176,18 @@ export async function handler(request: Request): Promise<Response> {
   const db = database();
   const cacheKey = await digest({ version: CACHE_VERSION, payload: cacheInput(payload) });
   const responseHeaders = { ...cors, "content-type": "application/json", "cache-control": "no-store",
-    "Access-Control-Expose-Headers": "X-Gaman-Cache" };
+    "Access-Control-Expose-Headers": "X-Gaman-Cache, Server-Timing" };
   if (db) {
+    const readStarted = performance.now();
     try {
       const rows = await db(`menu_cache?cache_key=eq.${cacheKey}&expires_at=gt.${encodeURIComponent(new Date().toISOString())}&select=response&limit=1`);
-      if (Array.isArray(rows) && savedDishes(rows[0]?.response)) {
-        return Response.json(rows[0].response, { headers: { ...responseHeaders, "X-Gaman-Cache": "HIT" } });
+      cacheReadMs = performance.now() - readStarted;
+      if (Array.isArray(rows) && cacheableResponse(rows[0]?.response, body.messages)) {
+        return Response.json(rows[0].response, { headers: { ...responseHeaders, "X-Gaman-Cache": "HIT", "Server-Timing": timing() } });
       }
     } catch {
       // A missing migration or temporary DB outage must not stop menu scanning.
+      cacheReadMs = performance.now() - readStarted;
       console.warn("Menu cache read unavailable; using Anthropic.");
     }
   }
@@ -156,6 +195,7 @@ export async function handler(request: Request): Promise<Response> {
   if (!apiKey) return reply(503, "Set ANTHROPIC_API_KEY in Supabase secrets.");
 
   try {
+    const aiStarted = performance.now();
     const upstream = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -168,18 +208,23 @@ export async function handler(request: Request): Promise<Response> {
       signal: AbortSignal.timeout(60_000),
     });
     const responseText = await upstream.text();
+    anthropicMs = performance.now() - aiStarted;
     let cacheStatus = db ? "MISS" : "DISABLED";
-    if (upstream.ok && db) {
+    const persist = async () => {
+      if (!upstream.ok || !db) return;
       try {
         const response = JSON.parse(responseText);
-        const dishes = savedDishes(response);
-        if (dishes) {
+        const fullTool = response.content?.find((item: JsonObject) => item.type === "tool_use" && item.name === "return_dishes");
+        const dishes: JsonObject[] = (fullTool?.input?.dishes || []).filter((dish: JsonObject) => savedDishes({
+          stop_reason: response.stop_reason, content: [{type: "tool_use", name: "return_dishes", input: {dishes: [dish]}}],
+        }));
+        if (cacheableResponse(response, body.messages)) {
           // Photos have shorter freshness because their prices belong to that menu.
           const hasImage = body.messages.some((message: JsonObject) => isObject(message) && Array.isArray(message.content) &&
             message.content.some((item: unknown) => isObject(item) && item.type === "image"));
           const ttlDays = hasImage ? 7 : 30;
-          const products = await Promise.all(dishes.map(async (dish) => {
-            const { price: _price, ...details } = dish;
+          const products = await Promise.all((dishes || []).map(async (dish) => {
+            const { price: _price, source_index: _sourceIndex, ...details } = dish;
             return {
               product_key: await digest({ version: CACHE_VERSION, model,
                 thai: normalizeName(String(dish.thai_name)), english: normalizeName(String(dish.english_name)),
@@ -190,21 +235,28 @@ export async function handler(request: Request): Promise<Response> {
           }));
           // A menu can list the same product more than once.
           const uniqueProducts = [...new Map(products.map((product) => [product.product_key, product])).values()];
-          await db("products?on_conflict=product_key", uniqueProducts);
-          await db("menu_cache?on_conflict=cache_key", {
+          await Promise.all([
+            ...(uniqueProducts.length ? [db("products?on_conflict=product_key", uniqueProducts)] : []),
+            db("menu_cache?on_conflict=cache_key", {
             cache_key: cacheKey, model, response,
             created_at: new Date().toISOString(),
             expires_at: new Date(Date.now() + ttlDays * 86_400_000).toISOString(),
-          });
+          }),
+          ]);
         } else cacheStatus = "SKIP";
       } catch {
         cacheStatus = "UNAVAILABLE";
         console.warn("Menu cache write unavailable; returning the generated result.");
       }
     }
+    // Hosted Supabase keeps this promise alive after the response has been sent.
+    // Local runtimes without waitUntil await it, so saves are never silently lost.
+    const runtime = (globalThis as typeof globalThis & { EdgeRuntime?: { waitUntil: (task: Promise<unknown>) => void } }).EdgeRuntime;
+    if (runtime?.waitUntil && upstream.ok && db) runtime.waitUntil(persist());
+    else await persist();
     return new Response(responseText, {
       status: upstream.status,
-      headers: { ...responseHeaders, "X-Gaman-Cache": cacheStatus },
+      headers: { ...responseHeaders, "X-Gaman-Cache": cacheStatus, "Server-Timing": timing() },
     });
   } catch (error) {
     return reply(error instanceof Error && error.name === "TimeoutError" ? 504 : 502,

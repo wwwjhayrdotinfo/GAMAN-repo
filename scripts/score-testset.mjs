@@ -1,4 +1,4 @@
-// Scores the real scan pipeline (src/lib/claude.js analyzeMenu → src/lib/dishMatch.js applyLibrary)
+// Scores the real scan pipeline (src/lib/claude.js analyzeMenu names-first pipeline)
 // against the hand-written labels in testset/.
 //
 //   npm run score:testset                  # dev split (OK to look at and tune on)
@@ -23,7 +23,7 @@ if (split === 'test') console.log('⚠️  testset/test is FROZEN. Report these 
 // Load the app modules exactly as the browser build uses them.
 const vite = await createServer({ server: { middlewareMode: true }, appType: 'custom', logLevel: 'error' })
 const { analyzeMenu } = await vite.ssrLoadModule('/src/lib/claude.js')
-const { applyLibrary, normalizeThai } = await vite.ssrLoadModule('/src/lib/dishMatch.js')
+const { normalizeThai } = await vite.ssrLoadModule('/src/lib/dishMatch.js')
 
 const tmp = mkdtempSync(join(tmpdir(), 'gaman-score-'))
 function loadImage(path) {
@@ -56,7 +56,8 @@ for (const f of files) {
   const t0 = Date.now()
   let preds
   try {
-    preds = (await analyzeMenu({ image: loadImage(join(dir, label.image)) })).map(applyLibrary)
+    preds = await analyzeMenu({ image: loadImage(join(dir, label.image)),
+      onProgress: (message) => console.log(`  ${((Date.now() - t0) / 1000).toFixed(1)}s: ${message}`) })
   } catch (e) {
     console.log(`${label.image}: ERROR ${e.message}`)
     continue

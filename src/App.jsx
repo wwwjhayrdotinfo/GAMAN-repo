@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import ScanScreen from './components/ScanScreen'
 import DishList from './components/DishList'
 import OrderScreen from './components/OrderScreen'
@@ -20,37 +20,66 @@ export default function App() {
   const [order, setOrder] = useState(null)
   const [preview, setPreview] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [loadingMessage, setLoadingMessage] = useState('')
+  const busy = useRef(false)
+  const scanController = useRef(null)
   const [error, setError] = useState('')
   const [myThai, setMyThai] = useState(loadMyThai)
 
   const go = (s) => { setScreen(s); window.scrollTo(0, 0) }
 
   async function run(input) {
+    if (busy.current) return
+    busy.current = true
     setError('')
     setLoading(true)
+    const started = performance.now()
+    const controller = new AbortController()
+    scanController.current = controller
+    let shown = false
     try {
-      const result = await analyzeMenu({ settings, ...input })
+      if (input.file) {
+        setPreview(null)
+        setLoadingMessage('Preparing your photo…')
+        const image = await fileToResizedBase64(input.file)
+        setPreview(image.previewUrl)
+        input = { image }
+      }
+      setLoadingMessage(input.image ? 'Reading your menu…' : 'Finding your dish…')
+      if (controller.signal.aborted) return
+      const result = await analyzeMenu({ ...input, signal: controller.signal, onProgress: setLoadingMessage,
+        onUpdate: (cards) => {
+          if (controller.signal.aborted) return
+          setDishes(cards)
+          if (!shown) { shown = true; go('dishes') }
+        },
+      })
+      if (controller.signal.aborted) return
       // Swap in our checked library cards wherever the scanned dish matches.
-      setDishes(result.map(applyLibrary))
-      go('dishes')
+      setDishes(input.image ? result : result.map(applyLibrary))
+      if (!shown) go('dishes')
     } catch (e) {
-      setError(e.message)
+      if (controller.signal.aborted) return
+      setError(e.name === 'TimeoutError' ? 'This scan took too long. Please try again with a clear photo of a smaller menu section.' : e.message)
     } finally {
-      setLoading(false)
+      performance.measure('gaman-scan-total', { start: started, end: performance.now() })
+      if (scanController.current === controller) {
+        busy.current = false
+        setLoading(false)
+        scanController.current = null
+      }
     }
   }
 
-  async function handlePhoto(file) {
-    const image = await fileToResizedBase64(file)
-    setPreview(image.previewUrl)
-    run({ image })
+  function handlePhoto(file) {
+    return run({ file })
   }
 
   function handleText(text) {
+    if (busy.current) return
     setPreview(null)
-    // Our 100-dish library first (instant, free, checked); otherwise ask Claude via the Supabase function.
     const local = searchLibrary(text).map((d) => ({ ...d, verified: 'exact', library_id: d.id }))
-    if (local.length) { setDishes(local); go('dishes'); return }
+    if (local.length) { setError(''); setDishes(local); go('dishes'); return }
     run({ text })
   }
 
@@ -74,7 +103,7 @@ export default function App() {
 
   switch (screen) {
     case 'dishes':
-      return <DishList dishes={dishes} preview={preview} onBack={() => go('scan')} onOrder={(d) => { setDish(d); go('order') }} />
+      return <DishList dishes={dishes} preview={preview} onBack={() => { scanController.current?.abort(); scanController.current = null; busy.current = false; setLoading(false); go('scan') }} onOrder={(d) => { setDish(d); go('order') }} />
     case 'order':
       return (
         <OrderScreen
@@ -98,6 +127,7 @@ export default function App() {
       return (
         <ScanScreen
           loading={loading}
+          loadingMessage={loadingMessage}
           error={error}
           preview={preview}
           onPhoto={handlePhoto}

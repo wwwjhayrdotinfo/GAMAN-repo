@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import { Header } from './ui'
 
-export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyThai, error, loading, preview }) {
+export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyThai, error, loading, loadingMessage, preview }) {
   const fileRef = useRef(null)
   const [query, setQuery] = useState('')
 
@@ -25,8 +25,8 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
         {loading ? (
           <div className="rounded-3xl bg-white border border-amber-200 p-6 text-center shadow-sm">
             {preview && <img src={preview} alt="" className="mx-auto max-h-48 rounded-xl mb-4 opacity-70" />}
-            <div className="animate-pulse text-amber-900 font-medium">Reading the menu… 🍲</div>
-            <p className="text-xs text-amber-700 mt-1">This usually takes 5 to 15 seconds</p>
+            <div className="animate-pulse text-amber-900 font-medium" role="status" aria-live="polite">{loadingMessage || 'Reading the menu…'}</div>
+            <p className="text-xs text-amber-700 mt-1">Dense menus take longer. A clear photo of one section helps.</p>
           </div>
         ) : (
           <button
@@ -48,7 +48,7 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
         />
 
         <form
-          onSubmit={(e) => { e.preventDefault(); if (query.trim()) onText(query.trim()) }}
+          onSubmit={(e) => { e.preventDefault(); if (!loading && query.trim()) onText(query.trim()) }}
           className="flex gap-2"
         >
           <input
@@ -60,7 +60,7 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
           <button className="rounded-2xl bg-amber-900 text-white px-4 font-semibold" disabled={loading}>Go</button>
         </form>
 
-        <button onClick={onDemo} className="text-amber-800 underline underline-offset-4 text-sm">
+        <button onClick={onDemo} disabled={loading} className="text-amber-800 underline underline-offset-4 text-sm">
           Try the demo menu (Chiang Mai classics, works offline)
         </button>
 
