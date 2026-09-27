@@ -15,7 +15,7 @@ function DishCard({ dish, onOrder }) {
               >✓ Dish list</span>
             )}
             {dish.northern_specialty && (
-              <span className="text-[11px] font-semibold uppercase tracking-wide bg-leaf-soft text-leaf rounded-full px-2 py-0.5">Northern</span>
+              <span className="text-[11px] font-semibold uppercase tracking-wide bg-soft text-ink rounded-full px-2 py-0.5">Northern</span>
             )}
           </div>
           <p className="text-ink italic">{dish.romanized}</p>

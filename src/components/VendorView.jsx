@@ -16,7 +16,7 @@ export default function VendorView({ order, particle, onClose }) {
     return (
       <div className="min-h-screen bg-rice flex flex-col px-5 py-6 max-w-md mx-auto gap-5">
         <p className="text-xs font-bold uppercase tracking-wide text-ink">The vendor says</p>
-        <div className="rounded-3xl bg-white border-2 border-leaf p-5 shadow">
+        <div className="rounded-3xl bg-white border-2 border-line p-5 shadow">
 
           <p className="text-2xl font-bold text-ink">{reply.english}</p>
           <p className="thai text-ink mt-1">{reply.thai}</p>
@@ -26,9 +26,9 @@ export default function VendorView({ order, particle, onClose }) {
           <p className="text-xs font-bold uppercase tracking-wide text-ink mb-2">Quick answer (tap to hear)</p>
           <div className="flex flex-wrap gap-2">
             {QUICK_ANSWERS.map((a) => (
-              <button key={a.thai} onClick={() => speakThai(a.thai, { gender: particle })} className="rounded-2xl bg-white border border-line px-3 py-2 text-left active:scale-95 transition">
-                <span className="thai font-bold text-ink">{a.thai}</span>
-                <span className="block text-xs text-ink">{a.romanized} · {a.english}</span>
+              <button key={a.thai} onClick={() => speakThai(a.thai, { gender: particle })} className="rounded-2xl bg-action hover:bg-action-hover text-white px-3 py-2 text-left active:scale-95 transition">
+                <span className="thai font-bold text-white">{a.thai}</span>
+                <span className="block text-xs text-white">{a.romanized} · {a.english}</span>
               </button>
             ))}
           </div>
@@ -42,7 +42,7 @@ export default function VendorView({ order, particle, onClose }) {
                 <div className="flex-1">
                   <p className="thai text-xl font-bold text-ink">{p.thai}</p>
                   <p className="text-sm text-ink italic">{p.romanized}</p>
-                  <p className="text-sm text-ink">{p.english}{p.dialect === 'northern' && <span className="ml-1 text-[10px] font-semibold uppercase bg-leaf-soft text-leaf rounded-full px-1.5 py-0.5">Kham Mueang</span>}</p>
+                  <p className="text-sm text-ink">{p.english}{p.dialect === 'northern' && <span className="ml-1 text-[10px] font-semibold uppercase bg-soft text-ink rounded-full px-1.5 py-0.5">Kham Mueang</span>}</p>
                 </div>
                 <SpeakButton text={p.thai} gender={particle} />
               </div>
@@ -83,12 +83,12 @@ export default function VendorView({ order, particle, onClose }) {
               <button
                 key={r.thai}
                 onClick={() => setReply(r)}
-                className="thai rounded-2xl bg-leaf text-white py-4 px-3 text-lg font-bold active:scale-95 transition shadow"
+                className="thai rounded-2xl bg-action hover:bg-action-hover text-white py-4 px-3 text-lg font-bold active:scale-95 transition shadow border border-white"
               >{r.thai}</button>
             ))}
             <button
               onClick={() => setOther(true)}
-              className="thai col-span-2 rounded-2xl bg-leaf text-white py-4 px-3 text-lg font-bold active:scale-95 transition shadow border-2 border-rice"
+              className="thai col-span-2 rounded-2xl bg-action hover:bg-action-hover text-white py-4 px-3 text-lg font-bold active:scale-95 transition shadow border border-white"
             ><Icon name="mic" className="mr-2 align-middle" />อื่นๆ… พูดเอง <span className="block text-xs font-normal opacity-80">Other… say it yourself</span></button>
           </div>
         )}

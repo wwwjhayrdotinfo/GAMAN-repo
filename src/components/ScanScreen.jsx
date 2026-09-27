@@ -66,7 +66,7 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
             placeholder="No menu? Type a dish, e.g. khao soi"
             className="min-w-0 flex-1 rounded-2xl border border-line bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-ink"
           />
-          <button className="rounded-2xl bg-ink text-white px-4 font-semibold" disabled={loading}>Go</button>
+          <button className="rounded-2xl bg-action hover:bg-action-hover text-white px-4 font-semibold" disabled={loading}>Go</button>
         </form>
 
         <button onClick={onDemo} disabled={loading} className="text-ink underline underline-offset-4 text-sm">

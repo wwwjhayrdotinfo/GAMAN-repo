@@ -54,7 +54,7 @@ export default function VendorVoiceReply({ onReply, onCancel }) {
           onClick={toggleMic}
           disabled={busy}
           className={`thai rounded-2xl py-4 text-lg font-bold active:scale-95 transition ${
-            status === 'listening' ? 'bg-ink text-white animate-pulse' : 'bg-action text-white'
+            status === 'listening' ? 'bg-action text-white animate-pulse' : 'bg-action hover:bg-action-hover text-white'
           } disabled:opacity-50`}
         ><Icon name={status === 'listening' ? 'stop' : 'mic'} className="mr-2 align-middle" />{status === 'listening' ? 'กำลังฟัง… แตะเพื่อหยุด' : 'แตะแล้วพูด'}</button>
       )}
@@ -75,7 +75,7 @@ export default function VendorVoiceReply({ onReply, onCancel }) {
           type="button"
           onClick={send}
           disabled={!text.trim() || busy || status === 'listening'}
-          className="thai flex-1 rounded-2xl bg-leaf text-white py-3 font-bold disabled:opacity-40"
+          className="thai flex-1 rounded-2xl bg-action hover:bg-action-hover text-white py-3 font-bold disabled:opacity-40"
         >{busy ? 'กำลังแปล…' : 'ส่งให้ลูกค้า ✓'}</button>
         <button type="button" onClick={onCancel} className="thai rounded-2xl border border-line px-4 font-semibold">ยกเลิก</button>
       </div>

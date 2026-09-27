@@ -36,7 +36,7 @@ function Row({ p, particle, onRemove }) {
         <p className="text-sm text-ink italic">{p.romanized}</p>
         <p className="text-sm text-ink">
           {p.english}
-          {p.dialect === 'northern' && <span className="ml-1 text-[10px] font-semibold uppercase bg-leaf-soft text-leaf rounded-full px-1.5 py-0.5">Kham Mueang</span>}
+          {p.dialect === 'northern' && <span className="ml-1 text-[10px] font-semibold uppercase bg-soft text-ink rounded-full px-1.5 py-0.5">Kham Mueang</span>}
         </p>
       </div>
       <SpeakButton text={p.thai} gender={particle} />

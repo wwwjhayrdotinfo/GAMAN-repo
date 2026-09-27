@@ -45,7 +45,7 @@ export function SpeakButton({ text, gender, className = '' }) {
 }
 
 export function Spice({ level }) {
-  if (!level) return <span className="text-xs text-leaf font-medium">Not spicy</span>
+  if (!level) return <span className="text-xs text-ink font-medium">Not spicy</span>
   return <span className="inline-flex gap-0.5 text-chili" role="img" aria-label={`Spice ${level} of 3`} title={`Spice ${level}/3`}>{Array.from({ length: level }, (_, i) => <Icon key={i} name="flame" size={16} />)}</span>
 }
 

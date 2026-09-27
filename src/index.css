@@ -17,10 +17,10 @@
 @theme {
   --color-rice: #FFF6E9;
   --color-ink: #27366B;
-  --color-action: #BF4E17;
+  --color-action: #BF4E17; /* Filled actions, including vendor replies. */
   --color-action-hover: #A64012;
   --color-thai-tea: #F26B1D;
-  --color-leaf: #2F6B3F;
+  --color-leaf: #2F6B3F; /* Success states only. */
   --color-leaf-soft: #EAF2E9;
   --color-chili: #C62F24;
   --color-turmeric: #F2A900;
