@@ -25,7 +25,15 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
         {loading ? (
           <div className="rounded-3xl bg-white border border-amber-200 p-6 text-center shadow-sm">
             {preview && <img src={preview} alt="" className="mx-auto max-h-48 rounded-xl mb-4 opacity-70" />}
-            <div className="animate-pulse text-amber-900 font-medium" role="status" aria-live="polite">{loadingMessage || 'Reading the menu…'}</div>
+            <div className="text-amber-900 font-medium" role="status" aria-live="polite">{loadingMessage || 'Reading the menu…'}</div>
+            <div
+              className="scan-progress mt-4 mb-3 h-2.5 overflow-hidden rounded-full bg-amber-100"
+              role="progressbar"
+              aria-label={loadingMessage || 'Reading the menu'}
+              aria-valuetext="In progress"
+            >
+              <div className="scan-progress-bar h-full w-2/5 rounded-full bg-amber-600" />
+            </div>
             <p className="text-xs text-amber-700 mt-1">Dense menus take longer. A clear photo of one section helps.</p>
           </div>
         ) : (

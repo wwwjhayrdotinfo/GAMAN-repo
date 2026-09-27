@@ -3,3 +3,13 @@
 html, body, #root { min-height: 100%; }
 body { font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif; -webkit-tap-highlight-color: transparent; }
 .thai { font-family: "Noto Sans Thai", "Thonburi", "Leelawadee UI", system-ui, sans-serif; }
+
+/* Indeterminate: the AI service does not report a completion percentage. */
+.scan-progress-bar { animation: scan-progress 1.6s ease-in-out infinite; }
+@keyframes scan-progress {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(350%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scan-progress-bar { animation: none; transform: translateX(75%); }
+}
