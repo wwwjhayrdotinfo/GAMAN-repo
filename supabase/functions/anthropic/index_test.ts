@@ -5,7 +5,7 @@ function assert(condition: unknown, message = "Assertion failed"): asserts condi
 }
 
 Deno.test("public proxy, CORS, validation, forwarding and failures", async () => {
-  const names = ["ANTHROPIC_API_KEY", "ALLOWED_ORIGIN", "ANTHROPIC_MODEL"];
+  const names = ["ANTHROPIC_API_KEY", "ALLOWED_ORIGIN", "ANTHROPIC_MODEL", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"];
   const saved = names.map((name) => Deno.env.get(name));
   const originalFetch = globalThis.fetch;
   let calls = 0;
@@ -22,6 +22,8 @@ Deno.test("public proxy, CORS, validation, forwarding and failures", async () =>
     method: "POST", headers: { "content-type": "application/json", origin }, body,
   });
   try {
+    Deno.env.delete("SUPABASE_URL");
+    Deno.env.delete("SUPABASE_SERVICE_ROLE_KEY");
     Deno.env.set("ANTHROPIC_API_KEY", "test-key");
     Deno.env.set("ALLOWED_ORIGIN", "https://example.com");
     Deno.env.delete("ANTHROPIC_MODEL");
@@ -60,6 +62,89 @@ Deno.test("public proxy, CORS, validation, forwarding and failures", async () =>
     assert((await handler(request())).status === 504);
     Deno.env.delete("ANTHROPIC_API_KEY");
     assert((await handler(request())).status === 503);
+  } finally {
+    globalThis.fetch = originalFetch;
+    names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));
+  }
+});
+
+Deno.test("persistent cache reuses normalized text, isolates photos/models, and survives DB failures", async () => {
+  const names = ["ANTHROPIC_API_KEY", "ALLOWED_ORIGIN", "ANTHROPIC_MODEL", "SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY"];
+  const saved = names.map((name) => Deno.env.get(name));
+  const originalFetch = globalThis.fetch;
+  const entries = new Map<string, {response: unknown; expires_at: string}>();
+  let aiCalls = 0;
+  let databaseDown = false;
+  let malformed = false;
+  const dish = {thai_name: "ข้าวซอย", english_name: "Khao Soi", romanized: "khâao soi", description: "Curry noodles",
+    ingredients: ["noodles", "coconut milk"], spice_level: 1, northern_specialty: true,
+    how_to_eat: "Add lime", story: "A northern Thai dish", unit: "ชาม", price: "60"};
+  const request = (name: string, image?: string) => new Request("https://example.com", {
+    method: "POST", headers: {"content-type": "application/json"},
+    body: JSON.stringify({ system: "GAMAN", messages: [{role: "user", content: image
+      ? [{type: "image", source: {type: "base64", media_type: "image/jpeg", data: image}}]
+      : [{type: "text", text: `Explain this dish (a customer typed its name, it may be misspelt or transliterated): "${name}"`}]}]}),
+  });
+  try {
+    Deno.env.set("SUPABASE_URL", "https://db.example.com");
+    Deno.env.set("SUPABASE_SERVICE_ROLE_KEY", "server-only");
+    Deno.env.set("ANTHROPIC_API_KEY", "test-key");
+    Deno.env.delete("ALLOWED_ORIGIN");
+    Deno.env.delete("ANTHROPIC_MODEL");
+    globalThis.fetch = async (input, init) => {
+      const url = new URL(String(input));
+      if (url.hostname === "api.anthropic.com") {
+        aiCalls++;
+        assert(new Headers(init?.headers).get("authorization") === null, "DB key must not reach Anthropic");
+        return Response.json({stop_reason: malformed ? "max_tokens" : "tool_use", content: [
+          {type: "tool_use", name: "return_dishes", input: {dishes: [dish]}}
+        ]});
+      }
+      assert(url.hostname === "db.example.com");
+      assert(new Headers(init?.headers).get("authorization") === "Bearer server-only");
+      if (databaseDown) return new Response("unavailable", {status: 503});
+      if (init?.method === "POST") {
+        const body = JSON.parse(String(init.body));
+        assert(!String(init.body).includes("photo-bytes"), "Uploaded photos must not be stored");
+        if (url.pathname.endsWith("products")) {
+          assert(body[0].thai_name === dish.thai_name);
+          assert(!("price" in body[0].details), "Menu price must not become a product price");
+        } else entries.set(body.cache_key, body);
+        return new Response(null, {status: 201});
+      }
+      const key = url.searchParams.get("cache_key")!.slice(3);
+      const row = entries.get(key);
+      return Response.json(row && new Date(row.expires_at).getTime() > Date.now() ? [row] : []);
+    };
+    const first = await handler(request("Khao Soi"));
+    assert(first.headers.get("x-gaman-cache") === "MISS");
+    assert(entries.size === 1 && aiCalls === 1);
+    // Even without an Anthropic key, a saved result can be served.
+    Deno.env.delete("ANTHROPIC_API_KEY");
+    const second = await handler(request("  khao   soi  "));
+    assert(second.headers.get("x-gaman-cache") === "HIT");
+    assert((await second.json()).content[0].input.dishes[0].price === "60");
+    assert(aiCalls === 1);
+    Deno.env.set("ANTHROPIC_API_KEY", "test-key");
+    for (const row of entries.values()) row.expires_at = "2000-01-01T00:00:00Z";
+    assert((await handler(request("khao soi"))).headers.get("x-gaman-cache") === "MISS");
+    assert(Number(aiCalls) === 2);
+    await handler(request("", "photo-bytes-A"));
+    const samePhoto = await handler(request("", "photo-bytes-A"));
+    assert(samePhoto.headers.get("x-gaman-cache") === "HIT");
+    await handler(request("", "photo-bytes-B"));
+    assert(Number(aiCalls) === 4);
+    Deno.env.set("ANTHROPIC_MODEL", "other-model");
+    assert((await handler(request("khao soi"))).headers.get("x-gaman-cache") === "MISS");
+    assert(Number(aiCalls) === 5);
+    malformed = true;
+    assert((await handler(request("uncacheable"))).headers.get("x-gaman-cache") === "SKIP");
+    await handler(request("uncacheable"));
+    assert(Number(aiCalls) === 7, "Truncated responses must never be cached");
+    malformed = false;
+    databaseDown = true;
+    const fallback = await handler(request("new dish"));
+    assert(fallback.status === 200 && fallback.headers.get("x-gaman-cache") === "UNAVAILABLE");
   } finally {
     globalThis.fetch = originalFetch;
     names.forEach((name, i) => saved[i] === undefined ? Deno.env.delete(name) : Deno.env.set(name, saved[i]!));

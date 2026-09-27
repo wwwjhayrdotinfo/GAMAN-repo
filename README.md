@@ -24,7 +24,7 @@ npm run build    # production build → dist/
 
 ## AI connection
 
-The app automatically calls the public Supabase `anthropic` function. Testers do not need an API key, proxy token, or connection settings. The Anthropic key is stored only in Supabase secrets.
+The app automatically calls the public Supabase `anthropic` function. Testers do not need an API key, proxy token, or connection settings. The Anthropic key is stored only in Supabase secrets. Supabase saves dish details and caches repeat dish-name lookups and identical menu images to avoid repeat AI calls.
 
 See [the Supabase setup guide](supabase/README.md) to deploy or update the function. This endpoint is intentionally open during core-feature testing.
 
