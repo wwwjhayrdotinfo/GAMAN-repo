@@ -7,18 +7,18 @@ export default defineConfig({
   base: '/',
   plugins: [react(), tailwindcss(), VitePWA({
     registerType: 'prompt',
-    includeAssets: ['icons/icon.svg', 'icons/apple-touch-icon.png'],
+    includeAssets: ['icons/*.png', 'brand/*.webp'],
     manifest: {
       id: '/',
       name: 'PadTalk',
       short_name: 'PadTalk',
-      description: 'Understand Thai menus and confidently order like a local.',
+      description: 'Every dish is a conversation. Understand the menu and order in Thai.',
       lang: 'en',
       start_url: '/',
       scope: '/',
       display: 'standalone',
-      background_color: '#fffbeb',
-      theme_color: '#b45309',
+      background_color: '#FFF6E9',
+      theme_color: '#27366B',
       categories: ['food', 'travel', 'education'],
       icons: [
         { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },

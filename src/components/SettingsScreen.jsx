@@ -16,21 +16,21 @@ export default function SettingsScreen({ settings, onSave, onBack }) {
             <option value="female">ค่ะ · khâ</option>
           </select>
         </Field>
-        <button onClick={() => onSave(s)} className="rounded-2xl bg-amber-700 text-white py-3 font-bold">Save</button>
+        <button onClick={() => onSave(s)} className="rounded-2xl bg-action text-white py-3 font-bold">Save</button>
         <InstallApp />
       </main>
     </div>
   )
 }
 
-const inputCls = 'w-full rounded-2xl border border-amber-300 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-amber-500'
+const inputCls = 'w-full rounded-2xl border border-line bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-ink'
 
 function Field({ label, hint, children }) {
   return (
     <label className="flex flex-col gap-1">
-      <span className="text-sm font-semibold text-amber-950">{label}</span>
+      <span className="text-sm font-semibold text-ink">{label}</span>
       {children}
-      {hint && <span className="text-xs text-amber-700">{hint}</span>}
+      {hint && <span className="text-xs text-ink">{hint}</span>}
     </label>
   )
 }

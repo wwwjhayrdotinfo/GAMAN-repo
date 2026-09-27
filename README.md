@@ -40,7 +40,7 @@ After deploying to Vercel, open the HTTPS app URL on your phone. On iPhone, use 
 
 After the first online visit finishes caching, the app shell, demo menu, built-in dishes, order builder and saved phrases are available offline. New AI scans require internet; speech availability depends on the device's Thai voices. API responses and menu photos are not cached by the service worker. Saved phrases remain in the same browser storage as before the rename.
 
-Updates show an Update now / Later notice so users can finish their current order before reloading. The current icons are simple PadTalk text placeholders pending branding.
+Updates show an Update now / Later notice so users can finish their current order before reloading. Brand icons use the supplied Pad Talk artwork. Fonts (Mitr, Anuphan and Sarabun) are self-hosted and cached for offline use.
 
 To test caching locally, run `npm run build` then `npm run preview`. Service workers are disabled during `npm run dev`. Installation requires HTTPS or localhost; a phone accessing a plain HTTP LAN address cannot use the full PWA installation flow. This frontend change does not require redeploying the Supabase function.
 

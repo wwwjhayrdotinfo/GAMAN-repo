@@ -35,13 +35,13 @@ export default function InstallApp() {
     try { await prompt.prompt(); await prompt.userChoice }
     catch { setError('Use your browser menu to add PadTalk to your home screen.') }
   }
-  return <section className="rounded-2xl border border-amber-200 bg-white p-4 text-amber-950">
+  return <section className="rounded-2xl border border-line bg-white p-4 text-ink">
     <h2 className="font-semibold">PadTalk on your home screen</h2>
     {installed ? <p className="mt-2 text-sm">You’re using the installed app.</p> : <>
-      {available && <button onClick={install} className="mt-3 rounded-xl bg-amber-700 px-4 py-2 font-semibold text-white">Install PadTalk</button>}
+      {available && <button onClick={install} className="mt-3 rounded-xl bg-action px-4 py-2 font-semibold text-white">Install PadTalk</button>}
       <p className="mt-2 text-sm">On iPhone, open PadTalk in Safari, tap Share, then Add to Home Screen. On Android, use your browser’s Install app or Add to Home screen option when available.</p>
     </>}
-    <p className="mt-2 text-xs text-amber-700">After an online visit finishes loading, the demo menu, built-in dish library and saved phrases work offline. New AI scans need internet.</p>
+    <p className="mt-2 text-xs text-ink">After an online visit finishes loading, the demo menu, built-in dish library and saved phrases work offline. New AI scans need internet.</p>
     {error && <p role="status" className="mt-2 text-sm">{error}</p>}
   </section>
 }

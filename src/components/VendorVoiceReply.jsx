@@ -1,3 +1,4 @@
+import Icon from './Icon'
 import { useEffect, useRef, useState } from 'react'
 import { canListen, listenThai } from '../lib/listen'
 import { translateVendorReply } from '../lib/claude'
@@ -44,8 +45,8 @@ export default function VendorVoiceReply({ onReply, onCancel }) {
 
   const busy = status === 'translating'
   return (
-    <div className="rounded-3xl bg-white text-amber-950 p-4 shadow-xl flex flex-col gap-3">
-      <p className="thai font-bold text-lg">พูดคำตอบเป็นภาษาไทย <span className="block text-xs font-normal text-amber-700">Speak your reply in Thai</span></p>
+    <div className="rounded-3xl bg-white text-ink p-4 shadow-xl flex flex-col gap-3">
+      <p className="thai font-bold text-lg">พูดคำตอบเป็นภาษาไทย <span className="block text-xs font-normal text-ink">Speak your reply in Thai</span></p>
 
       {micOk && (
         <button
@@ -53,9 +54,9 @@ export default function VendorVoiceReply({ onReply, onCancel }) {
           onClick={toggleMic}
           disabled={busy}
           className={`thai rounded-2xl py-4 text-lg font-bold active:scale-95 transition ${
-            status === 'listening' ? 'bg-red-600 text-white animate-pulse' : 'bg-amber-700 text-white'
+            status === 'listening' ? 'bg-ink text-white animate-pulse' : 'bg-action text-white'
           } disabled:opacity-50`}
-        >{status === 'listening' ? '● กำลังฟัง… แตะเพื่อหยุด' : '🎤 แตะแล้วพูด'}</button>
+        ><Icon name={status === 'listening' ? 'stop' : 'mic'} className="mr-2 align-middle" />{status === 'listening' ? 'กำลังฟัง… แตะเพื่อหยุด' : 'แตะแล้วพูด'}</button>
       )}
 
       <textarea
@@ -64,19 +65,19 @@ export default function VendorVoiceReply({ onReply, onCancel }) {
         disabled={busy}
         rows={3}
         placeholder={micOk ? 'หรือพิมพ์ที่นี่… (or type here)' : 'พิมพ์คำตอบที่นี่… (type your reply here)'}
-        className="thai w-full rounded-2xl border border-amber-300 p-3 text-xl"
+        className="thai w-full rounded-2xl border border-line p-3 text-xl"
       />
 
-      {error && <p className="thai text-sm text-red-700">{error}</p>}
+      {error && <p className="thai text-sm text-ink">{error}</p>}
 
       <div className="flex gap-2">
         <button
           type="button"
           onClick={send}
           disabled={!text.trim() || busy || status === 'listening'}
-          className="thai flex-1 rounded-2xl bg-emerald-600 text-white py-3 font-bold disabled:opacity-40"
+          className="thai flex-1 rounded-2xl bg-leaf text-white py-3 font-bold disabled:opacity-40"
         >{busy ? 'กำลังแปล…' : 'ส่งให้ลูกค้า ✓'}</button>
-        <button type="button" onClick={onCancel} className="thai rounded-2xl border border-amber-300 px-4 font-semibold">ยกเลิก</button>
+        <button type="button" onClick={onCancel} className="thai rounded-2xl border border-line px-4 font-semibold">ยกเลิก</button>
       </div>
     </div>
   )
