@@ -23,9 +23,19 @@ function DishCard({ dish, onOrder }) {
         <SpeakButton text={dish.thai_name} />
       </div>
 
-      {dish.loading || dish.detailError ? (
+      {dish.pending ? (
+        <button
+          type="button"
+          onClick={() => dish.loadDetails?.()}
+          className="rounded-2xl border border-amber-300 bg-amber-50 py-3 font-semibold text-amber-900 active:scale-[0.98] transition"
+        >Show details and order →</button>
+      ) : dish.loading || dish.detailError ? (
         <div role="status" className="rounded-2xl bg-amber-50 p-3 text-sm text-amber-800">
-          {dish.detailError || <><div className="animate-pulse h-3 bg-amber-200 rounded mb-2" /><div className="animate-pulse h-3 bg-amber-200 rounded w-2/3 mb-2" />Loading dish details…</>}
+          {dish.detailError ? (
+            <span className="flex items-center gap-2">{dish.detailError}
+              {dish.loadDetails && <button type="button" onClick={() => dish.loadDetails()} className="ml-auto underline font-semibold">Try again</button>}
+            </span>
+          ) : <><div className="animate-pulse h-3 bg-amber-200 rounded mb-2" /><div className="animate-pulse h-3 bg-amber-200 rounded w-2/3 mb-2" />Loading dish details…</>}
         </div>
       ) : <>
       <p className="text-amber-950">{dish.description}</p>
@@ -57,7 +67,7 @@ export default function DishList({ dishes, onBack, onOrder, preview }) {
       <Header title={`${dishes.length} dishes found`} onBack={onBack} />
       <main className="px-4 py-4 flex flex-col gap-4 max-w-md mx-auto pb-10">
         {preview && <img src={preview} alt="Scanned menu" className="rounded-2xl max-h-40 object-cover w-full" />}
-        {dishes.some((dish) => dish.loading) && <p role="status" className="text-sm text-amber-800">{dishes.filter((dish) => !dish.loading && !dish.detailError).length} of {dishes.length} dishes ready. You can order any ready dish.</p>}
+        {dishes.some((dish) => dish.loading) && <p role="status" className="text-sm text-amber-800">{dishes.filter((dish) => !dish.loading && !dish.detailError && !dish.pending).length} of {dishes.length} dishes ready. You can order any ready dish.</p>}
         {dishes.length === 0 && <p className="text-center text-amber-800 py-10">No dishes recognised. Try a clearer photo.</p>}
         {dishes.map((d) => <DishCard key={d.id} dish={d} onOrder={onOrder} />)}
       </main>

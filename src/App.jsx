@@ -23,6 +23,9 @@ export default function App() {
   const [loadingMessage, setLoadingMessage] = useState('')
   const busy = useRef(false)
   const scanController = useRef(null)
+  // The last photo scan stays live after it returns, so tapping "Show details" can load more.
+  const lastScan = useRef(null)
+  const endLastScan = () => { lastScan.current?.abort(); lastScan.current = null }
   const [error, setError] = useState('')
   const [myThai, setMyThai] = useState(loadMyThai)
 
@@ -36,6 +39,8 @@ export default function App() {
     const started = performance.now()
     const controller = new AbortController()
     scanController.current = controller
+    endLastScan()
+    lastScan.current = controller
     let shown = false
     try {
       if (input.file) {
@@ -79,7 +84,7 @@ export default function App() {
     if (busy.current) return
     setPreview(null)
     const local = searchLibrary(text).map((d) => ({ ...d, verified: 'exact', library_id: d.id }))
-    if (local.length) { setError(''); setDishes(local); go('dishes'); return }
+    if (local.length) { endLastScan(); setError(''); setDishes(local); go('dishes'); return }
     run({ text })
   }
 
@@ -103,7 +108,7 @@ export default function App() {
 
   switch (screen) {
     case 'dishes':
-      return <DishList dishes={dishes} preview={preview} onBack={() => { scanController.current?.abort(); scanController.current = null; busy.current = false; setLoading(false); go('scan') }} onOrder={(d) => { setDish(d); go('order') }} />
+      return <DishList dishes={dishes} preview={preview} onBack={() => { endLastScan(); scanController.current?.abort(); scanController.current = null; busy.current = false; setLoading(false); go('scan') }} onOrder={(d) => { setDish(d); go('order') }} />
     case 'order':
       return (
         <OrderScreen
@@ -132,7 +137,7 @@ export default function App() {
           preview={preview}
           onPhoto={handlePhoto}
           onText={handleText}
-          onDemo={() => { setPreview(null); setDishes(DEMO_DISHES); go('dishes') }}
+          onDemo={() => { endLastScan(); setPreview(null); setDishes(DEMO_DISHES); go('dishes') }}
           onSettings={() => go('settings')}
           onMyThai={() => go('mythai')}
         />
