@@ -118,11 +118,11 @@ export default function App() {
         />
       )
     case 'vendor':
-      return <VendorView order={order} onClose={() => go('order')} />
+      return <VendorView order={order} particle={settings.particle} onClose={() => go('order')} />
     case 'settings':
       return <SettingsScreen settings={settings} onBack={() => go('scan')} onSave={(s) => { updateSettings(s); go('scan') }} />
     case 'mythai':
-      return <MyThai saved={myThai} onRemove={removePhrase} onBack={() => go('scan')} />
+      return <MyThai saved={myThai} particle={settings.particle} onRemove={removePhrase} onBack={() => go('scan')} />
     default:
       return (
         <ScanScreen

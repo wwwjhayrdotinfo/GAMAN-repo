@@ -1,7 +1,7 @@
 import { PHRASES } from '../data/phrases'
 import { Header, SpeakButton } from './ui'
 
-export default function MyThai({ saved, onRemove, onBack }) {
+export default function MyThai({ saved, particle, onRemove, onBack }) {
   return (
     <div className="min-h-screen">
       <Header title="My Thai" onBack={onBack} />
@@ -13,14 +13,14 @@ export default function MyThai({ saved, onRemove, onBack }) {
           {saved.length === 0 && <p className="text-amber-700 text-sm">Order something and tap "Save this phrase" to build your list.</p>}
           <div className="flex flex-col gap-2">
             {saved.map((p, i) => (
-              <Row key={i} p={p} onRemove={() => onRemove(i)} />
+              <Row key={i} p={p} particle={particle} onRemove={() => onRemove(i)} />
             ))}
           </div>
         </section>
         <section>
           <h2 className="text-xs font-bold uppercase tracking-wide text-amber-900 mb-2">Useful at any food stall</h2>
           <div className="flex flex-col gap-2">
-            {PHRASES.map((p) => <Row key={p.id} p={p} />)}
+            {PHRASES.map((p) => <Row key={p.id} p={p} particle={particle} />)}
           </div>
         </section>
       </main>
@@ -28,7 +28,7 @@ export default function MyThai({ saved, onRemove, onBack }) {
   )
 }
 
-function Row({ p, onRemove }) {
+function Row({ p, particle, onRemove }) {
   return (
     <div className="flex items-center gap-3 rounded-2xl bg-white border border-amber-200 p-3">
       <div className="flex-1 min-w-0">
@@ -39,7 +39,7 @@ function Row({ p, onRemove }) {
           {p.dialect === 'northern' && <span className="ml-1 text-[10px] font-semibold uppercase bg-emerald-100 text-emerald-800 rounded-full px-1.5 py-0.5">Kham Mueang</span>}
         </p>
       </div>
-      <SpeakButton text={p.thai} />
+      <SpeakButton text={p.thai} gender={particle} />
       {onRemove && <button onClick={onRemove} className="text-amber-500 text-sm" aria-label="Remove">✕</button>}
     </div>
   )
