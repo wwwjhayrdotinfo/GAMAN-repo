@@ -8,7 +8,7 @@ export default function ScanScreen({ onPhoto, onText, onDemo, onSettings, onMyTh
   return (
     <div className="min-h-screen flex flex-col">
       <Header
-        title="GAMAN"
+        title="PadTalk"
         right={
           <div className="flex gap-1">
             <button onClick={onMyThai} className="w-9 h-9 rounded-full hover:bg-amber-100 text-lg" aria-label="My Thai phrases">📖</button>

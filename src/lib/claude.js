@@ -47,6 +47,9 @@ const MENU_SCHEMA = {
 }
 
 async function requestTool({ content, system, name, schema, signal }) {
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+    throw new Error('You’re offline. Try the demo menu or a built-in dish; AI scans need internet.')
+  }
   const res = await fetch(MENU_API_URL, {
     method: 'POST', headers: { 'content-type': 'application/json' },
     body: JSON.stringify({

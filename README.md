@@ -1,4 +1,4 @@
-# GAMAN 🍜 Order like a local in Chiang Mai
+# PadTalk 🍜 Order like a local in Chiang Mai
 
 **Goal:** Help newcomers in Chiang Mai understand local dishes and confidently order them in Thai, turning every meal at a local food spot into a real exchange with the vendor instead of a moment of confusion.
 
@@ -33,6 +33,16 @@ See [the Supabase setup guide](supabase/README.md) to deploy or update the funct
 Use the connected Vercel project: build command `npm run build`, output directory `dist`. Push to the branch configured for your desired Vercel environment. The GitHub Pages deployment workflow has been removed.
 
 See [launch setup](docs/launch-setup.md) for demo hosting and the sharing QR code.
+
+## Install PadTalk (PWA)
+
+After deploying to Vercel, open the HTTPS app URL on your phone. On iPhone, use Safari → Share → Add to Home Screen. On Android, use the browser's Install app option, or the Install PadTalk button in Settings when available. The installed app uses the full PadTalk name and opens in a standalone window.
+
+After the first online visit finishes caching, the app shell, demo menu, built-in dishes, order builder and saved phrases are available offline. New AI scans require internet; speech availability depends on the device's Thai voices. API responses and menu photos are not cached by the service worker. Saved phrases remain in the same browser storage as before the rename.
+
+Updates show an Update now / Later notice so users can finish their current order before reloading. The current icons are simple PadTalk text placeholders pending branding.
+
+To test caching locally, run `npm run build` then `npm run preview`. Service workers are disabled during `npm run dev`. Installation requires HTTPS or localhost; a phone accessing a plain HTTP LAN address cannot use the full PWA installation flow. This frontend change does not require redeploying the Supabase function.
 
 ## Project map
 

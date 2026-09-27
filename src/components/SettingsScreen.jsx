@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Header } from './ui'
+import InstallApp from './InstallApp'
 
 export default function SettingsScreen({ settings, onSave, onBack }) {
   const [s, setS] = useState(settings)
@@ -16,6 +17,7 @@ export default function SettingsScreen({ settings, onSave, onBack }) {
           </select>
         </Field>
         <button onClick={() => onSave(s)} className="rounded-2xl bg-amber-700 text-white py-3 font-bold">Save</button>
+        <InstallApp />
       </main>
     </div>
   )
