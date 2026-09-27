@@ -13,3 +13,4 @@ licences below; see each file page for the full author credit.
 | `test/sawadee-main.jpg` | [Menu of Sawadee Thai Restaurant (p2-3) 2024-10-05.jpg](https://commons.wikimedia.org/wiki/File:Menu_of_Sawadee_Thai_Restaurant_(p2-3)_2024-10-05.jpg), User:Onthewings | CC0 |
 | `dev/kaprow-sanpakoi.jpg` | GAMAN team photo (Kaprow Sanpakoi, Chiang Mai) | team photo |
 | `dev/wua-thong-grill.jpg` | GAMAN team photo (Wua Thong grill) | team photo |
+| `dev/khoei-chiang-mai-board.jpg` | Google Maps screenshot shared by the user (Khoei restaurant board, Chiang Mai) | internal use |

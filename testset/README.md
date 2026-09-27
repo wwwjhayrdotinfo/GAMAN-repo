@@ -13,12 +13,14 @@ links them to `src/data/dish-library.json`.
 This applies to humans and agents alike. If you need more tuning data, add photos to `dev/`.
 New, **unseen** photos may be added to `test/` (label them before running the scan on them).
 The Kaprow Sanpakoi and Wua Thong photos are in `dev/` because the matcher was already tuned on Kaprow.
+The Khoei board (a low-res 828×620 Google Maps screenshot of a bilingual Northern menu, right edge cut off)
+is in `dev/` because it was already scanned and discussed before labelling.
 
 ## Contents
 
 | Split | Photos | Labelled dishes | Expected to match the library |
 |-------|--------|-----------------|-------------------------------|
-| dev   | 2 | 12 | 9 |
+| dev   | 3 | 39 | 19 |
 | test  | 6 | 101 | 45 |
 
 `test/` covers: handwritten Thai + Chinese wall board (Chiang Rai), bilingual close-ups with glare and
@@ -48,7 +50,6 @@ npm run score:testset -- --image kaprow-sanpakoi
 
 Runs the real app code (`analyzeMenu`, including extraction and library reuse) against the live Supabase function and prints,
 per photo and overall: dishes found, exact Thai names, library matches (correct / wrong / missed /
-false link), add-ons shown as dishes, and scan time. The app returns at most 12 dishes per scan,
-so large menus cannot reach 100% found.
+false link), add-ons shown as dishes, and scan time. The app returns at most 40 dishes per scan.
 
 Photo sources and licences: see `ATTRIBUTION.md`.

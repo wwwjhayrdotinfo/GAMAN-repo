@@ -1,0 +1,215 @@
+{
+  "image": "khoei-chiang-mai-board.jpg",
+  "split": "dev",
+  "label_status": "draft: needs Thai-reader verification",
+  "source": "Khoei Chiang Mai - Northern Food, Google Maps contributor photo (michael khademi, Mar 2026); screenshot shared by Gilbert in the GAMAN DM",
+  "license": "Third-party Google Maps photo; internal testing only, remove if asked",
+  "languages": [
+    "th",
+    "en"
+  ],
+  "conditions": [
+    "printed",
+    "wall board",
+    "whole board in one photo",
+    "low resolution screenshot (828x620)",
+    "right edge cut off",
+    "app overlay covers top-left",
+    "28 numbered dishes"
+  ],
+  "notes": "Dish 25 is blurred out in the source and not labelled. Dev split: this photo was already scanned while raising the per-scan dish limit from 12 to 40 (commit 6f4f301). The photo's original resolution is too low for Thai names to be readable; English lines are readable.",
+  "dishes": [
+    {
+      "thai": null,
+      "english": "Northern platter: green chilli dip and/or tomato-pork chilli relish (top line hidden by overlay)",
+      "price": "285",
+      "expected_library_id": "",
+      "uncertain": true,
+      "partial": true
+    },
+    {
+      "thai": "แกงฮังเลหมู",
+      "english": "Northern style Hang Lay pork curry with garlic",
+      "price": "105",
+      "expected_library_id": "gaeng-hung-lay"
+    },
+    {
+      "thai": "ลาบหมูสุก",
+      "english": "Northern style spicy minced pork salad (cooked)",
+      "price": "105",
+      "expected_library_id": "laab-mueang",
+      "also_ok": [
+        "larb",
+        "laab-khua"
+      ]
+    },
+    {
+      "thai": "จอผักกาดใส่ซี่โครงหมู",
+      "english": "Northern style choy sum soup with pork ribs",
+      "price": "105",
+      "expected_library_id": "jor-pak-kad"
+    },
+    {
+      "thai": "แกงขนุนใส่ซี่โครงหมู / ปลาแห้ง",
+      "english": "Spicy jackfruit curry with pork ribs or dried fish",
+      "price": "105",
+      "expected_library_id": "kaeng-khanun"
+    },
+    {
+      "thai": "แกงหน่อไม้ใส่ซี่โครงหมู / ปลาแห้ง (น้ำปู๋)",
+      "english": "Northern style spicy bamboo shoot curry, crab paste, pork ribs or dried fish",
+      "price": "105",
+      "expected_library_id": null
+    },
+    {
+      "thai": "แกงผักหวานปลาแห้ง / ไข่มด (ตามฤดูกาล)",
+      "english": "Phuk Wann leaves curry soup with dried fish or ant eggs (seasonal)",
+      "price": "109 / 165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "แกงผักเชียงดาปลาแห้ง / ไข่มด (ตามฤดูกาล)",
+      "english": "Gurmar curry soup with dried fish or ant eggs (seasonal)",
+      "price": "109 / 165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ผักหวานคั่วไข่",
+      "english": "Stir-fried eggs with Phuk Wann leaves",
+      "price": "105",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ผักเชียงดาคั่วไข่",
+      "english": "Stir-fried eggs with gurmar",
+      "price": "105",
+      "expected_library_id": null
+    },
+    {
+      "thai": "แกงเห็ดถอบหมูใส่ยอดมะขาม (ตามฤดูกาล)",
+      "english": "Thai puffball mushroom curry with pork and young tamarind leaves (seasonal)",
+      "price": "165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "คั่วเห็ดถอบใส่ยอดมะขาม (ตามฤดูกาล)",
+      "english": "Stir-fried Thai puffball mushroom with pork and young tamarind leaves (seasonal)",
+      "price": "165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "เห็ดถอบลวกจิ้ม (ตามฤดูกาล)",
+      "english": "Thai puffball mushroom blanched (seasonal)",
+      "price": "165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "เห็ดถอบต้มเกลือ (ตามฤดูกาล)",
+      "english": "Thai puffball mushroom boiled in salted water (seasonal)",
+      "price": "165",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ต้มส้มไก่เมืองใส่ยอดมะขาม (ถ้วย / หม้อไฟ)",
+      "english": "Spicy Northern soup with young tamarind leaves and chicken (bowl / hot pot)",
+      "price": "105 / 209",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ไก่เมืองต้มน้ำปลา (ครึ่งตัว / 1 ตัว)",
+      "english": "Boiled chicken in fish sauce broth (half or whole)",
+      "price": "139 / 275",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ไก่เมืองนึ่ง (ครึ่งตัว / 1 ตัว)",
+      "english": "Northern style steamed chicken (half or whole)",
+      "price": "139 / 275",
+      "expected_library_id": null
+    },
+    {
+      "thai": "ยำจิ๊นไก่",
+      "english": "Northern style spicy chicken soup",
+      "price": "105",
+      "expected_library_id": "yam-jin-gai"
+    },
+    {
+      "thai": "แหนมหมก / ไข่",
+      "english": "Roast fermented pork / with egg",
+      "price": "95 / 105",
+      "expected_library_id": "naem",
+      "uncertain": true
+    },
+    {
+      "thai": "ไส้อั่ว",
+      "english": "Northern style spicy sausage",
+      "price": "95",
+      "expected_library_id": "sai-ua"
+    },
+    {
+      "thai": "อ่องปู",
+      "english": "Fat crab paste",
+      "price": "109",
+      "expected_library_id": null
+    },
+    {
+      "thai": "แคบหมู",
+      "english": "Pork crackle",
+      "price": "75",
+      "expected_library_id": "khaep-moo"
+    },
+    {
+      "thai": "น้ำพริกหนุ่ม + ผักนึ่ง",
+      "english": "Green chilli dip served with streamed mix vegetables",
+      "price": "",
+      "expected_library_id": "nam-prik-noom",
+      "partial": true
+    },
+    {
+      "thai": "น้ำพริกอ่อง + ผักนึ่ง",
+      "english": "Thai Northern style pork and tomato chilli dip served with streamed mix vegetables",
+      "price": "",
+      "expected_library_id": "nam-prik-ong",
+      "partial": true
+    },
+    {
+      "thai": "น้ำพริกปลาร้า + ผักนึ่ง",
+      "english": "Green chilli fermented fish spicy dip served with streamed mix vegetables",
+      "price": "",
+      "expected_library_id": null,
+      "partial": true
+    },
+    {
+      "thai": "น้ำพริกน้ำปู๋ + ผักนึ่ง",
+      "english": "Green chilli crab paste dip served with streamed mix vegetables",
+      "price": "",
+      "expected_library_id": null,
+      "partial": true
+    },
+    {
+      "thai": "น้ำพริกข่า + จิ้นนึ่ง",
+      "english": "Spicy chilli and galangal dip served with stewed beef",
+      "price": "",
+      "expected_library_id": null,
+      "partial": true
+    }
+  ],
+  "non_dishes": [
+    {
+      "text": "ประเภทน้ำพริก / Northern style chilli dips",
+      "why": "section header"
+    },
+    {
+      "text": "Khoei Chiang Mai - Northern Food / michael khademi / Photo - Mar 2026",
+      "why": "Google Maps overlay"
+    },
+    {
+      "text": "Google Maps / Image capture: Mar 2026 / Images may be subject to copyright",
+      "why": "screenshot chrome"
+    },
+    {
+      "text": "(รายการอาหารทั้งสองไม่ได้บวกภาษีมูลค่าเพิ่ม…)",
+      "why": "footer note"
+    }
+  ]
+}
