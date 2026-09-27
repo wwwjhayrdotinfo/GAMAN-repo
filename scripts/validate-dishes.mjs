@@ -5,7 +5,8 @@ import { readFileSync } from 'node:fs'
 import { DEMO_DISHES } from '../src/data/dishes.js'
 
 const library = JSON.parse(readFileSync(new URL('../src/data/dish-library.json', import.meta.url), 'utf8'))
-const UNITS = ['ที่', 'ชาม', 'จาน', 'แก้ว']
+const UNITS = ['ที่', 'ชาม', 'จาน', 'แก้ว', 'ขวด']
+const DRINK_OPTIONS = ['sweetness', 'ice']
 const STRINGS = ['id', 'thai_name', 'romanized', 'english_name', 'description', 'how_to_eat', 'story', 'unit']
 const OPTION_IDS = ['spice', 'no-coriander', 'fried-egg', 'less-sweet']
 const errors = []
@@ -19,6 +20,10 @@ library.forEach((d, i) => {
   if (!Number.isInteger(d.spice_level) || d.spice_level < 0 || d.spice_level > 3) errors.push(`${where}: spice_level must be an integer 0-3`)
   if (typeof d.northern_specialty !== 'boolean') errors.push(`${where}: northern_specialty must be boolean`)
   if (!UNITS.includes(d.unit)) errors.push(`${where}: unit must be one of ${UNITS.join(' ')}`)
+  if (d.drink !== undefined && d.drink !== true) errors.push(`${where}: drink must be true or absent`)
+  if (d.drink && (!Array.isArray(d.drink_options) || d.drink_options.some((x) => !DRINK_OPTIONS.includes(x)))) errors.push(`${where}: drink_options must be an array of ${DRINK_OPTIONS.join(' ')}`)
+  if (!d.drink && d.drink_options !== undefined) errors.push(`${where}: drink_options is only for drinks`)
+  if (d.unit === 'ขวด' && !d.drink) errors.push(`${where}: unit ขวด is only for drinks`)
   if (!/^[a-z0-9-]+$/.test(d.id ?? '')) errors.push(`${where}: id must be kebab-case`)
   if (!/[\u0E00-\u0E7F]/.test(d.thai_name ?? '')) errors.push(`${where}: thai_name must be in Thai script`)
   for (const k of ['id', 'thai_name']) {
@@ -38,4 +43,5 @@ if (errors.length) {
   process.exit(1)
 }
 const northern = library.filter((d) => d.northern_specialty).length
-console.log(`✓ ${library.length} dishes OK (${northern} Northern specialties)`)
+const drinks = library.filter((d) => d.drink).length
+console.log(`✓ ${library.length} dishes OK (${northern} Northern specialties, ${drinks} drinks)`)

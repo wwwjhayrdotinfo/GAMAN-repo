@@ -2,7 +2,7 @@ import { allowedOptions } from '../lib/orderOptions'
 import Icon from './Icon'
 import { useMemo, useState } from 'react'
 import { Chip, Header, SpeakButton } from './ui'
-import { buildOrder, EXTRA_OPTIONS, PARTICLES, SPICE_OPTIONS, WHERE_OPTIONS } from '../lib/order'
+import { buildOrder, drinkOptions, DRINK_WHERE_OPTIONS, EXTRA_OPTIONS, ICE_OPTIONS, isDrink, PARTICLES, SPICE_OPTIONS, SWEETNESS_OPTIONS, WHERE_OPTIONS } from '../lib/order'
 
 export default function OrderScreen({ dish, particle, onParticle, onBack, onShowVendor, onSavePhrase, savedList = [] }) {
   const allowed = allowedOptions(dish)
@@ -10,11 +10,16 @@ export default function OrderScreen({ dish, particle, onParticle, onBack, onShow
   const [qty, setQty] = useState(1)
   const [spice, setSpice] = useState('normal')
   const [extras, setExtras] = useState([])
-  const [where, setWhere] = useState('here')
+  // Drinks get sweetness / ice / glass-or-bag instead of spice and food extras.
+  const drink = isDrink(dish)
+  const drinkOpts = drinkOptions(dish)
+  const [where, setWhere] = useState(drink ? 'glass' : 'here')
+  const [sweetness, setSweetness] = useState('normal')
+  const [ice, setIce] = useState('normal')
 
   const order = useMemo(
-    () => buildOrder(dish, { qty, spice, extras, where, particle }),
-    [dish, qty, spice, extras, where, particle],
+    () => buildOrder(dish, { qty, spice, extras, where, particle, sweetness, ice }),
+    [dish, qty, spice, extras, where, particle, sweetness, ice],
   )
   const saved = savedList.some((p) => p.thai === order.thai)
   const toggleExtra = (id) => setExtras((x) => (x.includes(id) ? x.filter((e) => e !== id) : [...x, id]))
@@ -32,6 +37,7 @@ export default function OrderScreen({ dish, particle, onParticle, onBack, onShow
           </div>
         </section>
 
+        {!drink && <>
         {allowed.includes('spice') && <section className="flex flex-col gap-2">
           <Label>Spice</Label>
           <div className="flex flex-wrap gap-2">
@@ -52,6 +58,34 @@ export default function OrderScreen({ dish, particle, onParticle, onBack, onShow
             {WHERE_OPTIONS.map((w) => <Chip key={w.id} active={where === w.id} onClick={() => setWhere(w.id)}>{w.english}</Chip>)}
           </div>
         </section>
+        </>}
+
+        {drink && <>
+        {drinkOpts.includes('sweetness') && (
+          <section className="flex flex-col gap-2">
+            <Label>Sweetness <span className="font-normal normal-case text-ink">(Thai drinks are very sweet by default)</span></Label>
+            <div className="flex flex-wrap gap-2">
+              {SWEETNESS_OPTIONS.map((o) => <Chip key={o.id} active={sweetness === o.id} onClick={() => setSweetness(o.id)}>{o.english}</Chip>)}
+            </div>
+          </section>
+        )}
+
+        {drinkOpts.includes('ice') && (
+          <section className="flex flex-col gap-2">
+            <Label>Ice</Label>
+            <div className="flex flex-wrap gap-2">
+              {ICE_OPTIONS.map((o) => <Chip key={o.id} active={ice === o.id} onClick={() => setIce(o.id)}>{o.english}</Chip>)}
+            </div>
+          </section>
+        )}
+
+        <section className="flex flex-col gap-2">
+          <Label>Where?</Label>
+          <div className="flex flex-wrap gap-2">
+            {DRINK_WHERE_OPTIONS.map((w) => <Chip key={w.id} active={where === w.id} onClick={() => setWhere(w.id)}>{w.english}</Chip>)}
+          </div>
+        </section>
+        </>}
 
         <section className="flex flex-col gap-2">
           <Label>Polite ending <span className="font-normal normal-case text-ink">(Thai changes with the speaker)</span></Label>

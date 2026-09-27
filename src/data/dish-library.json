@@ -204,6 +204,11 @@
     "unit": "แก้ว",
     "allowed_options": [
       "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
     ]
   },
   {
@@ -1385,6 +1390,11 @@
     "unit": "แก้ว",
     "allowed_options": [
       "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
     ]
   },
   {
@@ -1406,6 +1416,11 @@
     "unit": "แก้ว",
     "allowed_options": [
       "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
     ]
   },
   {
@@ -1422,7 +1437,9 @@
     "how_to_eat": "Scrape out the soft flesh with a spoon after drinking.",
     "story": "Young coconuts are sold chilled at markets and fruit stalls.",
     "unit": "ที่",
-    "allowed_options": []
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": []
   },
   {
     "id": "pad-woon-sen",
@@ -2033,5 +2050,395 @@
     "story": "A Shan and Northern Thai staple that gives many Lanna dishes their deep flavour.",
     "unit": "ที่",
     "allowed_options": []
+  },
+  {
+    "id": "nam-plao",
+    "thai_name": "น้ำเปล่า",
+    "romanized": "náam bplàao",
+    "english_name": "Drinking Water",
+    "description": "Bottled drinking water, sold cold at almost every shop and stall.",
+    "ingredients": [
+      "water"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Ask for \"náam yen\" (น้ำเย็น) if you want it chilled. Many restaurants also give free jugs of filtered water.",
+    "story": "Thais rarely drink tap water; sealed bottles or filtered water are the norm.",
+    "unit": "ขวด",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": []
+  },
+  {
+    "id": "nam-khaeng",
+    "thai_name": "น้ำแข็ง",
+    "romanized": "náam khǎeng",
+    "english_name": "Glass of Ice",
+    "description": "A glass filled with ice, to pour your water, soft drink or beer over.",
+    "ingredients": [
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Order it alongside a bottle; the cylinder ice with a hole in the middle is factory-made and generally safe.",
+    "story": "Beer on ice is completely normal in Thailand, because of the heat.",
+    "unit": "แก้ว",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": []
+  },
+  {
+    "id": "coke",
+    "thai_name": "โค้ก",
+    "romanized": "khóhk",
+    "english_name": "Coke",
+    "description": "Coca-Cola, usually served in a glass bottle or can with a glass of ice.",
+    "ingredients": [
+      "cola"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say \"khóhk\" with a short, high tone; \"Pepsi\" (เป๊ปซี่) is just as common.",
+    "story": "Street stalls often pour soft drinks into a plastic bag with ice and a straw for take-away.",
+    "unit": "ขวด",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": [
+      "ice"
+    ]
+  },
+  {
+    "id": "beer-chang",
+    "thai_name": "เบียร์ช้าง",
+    "romanized": "bia cháang",
+    "english_name": "Chang Beer",
+    "description": "A strong, popular Thai lager. Cháang means elephant.",
+    "ingredients": [
+      "barley malt",
+      "rice",
+      "hops"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Usually drunk over ice. Alcohol is not sold in shops from 14:00 to 17:00 or after midnight.",
+    "story": "The green elephant label is one of the best-known Thai brands.",
+    "unit": "ขวด",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": [
+      "ice"
+    ]
+  },
+  {
+    "id": "beer-singha",
+    "thai_name": "เบียร์สิงห์",
+    "romanized": "bia sǐng",
+    "english_name": "Singha Beer",
+    "description": "A full-bodied Thai lager, Thailand's oldest beer brand.",
+    "ingredients": [
+      "barley malt",
+      "hops"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Say \"sǐng\", not \"sing-ha\". Often drunk over ice.",
+    "story": "Brewed since 1933 by Boon Rawd, the first Thai brewery.",
+    "unit": "ขวด",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": [
+      "ice"
+    ]
+  },
+  {
+    "id": "beer-leo",
+    "thai_name": "เบียร์ลีโอ",
+    "romanized": "bia lii-oh",
+    "english_name": "Leo Beer",
+    "description": "A light, cheap and very popular Thai lager.",
+    "ingredients": [
+      "barley malt",
+      "rice",
+      "hops"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Often ordered by the big bottle (ขวดใหญ่) to share, poured over ice.",
+    "story": "Made by the same company as Singha; it has a leopard on the label.",
+    "unit": "ขวด",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": [
+      "ice"
+    ]
+  },
+  {
+    "id": "kafae-yen",
+    "thai_name": "กาแฟเย็น",
+    "romanized": "gaa-fae yen",
+    "english_name": "Thai Iced Coffee",
+    "description": "Strong coffee with sweetened condensed and evaporated milk over ice.",
+    "ingredients": [
+      "coffee",
+      "condensed milk",
+      "evaporated milk",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Very sweet by default; ask for \"wǎan nói\" (less sweet). For black, ask for \"gaa-fae dam\" (กาแฟดำ).",
+    "story": "Chiang Mai is surrounded by coffee farms, so good local beans are easy to find.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "kafae-ron",
+    "thai_name": "กาแฟร้อน",
+    "romanized": "gaa-fae ráwn",
+    "english_name": "Hot Coffee",
+    "description": "Hot Thai-style coffee, usually with condensed milk.",
+    "ingredients": [
+      "coffee",
+      "condensed milk"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Ask for \"mâi sài nom\" (ไม่ใส่นม) for no milk.",
+    "story": "Old-style coffee shops serve it with a small glass of hot tea as a chaser.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness"
+    ]
+  },
+  {
+    "id": "cha-dam-yen",
+    "thai_name": "ชาดำเย็น",
+    "romanized": "chaa dam yen",
+    "english_name": "Thai Iced Black Tea",
+    "description": "Thai tea with sugar over ice, without milk.",
+    "ingredients": [
+      "black tea",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "A lighter option than milk tea; still sweet unless you ask for less.",
+    "story": "The same orange tea as chaa yen, just without the milk.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nom-yen",
+    "thai_name": "นมเย็น",
+    "romanized": "nom yen",
+    "english_name": "Pink Milk",
+    "description": "Iced milk sweetened with red sala syrup, bright pink.",
+    "ingredients": [
+      "milk",
+      "sala syrup",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Very sweet; a favourite with kids.",
+    "story": "The pink colour comes from sala syrup, a sweet red flavouring.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "cha-khiao-yen",
+    "thai_name": "ชาเขียวเย็น",
+    "romanized": "chaa khǐao yen",
+    "english_name": "Thai Iced Green Tea",
+    "description": "Sweet milky green tea over ice.",
+    "ingredients": [
+      "green tea",
+      "condensed milk",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Much sweeter than Japanese green tea; ask for less sweet if needed.",
+    "story": "A Thai street-stall classic, usually bright green.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-som-khan",
+    "thai_name": "น้ำส้มคั้น",
+    "romanized": "náam sôm khán",
+    "english_name": "Fresh Orange Juice",
+    "description": "Freshly squeezed Thai orange juice, sometimes with a pinch of salt.",
+    "ingredients": [
+      "orange",
+      "salt"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Sold in small bottles at markets; ask \"mâi sài glueah\" (ไม่ใส่เกลือ) for no salt.",
+    "story": "Northern Thailand grows many oranges; the juice is often more yellow than orange.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-pan",
+    "thai_name": "น้ำปั่น",
+    "romanized": "náam bpàn",
+    "english_name": "Fruit Shake",
+    "description": "Fruit blended with ice and sugar syrup; say the fruit first, e.g. น้ำมะม่วงปั่น (mango).",
+    "ingredients": [
+      "fruit",
+      "ice",
+      "sugar syrup"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Choose a fruit and ask for less sweet; some stalls add condensed milk.",
+    "story": "Fruit-shake stalls are everywhere in Chiang Mai's old town and night markets.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-oy",
+    "thai_name": "น้ำอ้อย",
+    "romanized": "náam ôi",
+    "english_name": "Sugarcane Juice",
+    "description": "Freshly pressed sugarcane juice, naturally sweet.",
+    "ingredients": [
+      "sugarcane"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Drink it fresh and cold; it is already sweet with no added sugar.",
+    "story": "Often pressed on the spot at markets.",
+    "unit": "แก้ว",
+    "allowed_options": [],
+    "drink": true,
+    "drink_options": [
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-lamyai",
+    "thai_name": "น้ำลำไย",
+    "romanized": "náam lam-yai",
+    "english_name": "Longan Juice",
+    "description": "A sweet drink made from dried longan fruit, served over ice.",
+    "ingredients": [
+      "dried longan",
+      "sugar",
+      "ice"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Tastes a little smoky and caramel-like.",
+    "story": "Longan is a famous crop of Chiang Mai and Lamphun.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-takrai",
+    "thai_name": "น้ำตะไคร้",
+    "romanized": "náam dtà-khrái",
+    "english_name": "Lemongrass Drink",
+    "description": "A light, sweet lemongrass infusion served cold.",
+    "ingredients": [
+      "lemongrass",
+      "sugar",
+      "water"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Refreshing on hot days; less sweet than most Thai drinks.",
+    "story": "Thais consider lemongrass good for digestion.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
+  },
+  {
+    "id": "nam-bai-toey",
+    "thai_name": "น้ำใบเตย",
+    "romanized": "náam bai dtoei",
+    "english_name": "Pandan Drink",
+    "description": "A sweet green drink made from pandan leaves, served cold.",
+    "ingredients": [
+      "pandan leaf",
+      "sugar",
+      "water"
+    ],
+    "spice_level": 0,
+    "northern_specialty": false,
+    "how_to_eat": "Has a light vanilla-like smell.",
+    "story": "Pandan is also used to flavour many Thai desserts.",
+    "unit": "แก้ว",
+    "allowed_options": [
+      "less-sweet"
+    ],
+    "drink": true,
+    "drink_options": [
+      "sweetness",
+      "ice"
+    ]
   }
 ]

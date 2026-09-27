@@ -1,5 +1,5 @@
 // Seed dishes: the demo works offline and without an API key.
-// unit: the Thai classifier used when ordering (ที่ = serving, ชาม = bowl, จาน = plate, แก้ว = glass)
+// unit: the Thai classifier used when ordering (ที่ = serving, ชาม = bowl, จาน = plate, แก้ว = glass, ขวด = bottle)
 // ⚠️ Have a Thai speaker double-check names/romanisation before the demo.
 export const DEMO_DISHES = [
   {
@@ -141,5 +141,8 @@ export const DEMO_DISHES = [
     how_to_eat: 'Say "wǎan nói" (หวานน้อย) if you want it less sweet.',
     story: 'Found at nearly every street stall. The bright orange colour comes from the tea blend.',
     unit: 'แก้ว',
+
+    drink: true,
+    drink_options: ['sweetness', 'ice'],
   },
 ]
