@@ -15,8 +15,8 @@ export const VENDOR_REPLIES = [
   { thai: 'ได้เลย', english: 'Sure, coming right up!', emoji: '👍' },
   { thai: 'หมดแล้ว', english: 'Sorry, it\'s sold out', emoji: '🙅' },
   { thai: 'กินเผ็ดได้ไหม', english: 'Can you eat spicy food?', emoji: '🌶️' },
-  { thai: 'ทานที่นี่หรือกลับบ้าน', english: 'Eat here or take away?', emoji: '🥡' },
-  { thai: 'รอสักครู่นะ', english: 'Please wait a moment', emoji: '⏳' },
+  { thai: 'กินที่นี่หรือกลับบ้าน', english: 'Eat here or take away?', emoji: '🥡' },
+  { thai: 'รอแป๊บนึงนะ', english: 'Please wait a moment', emoji: '⏳' },
   { thai: 'ลองอันนี้สิ อร่อย', english: 'Try this one, it\'s delicious!', emoji: '⭐' },
   { thai: 'มาจากไหน', english: 'Where are you from?', emoji: '🌏' },
   { thai: 'พูดไทยเก่งนะ', english: 'Your Thai is good!', emoji: '😄' },
@@ -27,6 +27,6 @@ export const QUICK_ANSWERS = [
   { thai: 'ได้', romanized: 'dâai', english: 'Yes / I can' },
   { thai: 'ไม่ได้', romanized: 'mâi dâai', english: 'No / I can\'t' },
   { thai: 'นิดหน่อย', romanized: 'nít nòi', english: 'A little' },
-  { thai: 'ทานที่นี่', romanized: 'thaan thîi nîi', english: 'Eat here' },
+  { thai: 'กินที่นี่', romanized: 'gin thîi nîi', english: 'Eat here' },
   { thai: 'กลับบ้าน', romanized: 'glàp bâan', english: 'Take away' },
 ]

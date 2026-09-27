@@ -27,7 +27,7 @@ export const EXTRA_OPTIONS = [
 ]
 
 export const WHERE_OPTIONS = [
-  { id: 'here', thai: 'ทานที่นี่', romanized: 'thaan thîi nîi', english: 'Eat here' },
+  { id: 'here', thai: 'กินที่นี่', romanized: 'gin thîi nîi', english: 'Eat here' },
   { id: 'takeaway', thai: 'ใส่ถุงกลับบ้าน', romanized: 'sài thǔng glàp bâan', english: 'Take away' },
 ]
 
@@ -66,8 +66,8 @@ export function drinkOptions(dish) {
 }
 
 export const PARTICLES = {
-  male: { thai: 'ครับ', romanized: 'khráp', english: 'I speak as male (khráp)' },
-  female: { thai: 'ค่ะ', romanized: 'khâ', english: 'I speak as female (khâ)' },
+  male: { thai: 'ครับ', romanized: 'khráp', orderThai: 'นะครับ', orderRomanized: 'ná khráp', english: 'I speak as male (khráp)' },
+  female: { thai: 'ค่ะ', romanized: 'khâ', orderThai: 'นะคะ', orderRomanized: 'ná khá', english: 'I speak as female (khâ)' },
 }
 
 export function buildOrder(dish, { qty = 1, spice = 'normal', extras = [], where = 'here', particle = 'male', sweetness = 'normal', ice = 'normal' }) {
@@ -90,7 +90,7 @@ export function buildOrder(dish, { qty = 1, spice = 'normal', extras = [], where
     spiceOpt?.thai && spiceOpt,
     ...extraOpts,
     whereOpt,
-    { thai: p.thai, romanized: p.romanized, english: '(polite)' },
+    { thai: p.orderThai, romanized: p.orderRomanized, english: '(polite)' },
   ].filter(Boolean)
 
   return {
@@ -115,7 +115,7 @@ function buildDrinkOrder(dish, { qty, where, particle, sweetness, ice }) {
     sweetOpt?.thai && sweetOpt,
     iceOpt?.thai && iceOpt,
     whereOpt,
-    { thai: p.thai, romanized: p.romanized, english: '(polite)' },
+    { thai: p.orderThai, romanized: p.orderRomanized, english: '(polite)' },
   ].filter(Boolean)
 
   return {
