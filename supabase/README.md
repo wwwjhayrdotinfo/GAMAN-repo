@@ -35,7 +35,7 @@ Tests mock Anthropic and do not make paid calls. For local function development,
 
 ## Testing limits
 
-Anyone who knows the endpoint can make paid requests. There is no authentication or rate limiting in this testing setup. The handler still limits request bodies to 8 MiB, fixes output at 4096 tokens, and selects the model server-side. CORS origin restrictions do not authenticate callers.
+Anyone who knows the endpoint can make paid requests. There is no user authentication or app-imposed daily usage cap in this demo setup. The handler still limits request bodies to 8 MiB, fixes output at 4096 tokens, and selects the model server-side. CORS origin restrictions do not authenticate callers.
 
 Anthropic errors retain their HTTP status and response body; network failures return 502 and timeouts return 504.
 
@@ -52,7 +52,7 @@ This first version reuses complete results for the same typed request or identic
 
 `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are supplied by the hosted Edge Function environment. The server credential stays in the function; browsers cannot directly read or write these tables. See [Supabase function environment variables](https://supabase.com/docs/guides/functions/secrets).
 
-If the tables are missing or the database is unavailable, the function continues with Anthropic and logs a generic cache warning. The response header `X-Gaman-Cache` reports `HIT`, `MISS`, `SKIP` (incomplete/unusable result), `DISABLED` (no database configuration), or `UNAVAILABLE` (a save failed). In browser DevTools, repeating the same dish should change this from `MISS` to `HIT`.
+If cache reads fail or the database is unavailable, the function continues with Anthropic and logs a generic cache warning. The response header `X-Gaman-Cache` reports `HIT`, `MISS`, `SKIP` (incomplete/unusable result), `DISABLED` (no database configuration), or `UNAVAILABLE` (a save failed). In browser DevTools, repeating the same dish should change this from `MISS` to `HIT`.
 
 To invalidate a result, delete its row from `menu_cache` in Table Editor. Editing `products` does not change previously cached responses. To clear all cached responses while keeping the catalog, run `delete from public.menu_cache;`. Expired rows are ignored automatically; optional maintenance can reclaim space with `delete from public.menu_cache where expires_at < now();`.
 

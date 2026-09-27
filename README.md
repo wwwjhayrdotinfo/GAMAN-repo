@@ -2,7 +2,7 @@
 
 **Goal:** Help newcomers in Chiang Mai understand local dishes and confidently order them in Thai, turning every meal at a local food spot into a real exchange with the vendor instead of a moment of confusion.
 
-Mobile-first web app, hosted on GitHub Pages. No app store required. AI calls can run through a Supabase Edge Function.
+Mobile-first web app, hosted on Vercel. No app store required. AI calls can run through a Supabase Edge Function.
 
 ## How it works
 
@@ -28,11 +28,11 @@ The app automatically calls the public Supabase `anthropic` function. Testers do
 
 See [the Supabase setup guide](supabase/README.md) to deploy or update the function. This endpoint is intentionally open during core-feature testing.
 
-## Deploy (GitHub Pages)
+## Deploy (Vercel)
 
-1. Repo → **Settings → Pages → Source: GitHub Actions**.
-2. Push to `main`. `.github/workflows/deploy.yml` builds and publishes.
-3. The site is at `https://<owner>.github.io/GAMAN-repo/`.
+Use the connected Vercel project: build command `npm run build`, output directory `dist`. Push to the branch configured for your desired Vercel environment. The GitHub Pages deployment workflow has been removed.
+
+See [launch setup](docs/launch-setup.md) for demo hosting and the sharing QR code.
 
 ## Project map
 
